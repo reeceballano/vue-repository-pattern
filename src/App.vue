@@ -14,7 +14,7 @@ export default {
     setup() {
         const store = useStore();
         onMounted(() => {
-            store.dispatch('post/fetchPost');
+            store.dispatch('post/fetchPosts');
         })        
     },
 }
