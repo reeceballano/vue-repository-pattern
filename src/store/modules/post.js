@@ -24,9 +24,6 @@ const mutations = {
 // ACTIONS
 const actions = {
     async fetchPost({ commit }) {
-        // const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
-        // commit('SET_POSTS', res.data);
-
         try {
             const { data } = await PostRepository.get();
             commit('SET_POSTS', data);
