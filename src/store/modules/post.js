@@ -6,6 +6,10 @@ const PostRepository = Repository.get('posts');
 const state = {
     posts: [],
     post: {},
+    pagination: {
+        start: 0,
+        limit: 5
+    }
 }
 
 // GETTERS
@@ -16,6 +20,10 @@ const getters = {
 
     getPost: state => {
         return state.post;
+    },
+
+    getCurrentPage: state => {
+        return state.pagination;
     }
 }
 
@@ -27,18 +35,18 @@ const mutations = {
 
     SET_POST(state, post) {
         state.post = post;
+    },
+
+    SET_PAGINATION(state, pagination) {
+        return state.pagination = pagination;
     }
 }
 
 // ACTIONS
 const actions = {
-    async fetchPosts({ commit }) {
+    async fetchPosts({ commit, state }) {
         try {
-            const paginate = {
-                start: 0,
-                limit: 3
-            }
-            const { data } = await PostRepository.get(paginate);
+            const { data } = await PostRepository.get(state.pagination);
             commit('SET_POSTS', data);
 
         } catch(error) {
@@ -53,6 +61,29 @@ const actions = {
         } catch(error) {
             console.log(error)
         }
+    },
+
+    paginatePost({ commit, state, dispatch }, payload) {
+
+        switch(payload) {
+            
+            case 'prev': {
+                const prev = { start: Number(state.pagination.start) - state.pagination.limit, limit: Number(state.pagination.limit) }
+                commit('SET_PAGINATION', prev);
+                dispatch('fetchPosts');
+                break;
+            }
+
+            case 'next': {
+                const next = { start: Number(state.pagination.start) + state.pagination.limit, limit: Number(state.pagination.limit) }
+
+                commit('SET_PAGINATION', next);
+                dispatch('fetchPosts');
+                break; 
+            }   
+        }
+
+        // commit('SET_PAGINATION', payload);
     }
 }
 

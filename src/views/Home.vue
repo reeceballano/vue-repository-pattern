@@ -2,7 +2,17 @@
     <div class="home">
         {{ post }}
         <button @click="getPost">Get Post ID: 1</button>
+        
+        <hr />
+
+        CURRENT PAGE: {{ currentPage }}
+
         <Post v-for="post in posts" :key="post.id" :post="post" />
+
+        <div class="pagination-wr">
+            <button @click="prevPosts">Prev</button>
+            <button @click="nextPosts">Next</button>
+        </div>
     </div>
 </template>
 
@@ -28,14 +38,29 @@ export default {
             return store.getters['post/getPost'];
         })
 
+        const currentPage = computed(() => {
+            return store.getters['post/getCurrentPage'];
+        })
+
         const getPost = () => {
             store.dispatch('post/fetchPost', 1);
+        }
+
+        const prevPosts = () => {
+            store.dispatch('post/paginatePost', 'prev');
+        }
+
+        const nextPosts = () => {
+            return store.dispatch('post/paginatePost', 'next');
         }
 
         return {
             posts,
             getPost,
-            post
+            post,
+            prevPosts,
+            nextPosts,
+            currentPage,
         }
     }
 }
