@@ -34,7 +34,11 @@ const mutations = {
 const actions = {
     async fetchPosts({ commit }) {
         try {
-            const { data } = await PostRepository.get();
+            const paginate = {
+                start: 0,
+                limit: 3
+            }
+            const { data } = await PostRepository.get(paginate);
             commit('SET_POSTS', data);
 
         } catch(error) {
