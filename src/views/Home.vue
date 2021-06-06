@@ -10,7 +10,7 @@
         <Post v-for="post in posts" :key="post.id" :post="post" />
 
         <div class="pagination-wr">
-            <button @click="prevPosts">Prev</button>
+            <button @click="prevPosts" :disabled="(currentPage.start === 0)">Prev</button>
             <button @click="nextPosts">Next</button>
         </div>
     </div>
