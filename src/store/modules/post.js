@@ -4,12 +4,14 @@ const PostRepository = Repository.get('posts');
 
 // STATE
 const state = {
+    allPosts: [],
     posts: [],
     post: {},
     pagination: {
         start: 0,
-        limit: 5
-    }
+        limit: 5,
+    },
+    endPost: false
 }
 
 // GETTERS
@@ -24,6 +26,10 @@ const getters = {
 
     getCurrentPage: state => {
         return state.pagination;
+    },
+
+    getEndPost: state => {
+        return state.endPost;
     }
 }
 
@@ -38,8 +44,13 @@ const mutations = {
     },
 
     SET_PAGINATION(state, pagination) {
-        return state.pagination = pagination;
+        state.pagination = pagination;
+    },
+
+    SET_END_POST(state, endPost) {
+        state.endPost = endPost;
     }
+
 }
 
 // ACTIONS
@@ -48,7 +59,12 @@ const actions = {
         try {
             const { data } = await PostRepository.get(state.pagination);
             commit('SET_POSTS', data);
-
+            
+            if(Array.isArray(data) && !data.length) {
+                commit('SET_END_POST', true);
+            } else {
+                commit('SET_END_POST', false);
+            }
         } catch(error) {
             console.log(error);
         }
@@ -84,6 +100,10 @@ const actions = {
         }
 
         // commit('SET_PAGINATION', payload);
+    },
+
+    endPost({ commit }, payload) {
+        commit('SET_END_POST', payload);
     }
 }
 
