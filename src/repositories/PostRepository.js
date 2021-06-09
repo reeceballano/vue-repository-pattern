@@ -9,5 +9,9 @@ export default {
 
     getPost(id) {
         return Client.get(`${resource}/${id}`);
+    },
+
+    create(payload) {
+        return Client.post(`${resource}`, payload);
     }
 }

@@ -2,6 +2,12 @@
     <div class="home">
         {{ post }}
         <button @click="getPost">Get Post ID: 1</button>
+
+        <hr />
+        
+        <input v-model="newpost" type="text" @keypress.enter="submitPost" />
+
+        <hr />
         
         <div v-if="isLoading">
             Loading...
@@ -16,7 +22,7 @@
 <script>
 import Post from '@/components/Post';
 import { useStore } from 'vuex';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
 export default {
     name: 'Home',
@@ -43,11 +49,26 @@ export default {
             return store.getters['post/getIsLoading'];
         })
 
+        const newpost = ref('');
+
+        const submitPost = () => {
+            const post = {
+                title: newpost.value,
+                body: 'test post',
+                userId: 1
+            }
+
+            store.dispatch('post/createPost', post);
+            newpost.value = '';
+        }
+
         return {
             posts,
             getPost,
             post,
             isLoading,
+            newpost,
+            submitPost,
         }
     }
 }

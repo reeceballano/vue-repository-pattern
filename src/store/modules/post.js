@@ -60,6 +60,15 @@ const actions = {
         } catch(error) {
             console.log(error)
         }
+    },
+
+    async createPost({ state }, payload) {
+        try {
+            const res = await PostRepository.create(payload);
+            state.posts.push(res.data);
+        } catch(error) {
+            console.log(error);
+        }
     }
 }
 
