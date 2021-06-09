@@ -6,6 +6,7 @@ const PostRepository = Repository.get('posts');
 const state = {
     posts: [],
     post: {},
+    isLoading: false,
 }
 
 // GETTERS
@@ -16,6 +17,10 @@ const getters = {
 
     getPost: state => {
         return state.post;
+    },
+
+    getIsLoading: state => {
+        return state.isLoading;
     }
 }
 
@@ -27,16 +32,22 @@ const mutations = {
 
     SET_POST(state, post) {
         state.post = post;
+    },
+
+    SET_IS_LOADING(state, isLoading) {
+        state.isLoading = isLoading;
     }
 }
 
 // ACTIONS
 const actions = {
     async fetchPosts({ commit }) {
+        commit('SET_IS_LOADING', true);
+
         try {
             const { data } = await PostRepository.get();
             commit('SET_POSTS', data);
-
+            commit('SET_IS_LOADING', false);
         } catch(error) {
             console.log(error);
         }

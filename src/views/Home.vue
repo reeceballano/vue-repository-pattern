@@ -2,7 +2,14 @@
     <div class="home">
         {{ post }}
         <button @click="getPost">Get Post ID: 1</button>
-        <Post v-for="post in posts" :key="post.id" :post="post" />
+        
+        <div v-if="isLoading">
+            Loading...
+        </div>
+
+        <div v-else>
+            <Post v-for="post in posts" :key="post.id" :post="post" />
+        </div>
     </div>
 </template>
 
@@ -32,10 +39,15 @@ export default {
             store.dispatch('post/fetchPost', 1);
         }
 
+        const isLoading = computed(() => {
+            return store.getters['post/getIsLoading'];
+        })
+
         return {
             posts,
             getPost,
-            post
+            post,
+            isLoading,
         }
     }
 }
