@@ -16,6 +16,6 @@ export default {
     },
 
     update(payload) {
-        return Client.put(`${resource}`, payload);
+        return Client.put(`${resource}/${payload.id}`, payload);
     }
 }
