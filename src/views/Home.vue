@@ -5,7 +5,7 @@
 
         <hr />
         
-        <input v-model="newpost" type="text" @keypress.enter="submitPost" />
+        <input v-model="newpost" type="text" @keypress.enter="submitPost" placeholder="Create new Post" />
 
         <hr />
         
