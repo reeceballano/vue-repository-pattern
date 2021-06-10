@@ -13,5 +13,9 @@ export default {
 
     create(payload) {
         return Client.post(`${resource}`, payload);
+    },
+
+    update(payload) {
+        return Client.put(`${resource}`, payload);
     }
 }
