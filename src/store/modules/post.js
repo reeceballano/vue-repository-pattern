@@ -72,13 +72,18 @@ const actions = {
     },
 
     async updatePost({ state }, payload) {
-        const res = await PostRepository.update(payload);
-        const post = state.posts.find(item => item.id === payload.id);
-        
-        if(post) {
-            post.title = res.data.title;
+        try {
+            const res = await PostRepository.update(payload);
+            const post = state.posts.find(item => item.id === payload.id);
+            
+            if(post) {
+                post.title = res.data.title;
+            }
+        } catch(error) {
+            console.log(error)
         }
-    }
+    },
+
 }
 
 export default {
