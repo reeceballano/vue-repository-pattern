@@ -80,9 +80,24 @@ const actions = {
                 post.title = res.data.title;
             }
         } catch(error) {
-            console.log(error)
+            console.log(error);
         }
     },
+
+    async deletePost({ state, commit }, id) {
+        try {
+            const res = await PostRepository.delete(id);
+            const posts = state.posts;
+
+            // FAKE DATA RESPONSE
+            if(res.status === 200) {
+                const newPosts = posts.filter(post => post.id !== id);
+                commit('SET_POSTS', newPosts);
+            }
+        } catch(error) {
+            console.log(error);
+        }
+    }
 
 }
 

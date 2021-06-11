@@ -1,6 +1,8 @@
 <template>
     <div class="post-item">
         {{ postData.title }}
+        <button @click="deletePost">Delete</button>
+
         <input v-if="isEditing" v-model="postData.title" type="text" />
 
         <button v-if="!isEditing" @click="editPost">Edit</button>
@@ -42,11 +44,16 @@ export default {
             store.dispatch('post/updatePost', postData.value);
         }
 
+        const deletePost = () => {
+            store.dispatch('post/deletePost', props.post.id);
+        }
+
         return {
             isEditing,
             editPost,
             postData,
             submitPost,
+            deletePost,
         }
     }
 }
