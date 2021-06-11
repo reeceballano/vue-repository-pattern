@@ -17,5 +17,9 @@ export default {
 
     update(payload) {
         return Client.put(`${resource}/${payload.id}`, payload);
+    },
+
+    delete(id) {
+        return Client.delete(`${resource}/${id}`);
     }
 }
