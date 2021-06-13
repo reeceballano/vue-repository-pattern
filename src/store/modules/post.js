@@ -9,6 +9,7 @@ const state = {
     isLoading: false,
     paginate: {
         start: 0,
+        limit: 15
     }
 }
 
@@ -122,10 +123,12 @@ const actions = {
     },
 
     async updatePaginate({ state, commit }) {
-        const start = state.paginate.start + 10;
+        const limit = state.paginate.limit;
+        const start = state.paginate.start + limit;
 
         const paginate = {
             start,
+            limit
         }
 
         await commit('SET_PAGINATE', paginate);

@@ -4,8 +4,8 @@ const resource = '/posts';
 
 export default {
     getPaginate(paginate) {
-        const { start } = paginate;
-        return Client.get(`${resource}?_start=${start}&_limit=10`);
+        const { start, limit } = paginate;
+        return Client.get(`${resource}?_start=${start}&_limit=${limit}`);
     },
 
     get() {
