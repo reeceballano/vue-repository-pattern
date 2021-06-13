@@ -3,6 +3,11 @@ import Client from './Clients/AxiosClient';
 const resource = '/posts';
 
 export default {
+    getPaginate(paginate) {
+        const { start } = paginate;
+        return Client.get(`${resource}?_start=${start}&_limit=10`);
+    },
+
     get() {
         return Client.get(`${resource}`);
     },

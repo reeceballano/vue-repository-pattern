@@ -14,7 +14,7 @@ export default {
     setup() {
         const store = useStore();
         onMounted(() => {
-            store.dispatch('post/fetchPosts');
+            store.dispatch('post/fetchPaginatedPosts');
         })        
     },
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="post-item">
-        {{ postData.title }}
+        {{ postData.id }} | {{ postData.title }}
         <button @click="deletePost">Delete</button>
 
         <input v-if="isEditing" v-model="postData.title" type="text" />

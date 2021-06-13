@@ -7,6 +7,9 @@ const state = {
     posts: [],
     post: {},
     isLoading: false,
+    paginate: {
+        start: 0,
+    }
 }
 
 // GETTERS
@@ -21,6 +24,10 @@ const getters = {
 
     getIsLoading: state => {
         return state.isLoading;
+    },
+
+    getPaginate: state => {
+        return state.paginate;
     }
 }
 
@@ -36,11 +43,26 @@ const mutations = {
 
     SET_IS_LOADING(state, isLoading) {
         state.isLoading = isLoading;
+    },
+
+    SET_PAGINATE(state, paginate) {
+        state.paginate = paginate;
     }
 }
 
 // ACTIONS
 const actions = {
+    async fetchPaginatedPosts({ state, dispatch }) {
+        try {
+            const res = await PostRepository.getPaginate(state.paginate);
+            await state.posts.push(...res.data);
+            console.log(res)
+            dispatch('updatePaginate');
+        } catch(error) {
+            console.log(error);
+        }
+    },
+
     async fetchPosts({ commit }) {
         commit('SET_IS_LOADING', true);
 
@@ -97,6 +119,16 @@ const actions = {
         } catch(error) {
             console.log(error);
         }
+    },
+
+    async updatePaginate({ state, commit }) {
+        const start = state.paginate.start + 10;
+
+        const paginate = {
+            start,
+        }
+
+        await commit('SET_PAGINATE', paginate);
     }
 
 }
