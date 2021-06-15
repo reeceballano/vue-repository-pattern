@@ -9,7 +9,9 @@ const state = {
 
 // GETTERS
 const getters = {
-
+    getUsers: state => {
+        return state.users;
+    }
 }
 
 // MUTATIONS
