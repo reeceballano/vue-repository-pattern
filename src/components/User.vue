@@ -2,7 +2,6 @@
     <div class="user">
         <router-link :to="{ name: 'User', params: { id: user.id } }">
             {{ user.id }}: {{ user.name }}
-
         </router-link>
     </div>
 </template>
@@ -16,6 +15,10 @@ export default {
             default: () => {}
         }
     },
+
+    setup() {
+
+    }
 }
 </script>
 
