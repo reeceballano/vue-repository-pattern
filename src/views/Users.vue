@@ -1,15 +1,22 @@
 <template>
     <div class="users">
         <h2>Users</h2>
-        {{ users }}
+        
+        <User v-for="user in users" :key="user.id" :user="user" />
     </div>
 </template>
 
 <script>
 import { useStore } from 'vuex';
 import { computed, onMounted } from 'vue';
+import User from '@/components/User';
 
 export default {
+    name: 'Users',
+    components: {
+        User
+    },
+
     setup() {
         const store = useStore();        
 

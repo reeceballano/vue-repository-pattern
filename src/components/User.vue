@@ -1,6 +1,6 @@
 <template>
     <div class="user">
-        {{ user }}
+        {{ user.id }}: {{ user.name }}
     </div>
 </template>
 
