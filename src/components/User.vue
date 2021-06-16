@@ -1,6 +1,9 @@
 <template>
     <div class="user">
-        {{ user.id }}: {{ user.name }}
+        <router-link :to="{ name: 'User', params: { id: user.id } }">
+            {{ user.id }}: {{ user.name }}
+
+        </router-link>
     </div>
 </template>
 
