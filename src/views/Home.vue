@@ -4,9 +4,9 @@
         <button @click="getPost">Get Post ID: 1</button>
 
         <hr />
-        
-        <input v-model="newpost" type="text" @keypress.enter="submitPost" placeholder="Create new Post" />
 
+        <Add />
+        
         <hr />
         
         <div v-if="isLoading">
@@ -22,12 +22,14 @@
 <script>
 import Post from '@/components/Post';
 import { useStore } from 'vuex';
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
+import Add from '@/components/Add';
 
 export default {
     name: 'Home',
     components: {
-        Post
+        Post,
+        Add
     },
 
     setup() {
@@ -49,26 +51,11 @@ export default {
             return store.getters['post/getIsLoading'];
         })
 
-        const newpost = ref('');
-
-        const submitPost = () => {
-            const post = {
-                title: newpost.value,
-                body: 'test post',
-                userId: 1
-            }
-
-            store.dispatch('post/createPost', post);
-            newpost.value = '';
-        }
-
         return {
             posts,
             getPost,
             post,
             isLoading,
-            newpost,
-            submitPost,
         }
     }
 }
