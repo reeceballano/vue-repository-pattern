@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home conatainer">
         {{ post }}
         <button @click="getPost">Get Post ID: 1</button>
 
