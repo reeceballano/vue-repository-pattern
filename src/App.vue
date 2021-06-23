@@ -1,10 +1,8 @@
 <template>
     <div class="app">
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link> |
-            <router-link to="/users">Users</router-link>
-        </div>
+        <Header>
+            <Nav />
+        </Header>
 
         <component :is="layout">
             <router-view/>
@@ -16,8 +14,15 @@
 import { onMounted, computed } from 'vue';
 import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
+import Header from '@/components/Header/Header';
+import Nav from '@/components/Header/Nav';
 
 export default {
+    components: {
+        Header,
+        Nav,
+    },
+
     setup() {
         const store = useStore();
         
