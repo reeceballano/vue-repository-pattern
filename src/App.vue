@@ -1,7 +1,15 @@
 <template>
     <div class="app">
         <Header>
-            <Nav />
+            <Nav>
+                <template v-slot:desktop>
+                    <NavLink v-for="link in navLinks" :key="link.id" :link="link" />
+                </template>
+
+                <template v-slot:mobile>
+                    <NavLink v-for="link in navLinks" :key="link.id" :link="link" />
+                </template>
+            </Nav>
         </Header>
 
         <component :is="layout">
@@ -16,11 +24,13 @@ import { useStore } from 'vuex';
 import { useRoute } from 'vue-router';
 import Header from '@/components/Header/Header';
 import Nav from '@/components/Header/Nav';
+import NavLink from '@/components/Header/NavLink';
 
 export default {
     components: {
         Header,
         Nav,
+        NavLink,
     },
 
     setup() {
@@ -32,12 +42,21 @@ export default {
             return (route.meta.layout || 'default-layout');
         }) 
 
+        const navLinks = [
+            { id: 1, name: 'Home', link: '/' },
+            { id: 2, name: 'About', link: '/about' },
+            { id: 3, name: 'Users', link: '/users' },
+            { id: 4, name: 'Blog', link: '/' },
+            { id: 5, name: 'Contact', link: '/' },
+        ]
+
         onMounted(() => {
             store.dispatch('post/fetchPosts');
         })        
 
         return {
-            layout
+            layout,
+            navLinks
         }
     },
 }
