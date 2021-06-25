@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-gray-800">
+    <nav class="bg-gray-600">
         <div class="custom-container">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -62,6 +62,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
