@@ -2,7 +2,7 @@
     <div class="main-hero">
         <div class="custom-container">
             <div class="md:flex">
-                <div class="w-2/5">
+                <div class="md:w-2/5 flex flex-col justify-center">
                     <h1>
                         Gathering moving cattle divide seas. 
                     </h1>
@@ -11,8 +11,9 @@
                         Firmament earth moving is is third saw whales. Our. Fruit moved rule living our two itself blessed appear two man.
                     </h2>
                 </div>
-                <div class="w-3/5">
-
+                <div class="md:w-3/5">
+                    <img :src="heroImg" />
+                    
                 </div>
             </div>
         </div>
@@ -20,21 +21,33 @@
 </template>
 
 <script>
-export default {
+import { computed } from 'vue';
 
+export default {
+    name: 'Hero',
+
+    setup() {
+        const heroImg = computed(() => {
+            return require(`./../../assets/hero-img.jpg`);
+        })
+
+        return {
+            heroImg
+        }
+    }
 }
 </script>
 
 <style scoped lang="scss">
     .main-hero {
-        @apply bg-gray-900;
+        background: #eeeff3;
 
         h1 {
-            @apply md:text-5xl text-white uppercase leading-10 font-extrabold;
+            @apply md:text-5xl text-gray-800 uppercase leading-tight font-extrabold;
         }
 
         h2 {
-            @apply md:text-3xl  font-thin text-gray-600 my-10;
+            @apply md:text-2xl font-thin text-gray-600 my-10;
         }
     }
 
