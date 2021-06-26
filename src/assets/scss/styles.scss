@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+    BUTTONS
+*/
+
+.btn-center-wrapper {
+    @apply md:flex items-center justify-center my-12 text-center;
+
+    button {
+        @apply mx-5 my-3;
+    }
+}
+
+.btn-blue-outlined {
+    @apply ring-1 py-4 px-14 text-blue-500 uppercase tracking-widest font-thin hover:bg-blue-500 hover:text-white ring-blue-500;
+}
+
+.btn-blue {
+    @apply ring-1 bg-blue-500 py-4 px-14 text-white uppercase tracking-widest font-thin hover:bg-transparent hover:text-blue-500 ring-blue-500;
+}
+
+/**
+    CONTAINER
+*/
+
+.custom-container {
+    @apply max-w-7xl mx-auto px-2 sm:px-6 lg:px-8;
+}
+
+/**
+    SECTION
+*/
+
+section {
+    @apply md:py-24 py-14;
+}

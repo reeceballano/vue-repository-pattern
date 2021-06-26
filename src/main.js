@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import '@/assets/css/styles.css'
+import '@/assets/scss/styles.scss'
 import Default from './layouts/Default.vue'
 import NoSidebar from './layouts/NoSidebar.vue'
 
