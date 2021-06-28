@@ -1,41 +1,45 @@
 <template>
     <div class="home-content">
-        <section class="custom-container intro-text">
-            <h2>
-                Third fish itself winged midst, days. Living great dry moving, together gathering had i likeness over give man third, let.
-            </h2>
+        <section class="intro-text">
+            <div class="custom-container">
+                <h2>
+                    Third fish itself winged midst, days. Living great dry moving, together gathering had i likeness over give man third, let.
+                </h2>
 
-            <div class="btn-center-wrapper">
-                <button class="btn-blue-outlined">
-                    Contact
-                </button>
+                <div class="btn-center-wrapper">
+                    <button class="btn-blue-outlined">
+                        Contact
+                    </button>
 
-                <button class="btn-blue">
-                    Explore
-                </button>
+                    <button class="btn-blue">
+                        Explore
+                    </button>
+                </div>
+
             </div>
             
         </section>
 
-
-
-
-        {{ post }}
+        <!-- {{ post }}
         <button @click="getPost">Get Post ID: 1</button>
 
         <hr />
 
         <Add />
         
-        <hr />
-        
-        <div v-if="isLoading">
-            Loading...
-        </div>
+        <hr /> -->
 
-        <div v-else>
-            <Post v-for="post in posts" :key="post.id" :post="post" />
-        </div>
+        <section class="blog-list-section bg-gray-50">
+            <div class="custom-container">
+                <div v-if="isLoading">
+                    Loading...
+                </div>
+
+                <div v-else>
+                    <Post v-for="post in posts" :key="post.id" :post="post" />
+                </div>
+            </div>
+        </section>
     </div>
 </template>
 
@@ -43,13 +47,13 @@
 import Post from '@/components/Post';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
-import Add from '@/components/Add';
+// import Add from '@/components/Add';
 
 export default {
     name: 'Home',
     components: {
         Post,
-        Add
+        // Add
     },
 
     setup() {
