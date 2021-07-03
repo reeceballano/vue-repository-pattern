@@ -28,22 +28,26 @@
         <Add />
         
         <hr /> -->
-
-        <section class="blog-list-section bg-gray-50">
+        <section ref="scrollComponent" class="blog-list-section bg-gray-50">
             <div class="custom-container">
-                <div v-if="isLoading">
+                <Post v-for="post in posts" :key="post.id" :post="post" />
+                
+                <div v-if="isLoading" class="text-center my-5">
                     Loading...
                 </div>
+            </div>
+        </section>
 
-                <div v-else>
-                    <Post v-for="post in posts" :key="post.id" :post="post" />
-                </div>
+        <section>
+            <div class="custom-container">
+                <h1>Next Section</h1>
             </div>
         </section>
     </div>
 </template>
 
 <script>
+import { ref, onMounted, onUnmounted } from 'vue';
 import Post from '@/components/Post';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
@@ -75,11 +79,30 @@ export default {
             return store.getters['post/getIsLoading'];
         })
 
+        const scrollComponent = ref(null);
+
+        const handleScroll = async () => {
+            let element = scrollComponent.value;
+
+            if(element.getBoundingClientRect().bottom < window.innerHeight) {
+                await store.dispatch('post/fetchPaginatedPosts');
+            }
+        }
+
+        onMounted(() => {
+            window.addEventListener('scroll', handleScroll);
+        })
+
+        onUnmounted(() => {
+            window.removeEventListener('scroll', handleScroll);
+        })
+
         return {
             posts,
             getPost,
             post,
             isLoading,
+            scrollComponent
         }
     }
 }

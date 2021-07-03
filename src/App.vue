@@ -55,7 +55,7 @@ export default {
         ]
 
         onMounted(() => {
-            store.dispatch('post/fetchPosts');
+            store.dispatch('post/fetchPaginatedPosts');
         })        
 
         return {
