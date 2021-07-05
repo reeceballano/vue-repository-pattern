@@ -79,13 +79,19 @@ export default {
             return store.getters['post/getIsLoading'];
         })
 
+        const noData = computed(() => {
+            return store.getters['post/getNoData'];
+        })
+
         const scrollComponent = ref(null);
 
         const handleScroll = async () => {
             let element = scrollComponent.value;
 
             if(element.getBoundingClientRect().bottom < window.innerHeight) {
-                await store.dispatch('post/fetchPaginatedPosts');
+                if(!noData.value) {
+                    await store.dispatch('post/fetchPaginatedPosts');
+                }
             }
         }
 
