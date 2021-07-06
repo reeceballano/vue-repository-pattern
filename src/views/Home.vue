@@ -31,7 +31,7 @@
         <section ref="scrollComponent" class="blog-list-section bg-gray-50">
             <div class="custom-container">
                 <Post v-for="post in posts" :key="post.id" :post="post" />
-                
+
                 <div v-if="isLoading" class="text-center my-5">
                     Loading...
                 </div>
@@ -47,10 +47,9 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
-import Post from '@/components/Post';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useStore } from 'vuex';
-import { computed } from 'vue';
+import Post from '@/components/Post';
 // import Add from '@/components/Add';
 
 export default {
