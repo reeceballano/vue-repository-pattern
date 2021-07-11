@@ -28,13 +28,9 @@
         <Add />
         
         <hr /> -->
-        <section ref="scrollComponent" class="blog-list-section bg-gray-50">
+        <section class="blog-list-section bg-gray-50">
             <div class="custom-container">
-                <Post v-for="post in posts" :key="post.id" :post="post" />
-
-                <div v-if="isLoading" class="text-center my-5">
-                    Loading...
-                </div>
+                <PostList  />
             </div>
         </section>
 
@@ -47,24 +43,21 @@
 </template>
 
 <script>
-import { computed, ref, onMounted, onUnmounted } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
-import Post from '@/components/Post';
+import PostList from '@/components/PostList';
 // import Add from '@/components/Add';
 
 export default {
     name: 'Home',
     components: {
-        Post,
+        PostList,
         // Add
     },
 
     setup() {
         const store = useStore();
 
-        const posts = computed(() => {
-            return store.getters['post/getPosts']
-        })
 
         const post = computed(() => {
             return store.getters['post/getPost'];
@@ -74,40 +67,9 @@ export default {
             store.dispatch('post/fetchPost', 1);
         }
 
-        const isLoading = computed(() => {
-            return store.getters['post/getIsLoading'];
-        })
-
-        const noData = computed(() => {
-            return store.getters['post/getNoData'];
-        })
-
-        const scrollComponent = ref(null);
-
-        const handleScroll = async () => {
-            let element = scrollComponent.value;
-
-            if(element.getBoundingClientRect().bottom < window.innerHeight) {
-                if(!noData.value) {
-                    await store.dispatch('post/fetchPaginatedPosts');
-                }
-            }
-        }
-
-        onMounted(() => {
-            window.addEventListener('scroll', handleScroll);
-        })
-
-        onUnmounted(() => {
-            window.removeEventListener('scroll', handleScroll);
-        })
-
         return {
-            posts,
             getPost,
             post,
-            isLoading,
-            scrollComponent
         }
     }
 }

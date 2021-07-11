@@ -95,12 +95,7 @@ export default {
 
         const isEditing = ref(false);
         
-        const postData = ref({
-            id: props.post.id,
-            title: props.post.title,
-            body: props.post.body,
-            userId: props.post.userId
-        })
+        const postData = ref(props.post)
 
         const editPost = () => {
             isEditing.value = true;
