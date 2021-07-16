@@ -90,6 +90,7 @@ const actions = {
     },
 
     async fetchPost({ commit }, id) {
+        console.log(`fetching: ${id}`)
         try {
             const { data } = await PostRepository.getPost(id);
             commit('SET_POST', data);
