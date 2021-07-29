@@ -9,15 +9,7 @@
 
         <hr />
 
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                <router-link :to="{ name: 'Post', params: { id: post.id } }">
-                    {{ post.id }}:  {{ post.title }}
-                </router-link>
-            </li>
-        </ul>
-
-
+        <RelatedPosts />
         
     </div>
 </template>
@@ -26,10 +18,14 @@
 import { useRoute } from 'vue-router';
 import { watch, computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
+import RelatedPosts from '@/components/RelatedPosts';
 
 export default {
     name: 'Post',
-    
+    components: {
+        RelatedPosts,
+    },
+
     setup() {
         const route = useRoute();
 
