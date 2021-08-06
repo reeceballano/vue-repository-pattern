@@ -1,15 +1,17 @@
 <template>
-    <div class="post-single">
-        <h2>Post Info</h2>
-        <hr />
-        ID: {{ id }}
-        <br />
+    <div class="post-single custom-container">
+        <div class="post-header py-10 border-b">
+            <h2 class="text-3xl uppercase">{{ post.title }}</h2>
 
-        {{ post }}
+        </div>
 
-        <hr />
+        <div class="post-body py-10 border-b">
+            {{ post }}
+        </div>
 
-        <RelatedPosts :limit="5" />
+        <div class="related-pst">
+            <RelatedPosts :limit="5" />
+        </div>
         
     </div>
 </template>

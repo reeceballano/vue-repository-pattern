@@ -1,6 +1,6 @@
 <template>
-    <div class="related-posts container">
-        <h2>Related Posts</h2>
+    <div class="related-posts py-10">
+        <h2 class="text-2xl uppercase">Related Posts</h2>
         <Post v-for="post in relatedPosts" :key="post.id" :post="post" />
     </div>
 </template>
