@@ -6,7 +6,9 @@
         </div>
 
         <div class="post-body py-10 border-b">
-            {{ post }}
+            <p class="text-lg">
+                {{ post.body }}
+            </p>
         </div>
 
         <div class="related-pst">
