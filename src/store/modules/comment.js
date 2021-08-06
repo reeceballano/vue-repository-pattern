@@ -4,12 +4,14 @@ const CommentRepository = Repository.get('comments');
 
 // STATE
 const state = {
-    comments: [],
+    comments: [{id: 1, comment: 'test'}],
 }
 
 // GETTERS
 const getters = {
-
+    getComments: state => {
+        return state.comments;
+    }
 }
 
 // MUTATIONS
@@ -32,6 +34,7 @@ const actions = {
 }
 
 export default {
+    namespaced: true,
     state,
     getters,
     mutations,

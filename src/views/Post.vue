@@ -9,6 +9,19 @@
             <p class="text-lg">
                 {{ post.body }}
             </p>
+
+            <div class="comments-wrapper bg-gray-100 p-10 mt-10">
+                <h3 class="uppercase m-5 font-semibold">Response</h3>
+                <div class="comment-list">
+                    <div v-for="comment in filteredComments(comments.data)" :key="comment.id" class="comment-item m-5 border-b pb-5">
+                        {{ comment.body }}
+
+                        <strong class="uppercase block text-sm">
+                            - {{ comment.name }}
+                        </strong>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="related-pst">
@@ -51,12 +64,20 @@ export default {
             return store.getters['post/getPosts'];
         })
 
+        const comments = computed(() => {
+            return store.getters['comment/getComments'];
+        })
+
+        const filteredComments = (data) => {
+            return data.filter(item => Number(item.postId) === Number(id.value));
+        }
+
         watch(() => id.value, () => {
-            return fetchPost()
+                fetchPost()
         });
 
         onMounted(() => {
-            fetchPost()
+            fetchPost();
         })
 
         return {
@@ -64,6 +85,8 @@ export default {
             post,
             fetchPost,
             posts,
+            filteredComments,
+            comments,
         }
     }
 }
