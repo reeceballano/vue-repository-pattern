@@ -9,7 +9,7 @@
 
         <hr />
 
-        <RelatedPosts />
+        <RelatedPosts :limit="5" />
         
     </div>
 </template>

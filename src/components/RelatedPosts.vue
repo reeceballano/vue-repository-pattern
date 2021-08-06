@@ -12,15 +12,24 @@ import { computed } from 'vue';
 
 export default {
     name: 'RelatedPosts',
+    props: {
+        limit: {
+            type: Number,
+            default: 3
+        }
+    },
     components: {
         Post,
     },
 
-    setup() {
+    setup(props) {
         const store = useStore();
 
         const relatedPosts = computed(() => {
-            return store.getters['post/getPosts'];
+            const posts = store.getters['post/getPosts'];
+            const limit = posts.slice(0, props.limit);
+
+            return limit;
         })
 
         return {
