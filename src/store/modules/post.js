@@ -10,7 +10,7 @@ const state = {
     paginate: {
         start: 0,
         limit: 5,
-        current: 0,
+        current: 1,
         last_page: 0,
         totalPage: 0,
     },
