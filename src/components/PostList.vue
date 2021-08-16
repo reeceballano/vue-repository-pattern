@@ -1,14 +1,17 @@
 <template>
-    <div ref="scrollComponent" class="post-list">
+    <div class="post-list">
         <Post v-for="post in posts" :key="post.id" :post="post" />
-        <div v-if="isLoading" class="text-center my-5">
-            Loading...
+
+        <div class="pagination-wrapper flex gap-2 my-10">
+            <button class="btn-blue-outlined" @click="prevPage">Prev</button>
+            <button class="btn-blue-outlined" @click="nextPage">Next</button>
+
         </div>
     </div>
 </template>
 
 <script>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { computed } from 'vue';
 import Post from '@/components/Post';
 import { useStore } from 'vuex';
 
@@ -25,38 +28,23 @@ export default {
             return store.getters['post/getPosts']
         })
 
-        const isLoading = computed(() => {
-            return store.getters['post/getIsLoading'];
-        })
-
-        const noData = computed(() => {
-            return store.getters['post/getNoData'];
-        })
-
-        const scrollComponent = ref(null);
-
-        const handleScroll = async () => {
-            let element = scrollComponent.value;
-
-            if(element.getBoundingClientRect().bottom < window.innerHeight) {
-                if(!noData.value) {
-                    await store.dispatch('post/fetchPaginatedPosts');
-                }
-            }
+        const nextPage = () => {
+            store.dispatch('post/updatePagination', '+');
         }
 
-        onMounted(() => {
-            window.addEventListener('scroll', handleScroll);
-        })
+        const prevPage = () => {
+            store.dispatch('post/updatePagination', '-');
+        }
 
-        onUnmounted(() => {
-            window.removeEventListener('scroll', handleScroll);
+        const pagination = computed(() => {
+            return store.getters['post/getPaginate'];
         })
 
         return {
             posts,
-            isLoading,
-            scrollComponent,
+            nextPage,
+            prevPage,
+            pagination,
         }
 
     }

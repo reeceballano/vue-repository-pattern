@@ -28,6 +28,7 @@
         <Add />
         
         <hr /> -->
+
         <section class="blog-list-section bg-gray-50">
             <div class="custom-container">
                 <PostList  />
@@ -66,6 +67,7 @@ export default {
         const getPost = () => {
             store.dispatch('post/fetchPost', 1);
         }
+
 
         return {
             getPost,

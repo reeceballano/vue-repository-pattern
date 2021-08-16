@@ -8,8 +8,11 @@ const state = {
     post: {},
     isLoading: false,
     paginate: {
-        start: 5,
+        start: 0,
         limit: 5,
+        current: 0,
+        last_page: 0,
+        totalPage: 0,
     },
     noData: false,
 }
@@ -30,6 +33,10 @@ const getters = {
 
     getNoData: state => {
         return state.noData;
+    },
+
+    getPaginate: state => {
+        return state.paginate;
     }
 }
 
@@ -53,7 +60,8 @@ const mutations = {
 
     SET_NO_DATA(state, noData) {
         state.noData = noData;
-    }
+    },
+
 }
 
 // ACTIONS
@@ -65,20 +73,35 @@ const actions = {
             const { data } = await PostRepository.get();
             commit('SET_POSTS', data);
             commit('SET_IS_LOADING', false);
+
+
         } catch(error) {
             console.log(error);
         }
     },
 
-    async fetchPaginatedPosts({ state, commit, dispatch }) {
+
+    async fetchPaginatedPosts({ state, commit }) {
         commit('SET_IS_LOADING', true);
         
         try {
+            console.log(state.paginate)
             const { data } = await PostRepository.getPostPaginated(state.paginate);
-            
-            state.posts.push(...data);
-            dispatch('updatePaginate');
+            const totalData = await PostRepository.get();
+            state.posts = data;
             commit('SET_IS_LOADING', false);
+
+            console.log(data)
+
+            const paginate = {
+                start: state.paginate.start,
+                limit: state.paginate.limit,
+                current: state.paginate.current,
+                last_page: Math.ceil(totalData.data.length / state.paginate.limit),
+                totalPage: totalData.data.length
+            }
+
+            commit('SET_PAGINATE', paginate);
 
             if(!Array.isArray(data) || !data.length) {
                 commit('SET_NO_DATA', true);
@@ -136,18 +159,37 @@ const actions = {
         }
     },
 
-    async updatePaginate({ state, commit }) {
-        const limit = await state.paginate.limit;
-        const start = await state.paginate.start + limit;
+    updatePagination({ commit, dispatch }, payload) {
 
-        const paginate = {
-            start,
-            limit
+        let paginate = {
+            start: state.paginate.start,
+            limit: state.paginate.limit,
+            current: state.paginate.current,
+            last_page: Math.ceil(state.paginate.totalPage / state.paginate.limit),
+            totalPage: state.paginate.totalPage,
         }
 
-        await commit('SET_PAGINATE', paginate);
-    }
+        if(payload === '+') {
+            paginate = {
+                start: state.paginate.start + state.paginate.limit,
+                limit: state.paginate.limit,
+                current: state.paginate.current + 1,
+                last_page: Math.ceil(state.paginate.totalPage / state.paginate.limit),
+                totalPage: state.paginate.totalPage,
+            }
+        } else {
+            paginate = {
+                start: state.paginate.start - state.paginate.limit,
+                limit: state.paginate.limit,
+                current: state.paginate.current - 1,
+                last_page: Math.ceil(state.paginate.totalPage / state.paginate.limit),
+                totalPage: state.paginate.totalPage,
+            }
+        }
 
+        commit('SET_PAGINATE', paginate);
+        dispatch('fetchPaginatedPosts');
+    }
 }
 
 export default {
