@@ -1,6 +1,6 @@
 <template>
     <div class="search-results absolute bg-white w-full left-0 top-16 p-10 z-50">
-        <input v-model="search" type="text" placeholder="Search" class="w-full border border-gray-100 px-5 py-3 focus:outline-none focus:ring-1"/>
+        <input v-model="search" type="text" placeholder="Search" class="searchInput w-full border border-gray-100 px-5 py-3 focus:outline-none focus:ring-1"/>
 
         <Post v-for="post in searchResults" :key="post.id" :post="post" /> 
     </div>
@@ -15,16 +15,25 @@ import Post from '@/components/Post';
 export default {
     name: 'Search',
 
+    props: {
+        isFocus: {
+            type: Boolean,
+            default: false
+        }  
+    },
+
     components: {
         Post,
     },
 
-    setup() {
+    setup(context) {
         const store = useStore();
 
         const search = ref('');
 
         let searchResults = ref(null);
+
+        const setFocus = context;
 
         const posts = computed(() => {
             return store.getters['post/getAllPosts'];
@@ -44,6 +53,14 @@ export default {
             }
         })
 
+        watch(setFocus,(setFocus) => {
+            if(setFocus.isFocus) {
+                setTimeout(() => {
+                    document.querySelector('.searchInput').focus(); // THIS IS NOT THE RIGHT WAY, I WILL REFACTOR THIS LATER
+                },  100)
+            }
+        })
+
         onMounted(() => {
             store.dispatch('post/fetchPosts');
         })
@@ -51,7 +68,8 @@ export default {
         return {
             search,
             posts,
-            searchResults
+            searchResults,
+            setFocus
         }
     },
 }

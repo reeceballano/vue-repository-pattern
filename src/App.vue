@@ -11,7 +11,7 @@
                         </svg>
                     </a>
 
-                    <Search v-show="isSearch" />
+                    <Search v-show="isSearch" :isFocus="isSearch" />
                 </template>
 
                 <template v-slot:mobile>
