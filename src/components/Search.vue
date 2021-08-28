@@ -18,7 +18,7 @@ export default {
 
         const search = ref('');
 
-        let searchResults = ref([]);
+        let searchResults = ref(null);
 
         const posts = computed(() => {
             return store.getters['post/getAllPosts'];
@@ -26,7 +26,16 @@ export default {
 
         watch(search, (search) => {
             const filtered = store.getters['post/getAllPosts'].filter(item => item.title.includes(search));
-            searchResults.value = filtered;
+
+            switch(search.length) {
+                case 0:
+                    searchResults.value = null;
+                    break;
+
+                default:
+                    searchResults.value = filtered;
+                    break;
+            }
         })
 
         onMounted(() => {
