@@ -4,6 +4,7 @@ const PostRepository = Repository.get('posts');
 
 // STATE
 const state = {
+    allPosts: [],
     posts: [],
     post: {},
     isLoading: false,
@@ -37,6 +38,10 @@ const getters = {
 
     getPaginate: state => {
         return state.paginate;
+    },
+
+    getAllPosts: state => {
+        return state.allPosts;
     }
 }
 
@@ -62,6 +67,10 @@ const mutations = {
         state.noData = noData;
     },
 
+    SET_ALL_POSTS(state, allPosts) {
+        state.allPosts = allPosts;
+    }
+
 }
 
 // ACTIONS
@@ -71,7 +80,7 @@ const actions = {
 
         try {
             const { data } = await PostRepository.get();
-            commit('SET_POSTS', data);
+            commit('SET_ALL_POSTS', data);
             commit('SET_IS_LOADING', false);
 
 
