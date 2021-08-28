@@ -61,8 +61,6 @@ export default {
             { id: 1, name: 'Home', link: '/' },
             { id: 2, name: 'About', link: '/about' },
             { id: 3, name: 'Users', link: '/users' },
-            { id: 4, name: 'Blog', link: '/' },
-            { id: 5, name: 'Contact', link: '/' },
         ]
 
         const isSearch = ref(false);
