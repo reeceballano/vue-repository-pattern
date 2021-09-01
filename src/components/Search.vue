@@ -19,6 +19,10 @@ export default {
         isFocus: {
             type: Boolean,
             default: false
+        },
+        count: {
+            type: Number,
+            default: 3
         }  
     },
 
@@ -35,6 +39,8 @@ export default {
 
         const setFocus = context;
 
+        const resultCount = context;
+
         const posts = computed(() => {
             return store.getters['post/getAllPosts'];
         })
@@ -48,7 +54,7 @@ export default {
                     break;
 
                 default:
-                    searchResults.value = filtered;
+                    searchResults.value = filtered.slice(0,resultCount.count);
                     break;
             }
         })
