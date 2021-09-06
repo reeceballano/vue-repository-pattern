@@ -3,7 +3,7 @@
         <h2>User Info:</h2>
         {{ user }} <hr />
 
-        {{ userPosts }}
+        <Post v-for="post in userPosts" :key="post.id" :post="post" />
     </div>
 </template>
 
@@ -11,9 +11,14 @@
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 import { onMounted, computed } from 'vue';
+import Post from '@/components/Post';
 
 export default {
     name: 'User',
+    components: {
+        Post
+    },
+
     setup() {
         const router = useRoute();
         const store = useStore();
