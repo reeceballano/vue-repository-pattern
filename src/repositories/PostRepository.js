@@ -27,5 +27,9 @@ export default {
 
     delete(id) {
         return Client.delete(`${resource}/${id}`);
+    },
+
+    getUserPosts(id) {
+        return Client.get(`${resource}/userId=${id}`);
     }
 }
