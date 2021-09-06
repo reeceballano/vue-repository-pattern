@@ -1,7 +1,9 @@
 <template>
     <div class="user">
         <h2>User Info:</h2>
-        {{ user }}
+        {{ user }} <hr />
+
+        {{ userPosts }}
     </div>
 </template>
 
@@ -19,14 +21,20 @@ export default {
         onMounted(() => {
             console.log(router.params.id);
             store.dispatch('user/fetchUser', router.params.id);
+            store.dispatch('post/fetchUserPosts', router.params.id);
         })
 
         const user = computed(() => {
             return store.getters['user/getUser'];
         })
 
+        const userPosts = computed(() => {
+            return store.getters['post/getUserPosts'];
+        })
+
         return {
-            user
+            user,
+            userPosts,
         }
     }
 }

@@ -7,6 +7,7 @@ const state = {
     allPosts: [],
     posts: [],
     post: {},
+    userPosts: [],
     isLoading: false,
     paginate: {
         start: 0,
@@ -42,6 +43,10 @@ const getters = {
 
     getAllPosts: state => {
         return state.allPosts;
+    },
+
+    getUserPosts: state => {
+        return  state.userPosts;
     }
 }
 
@@ -69,6 +74,10 @@ const mutations = {
 
     SET_ALL_POSTS(state, allPosts) {
         state.allPosts = allPosts;
+    },
+
+    SET_USER_POSTS(state, userPosts) {
+        state.userPosts = userPosts;
     }
 
 }
@@ -198,6 +207,15 @@ const actions = {
 
         commit('SET_PAGINATE', paginate);
         dispatch('fetchPaginatedPosts');
+    },
+
+    async fetchUserPosts({ commit }, id) {
+        try {
+            const { data } = await PostRepository.getUserPosts(id);
+            commit('SET_USER_POSTS', data);
+        } catch(error) {
+            console.log(error);
+        }
     }
 }
 

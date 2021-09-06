@@ -30,6 +30,6 @@ export default {
     },
 
     getUserPosts(id) {
-        return Client.get(`${resource}/userId=${id}`);
+        return Client.get(`${resource}?userId=${id}`);
     }
 }
