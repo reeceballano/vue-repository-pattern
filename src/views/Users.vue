@@ -1,9 +1,11 @@
 <template>
-    <div class="users">
-        <h2>Users</h2>
-        
-        <User v-for="user in users" :key="user.id" :user="user" />
-    </div>
+    <section class="users">
+        <div class="custom-container">
+            <h2>Users</h2>
+            
+            <User v-for="user in users" :key="user.id" :user="user" />
+        </div>
+    </section>
 </template>
 
 <script>
