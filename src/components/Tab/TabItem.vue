@@ -1,27 +1,25 @@
 <template>
-    <div class="tab-item">
-
-        <div class="tab-title">
-            {{ tabTitle }}
-        </div>
-        <div v-if="tabTitle == selectedTab" class="tab-content">
-            <slot></slot>
-        </div>
+    <div class="tab-content">
+        <slot />
     </div>
 </template>
 
 <script>
-import { ref, inject } from 'vue';
+import { computed } from 'vue';
 export default {
     name: 'TabItem',
-    setup(props, context) {
-        const tabTitle = ref(context.attrs.title);
-
-        const selectedTab = inject('titleTab');
+    props: {
+        title: {
+            type: String
+        }
+    },
+    setup(props) {
+        const tabTitle = computed(() => {
+            return props.title;
+        });
 
         return {
-            tabTitle,
-            selectedTab
+            tabTitle
         }
     },
 }
