@@ -40,7 +40,7 @@
                 <h1>Next Section</h1>
 
                 <Tabs :tabsProp="tabs">
-                    <TabItem v-for="tab in tabs" :title="tab.title" :key="tab.id">{{ tab.content }}</TabItem>
+                    <TabItem v-for="(tab,i) in tabs" :title="tab.title" :tabIndex="i+1" :key="tab.id">{{ tab.content }}</TabItem>
                 </Tabs>
             </div>
         </section>

@@ -1,28 +1,27 @@
 <template>
     <div class="tab-content">
-        {{ currentTab }}
-        <slot />
+        <slot v-if="tab == currentTab" />
     </div>
 </template>
 
 <script>
-import { ref, computed, inject } from 'vue';
+import { ref, inject, computed } from 'vue';
 export default {
     name: 'TabItem',
     props: {
-        title: {
-            type: String
+        tabIndex: {
+            type: Number
         }
     },
     setup(props) {
-        const tabTitle = computed(() => {
-            return props.title;
-        });
+        const tab = computed(() => { return props.tabIndex});
+
+        // const tabIdx = inject('currentTab');
 
         const currentTab = ref(inject('currentTab'));
 
         return {
-            tabTitle,
+            tab,
             currentTab
         }
     },
