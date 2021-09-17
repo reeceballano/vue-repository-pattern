@@ -1,11 +1,12 @@
 <template>
     <div class="tab-content">
+        {{ currentTab }}
         <slot />
     </div>
 </template>
 
 <script>
-import { computed } from 'vue';
+import { ref, computed, inject } from 'vue';
 export default {
     name: 'TabItem',
     props: {
@@ -18,8 +19,11 @@ export default {
             return props.title;
         });
 
+        const currentTab = ref(inject('currentTab'));
+
         return {
-            tabTitle
+            tabTitle,
+            currentTab
         }
     },
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="tabs">
         <ul>
-            <li v-for="(tab, i) in tabsObj" :key="i">{{ tab.title }}</li>
+            <li v-for="(tab, i) in tabsObj" :key="i" @click.prevent="changeTab(i+1)">{{ tab.title }}</li>
         </ul>
 
         <div class="tab-content-wrapper">
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, provide } from 'vue';
 
 export default {
     name: 'Tab',
@@ -24,9 +24,18 @@ export default {
 
     setup(props) {
         const tabsObj = ref(props.tabsProp);
+        const currentTab = ref(1);
+        const changeTab = (tab) => {
+            currentTab.value = tab;
+            console.log(currentTab.value)
+        }
+
+        provide('currentTab', currentTab);
 
         return {
-            tabsObj
+            tabsObj,
+            currentTab,
+            changeTab
         }
     },
 }
