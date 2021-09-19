@@ -46,7 +46,7 @@ const getters = {
     },
 
     getUserPosts: state => {
-        return  state.userPosts;
+        return state.userPosts;
     }
 }
 
@@ -63,7 +63,7 @@ const mutations = {
     SET_IS_LOADING(state, isLoading) {
         state.isLoading = isLoading;
     },
-    
+
     SET_PAGINATE(state, paginate) {
         state.paginate = paginate;
     },
@@ -93,7 +93,7 @@ const actions = {
             commit('SET_IS_LOADING', false);
 
 
-        } catch(error) {
+        } catch (error) {
             console.log(error);
         }
     },
@@ -101,7 +101,7 @@ const actions = {
 
     async fetchPaginatedPosts({ state, commit }) {
         commit('SET_IS_LOADING', true);
-        
+
         try {
             console.log(state.paginate)
             const { data } = await PostRepository.getPostPaginated(state.paginate);
@@ -121,21 +121,21 @@ const actions = {
 
             commit('SET_PAGINATE', paginate);
 
-            if(!Array.isArray(data) || !data.length) {
+            if (!Array.isArray(data) || !data.length) {
                 commit('SET_NO_DATA', true);
             }
 
-        } catch(error) {
+        } catch (error) {
             console.log(error);
         }
     },
 
     async fetchPost({ commit }, id) {
-        console.log(`fetching: ${id}`)
+        console.log(`fetching: ${Number(id)}`)
         try {
-            const { data } = await PostRepository.getPost(id);
+            const { data } = await PostRepository.getPost(Number(id));
             commit('SET_POST', data);
-        } catch(error) {
+        } catch (error) {
             console.log(error)
         }
     },
@@ -144,7 +144,7 @@ const actions = {
         try {
             const res = await PostRepository.create(payload);
             state.posts.push(res.data);
-        } catch(error) {
+        } catch (error) {
             console.log(error);
         }
     },
@@ -153,11 +153,11 @@ const actions = {
         try {
             const res = await PostRepository.update(payload);
             const post = state.posts.find(item => item.id === payload.id);
-            
-            if(post) {
+
+            if (post) {
                 post.title = res.data.title;
             }
-        } catch(error) {
+        } catch (error) {
             console.log(error);
         }
     },
@@ -168,11 +168,11 @@ const actions = {
             const posts = state.posts;
 
             // FAKE DATA RESPONSE
-            if(res.status === 200) {
+            if (res.status === 200) {
                 const newPosts = posts.filter(post => post.id !== id);
                 commit('SET_POSTS', newPosts);
             }
-        } catch(error) {
+        } catch (error) {
             console.log(error);
         }
     },
@@ -187,7 +187,7 @@ const actions = {
             totalPage: state.paginate.totalPage,
         }
 
-        if(payload === '+') {
+        if (payload === '+') {
             paginate = {
                 start: state.paginate.start + state.paginate.limit,
                 limit: state.paginate.limit,
@@ -213,7 +213,7 @@ const actions = {
         try {
             const { data } = await PostRepository.getUserPosts(id);
             commit('SET_USER_POSTS', data);
-        } catch(error) {
+        } catch (error) {
             console.log(error);
         }
     }
