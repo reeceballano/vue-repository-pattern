@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref, inject, computed } from 'vue';
+import { inject, computed } from 'vue';
 export default {
     name: 'TabItem',
     props: {
@@ -13,16 +13,19 @@ export default {
             type: Number
         }
     },
-    setup(props) {
+    setup(props, context) {
         const tab = computed(() => { return props.tabIndex});
 
-        // const tabIdx = inject('currentTab');
+        const { currentTab, registerChild } = inject('tab');
 
-        const currentTab = ref(inject('currentTab'));
+        const childAttributes = context.attrs.title;
+
+        registerChild(childAttributes)
+
 
         return {
             tab,
-            currentTab
+            currentTab,
         }
     },
 }

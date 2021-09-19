@@ -1,7 +1,7 @@
 <template>
     <div class="tabs">
         <ul>
-            <li v-for="(tab, i) in tabsObj" :key="i" @click.prevent="changeTab(i+1)">{{ tab.title }}</li>
+            <li v-for="(tab, i) in registeredchild" :key="i" @click.prevent="changeTab(i+1)">{{ tab }}</li>
         </ul>
 
         <div class="tab-content-wrapper">
@@ -30,12 +30,17 @@ export default {
             console.log(currentTab.value)
         }
 
-        provide('currentTab', currentTab);
+        const registerChild = (child) => registeredchild.value.push(child);
+        
+        const registeredchild = ref([]);
+
+        provide('tab', { currentTab,  registerChild });
 
         return {
             tabsObj,
             currentTab,
-            changeTab
+            changeTab,
+            registeredchild,
         }
     },
 }
