@@ -48,11 +48,10 @@ export default {
 
         const store = useStore();
 
-        const id = ref(computed(() => {
-            return route.params.id;
-        }));
+        const id = ref(route.params.id);
 
         const fetchPost = () => {
+            console.log('fetching test', Number(id.value))
             store.dispatch('post/fetchPost', Number(id.value));
         }
 
@@ -73,7 +72,7 @@ export default {
         }
 
         watch(() => id.value, () => {
-                fetchPost()
+            fetchPost()
         });
 
         onMounted(() => {
