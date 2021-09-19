@@ -39,36 +39,21 @@
             <div class="custom-container">
                 <h1>Next Section</h1>
 
-                <Tabs>
-                    <TabItem v-for="(tab,i) in tabs" :title="tab.title" :tabIndex="i+1" :key="tab.id">{{ tab.content }}</TabItem>
-                </Tabs>
-
-                <div class="w-full h-0 my-10 border-b border-gray-400"></div>
-
-                <Tabs>
-                    <TabItem title="DESCRIPTION" :tabIndex="1">this is the description</TabItem>
-                    <TabItem title="SPECIFICATION" :tabIndex="2">this is the specification</TabItem>
-                    <TabItem title="FEATURES" :tabIndex="3">this is the features</TabItem>
-                </Tabs>
             </div>
         </section>
     </div>
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 import PostList from '@/components/PostList';
-import Tabs from '@/components/Tab/Tabs';
-import TabItem from '@/components/Tab/TabItem';
 // import Add from '@/components/Add';
 
 export default {
     name: 'Home',
     components: {
         PostList,
-        Tabs,
-        TabItem
         // Add
     },
 
@@ -83,16 +68,9 @@ export default {
             store.dispatch('post/fetchPost', 1);
         }
 
-        const tabs = ref([
-            { id: 1, title: 'Tab 1', content: 'content for tab 1' },
-            { id: 1, title: 'Tab 2', content: 'content for tab 2' },
-            { id: 1, title: 'Tab 3', content: 'content for tab 3' },
-        ])
-
         return {
             getPost,
             post,
-            tabs
         }
     }
 }
