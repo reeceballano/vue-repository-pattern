@@ -1,6 +1,6 @@
 <template>
     <div class="tabs">
-        <ul class="flex justify-start gap-10">
+        <ul class="flex justify-start">
             <li class="px-10 py-3 bg-gray-100 cursor-pointer" v-for="(tab, i) in registeredchild" :key="i" @click.prevent="changeTab(i+1)">{{ tab }}</li>
         </ul>
 
