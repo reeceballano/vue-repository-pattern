@@ -1,6 +1,6 @@
 <template>
-    <div class="tab-content">
-        <slot v-if="tab == currentTab" />
+    <div v-show="tab == currentTab" class="tab-content px-5 py-8">
+        <slot />
     </div>
 </template>
 
