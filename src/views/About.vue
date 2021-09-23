@@ -11,7 +11,7 @@
 
             <div class="w-full h-0 my-10 border-b border-gray-400"></div>
 
-            <Tabs>
+            <Tabs :active-tab="2">
                 <TabItem title="DESCRIPTION" :tabIndex="1">this is the description</TabItem>
                 <TabItem title="SPECIFICATION" :tabIndex="2">this is the specification</TabItem>
                 <TabItem title="FEATURES" :tabIndex="3">this is the features</TabItem>

@@ -15,8 +15,14 @@ import { ref, provide } from 'vue';
 
 export default {
     name: 'Tab',
-    setup() {
-        const currentTab = ref(1);
+    props: {
+        activeTab: {
+            type: Number,
+            default: 1
+        }
+    },
+    setup(props) {
+        const currentTab = ref(props.activeTab);
         const changeTab = (tab) => {
             currentTab.value = tab;
             console.log(currentTab.value)
