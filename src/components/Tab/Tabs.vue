@@ -15,15 +15,7 @@ import { ref, provide } from 'vue';
 
 export default {
     name: 'Tab',
-    props: {
-        tabsProp: {
-            type: Object,
-            default: () => {}
-        }
-    },
-
-    setup(props) {
-        const tabsObj = ref(props.tabsProp);
+    setup() {
         const currentTab = ref(1);
         const changeTab = (tab) => {
             currentTab.value = tab;
@@ -37,7 +29,6 @@ export default {
         provide('tab', { currentTab,  registerChild });
 
         return {
-            tabsObj,
             currentTab,
             changeTab,
             registeredchild,
