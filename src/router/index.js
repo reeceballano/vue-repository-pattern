@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
-const routes = [
-    {
+const routes = [{
         path: '/',
         name: 'Home',
         component: Home,
-        meta: { layout: 'no-sidebar' }
+        meta: { layout: 'no-sidebar', header: 'full' }
     },
     {
         path: '/about',
@@ -14,23 +13,33 @@ const routes = [
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-        meta: { layout: 'default-layout' }
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/About.vue'),
+        meta: { layout: 'default-layout', header: 'half' }
     },
     {
         path: '/users',
         name: 'Users',
-        component: () => import(/* webpackChunkName: "users" */ '../views/Users.vue')
+        component: () =>
+            import ( /* webpackChunkName: "users" */ '../views/Users.vue')
     },
     {
         path: '/user/:id',
         name: 'User',
-        component: () => import(/* webpackChunkName: "user" */ '../views/User.vue')
+        component: () =>
+            import ( /* webpackChunkName: "user" */ '../views/User.vue')
     },
     {
         path: '/post/:id',
         name: 'Post',
-        component: () => import(/* webpackChunkName: "post" */ '../views/Post.vue')
+        component: () =>
+            import ( /* webpackChunkName: "post" */ '../views/Post.vue')
+    },
+    {
+        path: '/suspense',
+        name: 'Suspense',
+        component: () =>
+            import ( /* webpackChunkName: "suspense" */ '../views/Suspense.vue')
     }
 ]
 
@@ -38,7 +47,7 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
     scrollBehavior() {
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 })
 
