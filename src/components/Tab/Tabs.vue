@@ -1,7 +1,9 @@
 <template>
     <div class="tabs">
         <ul class="flex justify-start md:flex-row flex-col">
-            <li :class="[currentTab == i+1 ? 'active' : '']" class="tab-title" v-for="(tab, i) in registeredchild" :key="i" @click.prevent="changeTab(i+1)">{{ tab }}</li>
+            <li :class="[currentTab == i+1 ? 'active' : '']" class="tab-title" v-for="(tab, i) in registeredchild" :key="i" @click.prevent="changeTab(i+1)">
+                <CogIcon class="h-5 w-5 mr-2 text-blue-500"/>{{ tab }}
+            </li>
         </ul>
 
         <div class="tab-content-wrapper">
@@ -12,6 +14,7 @@
 
 <script>
 import { ref, provide } from 'vue';
+import { CogIcon } from '@heroicons/vue/solid';
 
 export default {
     name: 'Tab',
@@ -21,6 +24,10 @@ export default {
             default: 1
         }
     },
+    components: {
+        CogIcon
+    },
+
     setup(props) {
         const currentTab = ref(props.activeTab);
         const changeTab = (tab) => {
@@ -45,7 +52,7 @@ export default {
 
 <style scoped>
     .tab-title {
-        @apply px-10 py-3 bg-gray-100 cursor-pointer;
+        @apply px-10 py-3 bg-gray-100 cursor-pointer flex justify-around items-center;
     }
 
     .active {
