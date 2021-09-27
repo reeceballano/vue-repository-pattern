@@ -2,7 +2,7 @@
     <div class="tabs">
         <ul class="flex justify-start md:flex-row flex-col">
             <li :class="[currentTab == i+1 ? 'active' : '']" class="tab-title" v-for="(tab, i) in registeredchild" :key="i" @click.prevent="changeTab(i+1)">
-                <Icon icon="CogIcon" class="h-5 w-5 mr-2 text-blue-500"/>{{ tab }}
+                <Icon :icon="tab.icon" class="h-5 w-5 mr-2 text-blue-500"/>{{ tab.title }}
             </li>
         </ul>
 

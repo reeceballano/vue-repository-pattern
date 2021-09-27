@@ -6,7 +6,7 @@
             <div class="w-full h-0 my-10 border-b border-gray-400"></div>
 
             <Tabs>
-                <TabItem v-for="(tab,i) in tabs" :title="tab.title" :tab-index="i+1" :key="tab.id">{{ tab.content }}</TabItem>
+                <TabItem v-for="(tab,i) in tabs" icon="MoonIcon" :title="tab.title" :tab-index="i+1" :key="tab.id">{{ tab.content }}</TabItem>
             </Tabs>
 
             <div class="w-full h-0 my-10 border-b border-gray-400"></div>

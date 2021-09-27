@@ -18,7 +18,7 @@ export default {
 
         const { currentTab, registerChild } = inject('tab');
 
-        const childAttributes = context.attrs.title;
+        const childAttributes = context.attrs;
 
         registerChild(childAttributes)
 
