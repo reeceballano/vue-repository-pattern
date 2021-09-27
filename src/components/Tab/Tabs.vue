@@ -2,7 +2,7 @@
     <div class="tabs">
         <ul class="flex justify-start md:flex-row flex-col">
             <li :class="[currentTab == i+1 ? 'active' : '']" class="tab-title" v-for="(tab, i) in registeredchild" :key="i" @click.prevent="changeTab(i+1)">
-                <CogIcon class="h-5 w-5 mr-2 text-blue-500"/>{{ tab }}
+                <Icon icon="CogIcon" class="h-5 w-5 mr-2 text-blue-500"/>{{ tab }}
             </li>
         </ul>
 
@@ -14,7 +14,7 @@
 
 <script>
 import { ref, provide } from 'vue';
-import { CogIcon } from '@heroicons/vue/solid';
+import Icon from '@/components/Icon';
 
 export default {
     name: 'Tab',
@@ -25,7 +25,7 @@ export default {
         }
     },
     components: {
-        CogIcon
+        Icon
     },
 
     setup(props) {
