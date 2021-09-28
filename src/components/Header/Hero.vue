@@ -62,6 +62,14 @@ export default {
         }
     }
 
+    .full {
+        @apply h-screen;
+    }
+
+    .half {
+        @apply h-auto;
+    }
+
     .custom-container {
         @apply md:h-auto h-full md:py-24 py-14;
     }
