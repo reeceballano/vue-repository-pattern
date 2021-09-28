@@ -78,7 +78,7 @@ export default {
             layout,
             navLinks,
             isSearch,
-            headerLayout
+            headerLayout,
         }
     },
 }
