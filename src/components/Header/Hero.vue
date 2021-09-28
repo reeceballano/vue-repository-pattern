@@ -1,5 +1,5 @@
 <template>
-    <div class="main-hero">
+    <div :class="headerType" class="main-hero">
         <div class="custom-container">
             <div class="md:flex">
                 <div class="md:w-2/5 flex flex-col justify-center">
@@ -26,13 +26,24 @@ import { computed } from 'vue';
 export default {
     name: 'Hero',
 
-    setup() {
+    props: {
+        header: {
+            type: String
+        }
+    },
+
+    setup(props) {
         const heroImg = computed(() => {
             return require(`./../../assets/hero-img.jpg`);
         })
 
+        const headerType = computed(() => {
+            return props.header;
+        })
+
         return {
-            heroImg
+            heroImg,
+            headerType
         }
     }
 }

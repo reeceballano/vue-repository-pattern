@@ -20,7 +20,7 @@
 
             </Nav>
 
-            <Hero />
+            <Hero :header="headerLayout" />
         </Header>
 
         <component :is="layout">
@@ -55,7 +55,11 @@ export default {
 
         const layout = computed(() => {
             return (route.meta.layout || 'default-layout');
-        }) 
+        })
+        
+        const headerLayout = computed(() => {
+            return (route.meta.header || 'full');
+        })
 
         const navLinks = [
             { id: 1, name: 'Home', link: '/' },
@@ -73,7 +77,8 @@ export default {
         return {
             layout,
             navLinks,
-            isSearch
+            isSearch,
+            headerLayout
         }
     },
 }
