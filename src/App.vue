@@ -58,7 +58,7 @@ export default {
         })
         
         const headerLayout = computed(() => {
-            return (route.meta.header || 'full');
+            return (route.meta.header || 'half');
         })
 
         const navLinks = [
