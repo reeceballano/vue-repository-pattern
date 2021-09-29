@@ -70,7 +70,7 @@ export default {
         }
 
         watch(() => route.params.id, () => {
-            console.log(route.params.id)
+            //console.log(route.params.id)
             fetchPost()
         });
 
