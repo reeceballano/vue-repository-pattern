@@ -3,17 +3,29 @@
         <div class="custom-container">
             <div class="md:flex">
                 <div class="md:w-2/5 flex flex-col justify-center">
-                    <h1>
-                        Gathering moving cattle divide seas. 
-                    </h1>
+                    <div v-if="route.name == 'Post'" class="hero-content">
+                        <h1>
+                            {{ post.title }}
+                        </h1>
 
-                    <h2>
-                        Firmament earth moving is is third saw whales. Our. Fruit moved rule living our two itself blessed appear two man.
-                    </h2>
+                        <h2>
+                            {{ post.body }}
+                        </h2>
+
+                    </div>
+                    <div v-else class="hero-content">
+                        <h1>
+                            Gathering moving cattle divide seas. 
+                        </h1>
+
+                        <h2>
+                            Firmament earth moving is is third saw whales. Our. Fruit moved rule living our two itself blessed appear two man.
+                        </h2>
+
+                    </div>
                 </div>
                 <div class="md:w-3/5">
                     <img :src="heroImg" />
-                    
                 </div>
             </div>
         </div>
@@ -22,7 +34,8 @@
 
 <script>
 import { computed } from 'vue';
-
+import { useRoute } from 'vue-router';
+import { useStore } from 'vuex';
 export default {
     name: 'Hero',
 
@@ -33,6 +46,13 @@ export default {
     },
 
     setup(props) {
+        const route = useRoute();
+
+        const store = useStore();
+
+        const post = computed(() => {
+            return store.getters['post/getPost'];
+        })
         const heroImg = computed(() => {
             return require(`./../../assets/hero-img.jpg`);
         })
@@ -43,7 +63,9 @@ export default {
 
         return {
             heroImg,
-            headerType
+            headerType,
+            route,
+            post,
         }
     }
 }
