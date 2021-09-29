@@ -33,7 +33,7 @@
 
 <script>
 import { useRoute } from 'vue-router';
-import { watch, computed, onMounted, ref } from 'vue';
+import { watch, computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import RelatedPosts from '@/components/RelatedPosts';
 
@@ -48,11 +48,9 @@ export default {
 
         const store = useStore();
 
-        const id = ref(route.params.id);
-
         const fetchPost = () => {
-            console.log('fetching test', Number(id.value))
-            store.dispatch('post/fetchPost', Number(id.value));
+            console.log('fetching test', Number(route.params.id))
+            store.dispatch('post/fetchPost', Number(route.params.id));
         }
 
         const post = computed(() => {
@@ -68,10 +66,11 @@ export default {
         })
 
         const filteredComments = (data) => {
-            return data.filter(item => Number(item.postId) === Number(id.value));
+            return data.filter(item => Number(item.postId) === Number(route.params.id));
         }
 
-        watch(() => id.value, () => {
+        watch(() => route.params.id, () => {
+            console.log(route.params.id)
             fetchPost()
         });
 
@@ -80,7 +79,6 @@ export default {
         })
 
         return {
-            id,
             post,
             fetchPost,
             posts,
