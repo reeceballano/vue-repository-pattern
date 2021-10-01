@@ -1,10 +1,6 @@
 <template>
     <div class="default-layout custom-container">
-        <div class="sidebar  col-span-1 md:col-span-1">
-            <section class="sidebar-title">
-                <h2 class="text-2xl">Sidebar</h2>
-            </section>
-        </div>
+        <Sidebar />
 
         <div class="main-content col-span-1 md:col-span-2">
             <slot />
@@ -13,8 +9,13 @@
 </template>
 
 <script>
+import Sidebar from '@/components/Sidebar';
+
 export default {
-    name: 'Default'
+    name: 'Default',
+    components: {
+        Sidebar
+    }
 }
 </script>
 
