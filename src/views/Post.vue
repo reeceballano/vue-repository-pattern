@@ -1,5 +1,5 @@
 <template>
-    <div class="post-single custom-container">
+    <section class="post-single">
         <div class="post-header py-10 border-b">
             <h2 class="text-3xl uppercase">{{ post.title }}</h2>
 
@@ -28,7 +28,7 @@
             <RelatedPosts :limit="5" />
         </div>
         
-    </div>
+    </section>
 </template>
 
 <script>
