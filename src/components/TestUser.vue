@@ -1,18 +1,14 @@
 <template>
     <div class="user">
-        <router-link :to="{ name: 'User', params: { id: user.id } }">
-            <div class="user-item">
-                <div class="user-image"></div>
-                <span class="user-name">{{ user.name }}</span>
-                <span class="user-email">{{ user.email }}</span>
-            </div>
-        </router-link>
+        {{ userData }}
     </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
-    name: 'User',
+    name: 'TestUser',
     props: {
         user: {
             type: Object,
@@ -20,7 +16,12 @@ export default {
         }
     },
 
-    setup() {
+    setup(props) {
+        const userData = ref(props.user);
+
+        return {
+            userData
+        }
     }
 }
 </script>

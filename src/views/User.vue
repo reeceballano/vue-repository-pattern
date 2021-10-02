@@ -1,7 +1,8 @@
 <template>
-    <div class="user">
+    <div class="user-info">
         <h2>User Info:</h2>
-        {{ user }} <hr />
+        
+        <User :user="user"/> <hr />
 
         <Post v-for="post in userPosts" :key="post.id" :post="post" />
     </div>
@@ -12,11 +13,13 @@ import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 import { onMounted, computed } from 'vue';
 import Post from '@/components/Post';
+import User from '@/components/User';
 
 export default {
-    name: 'User',
+    name: 'UserView',
     components: {
-        Post
+        Post,
+        User
     },
 
     setup() {
