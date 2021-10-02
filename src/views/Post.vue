@@ -69,9 +69,11 @@ export default {
             return data.filter(item => Number(item.postId) === Number(route.params.id));
         }
 
-        watch(() => route.params.id, () => {
+        watch(() => route.params.id, (current) => {
             //console.log(route.params.id)
-            fetchPost()
+            if(current != undefined) {
+                fetchPost()
+            }
         });
 
         onMounted(() => {

@@ -131,9 +131,9 @@ const actions = {
     },
 
     async fetchPost({ commit }, id) {
-        console.log(`fetching: ${Number(id)}`)
+        console.log(`fetching: ${parseInt(id)}`)
         try {
-            const { data } = await PostRepository.getPost(Number(id));
+            const { data } = await PostRepository.getPost(parseInt(id));
             commit('SET_POST', data);
         } catch (error) {
             console.log(error)
