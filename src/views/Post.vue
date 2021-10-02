@@ -1,6 +1,6 @@
 <template>
     <section class="post-single">
-        <div class="post-header py-10 border-b">
+        <div class="post-header pb-10 border-b">
             <h2 class="text-3xl uppercase">{{ post.title }}</h2>
 
         </div>
