@@ -1,7 +1,7 @@
 <template>
     <div class="post-list">
-        {{ isLoading }}
-        <Post v-for="post in posts" :key="post.id" :post="post" />
+        <Loading v-if="isLoading" />
+        <Post v-else v-for="post in posts" :key="post.id" :post="post" />
 
         <div class="pagination-wrapper my-10">
             Current Page: {{pagination.current}} / {{ lastPage }}
@@ -15,13 +15,15 @@
 
 <script>
 import { computed } from 'vue';
-import Post from '@/components/Post';
 import { useStore } from 'vuex';
+import Post from '@/components/Post';
+import Loading from '@/components/Loading';
 
 export default {
     name: 'PostList',
     components: {
         Post,
+        Loading
     },
 
     setup() {

@@ -92,7 +92,7 @@ const actions = {
             commit('SET_ALL_POSTS', data);
             setTimeout(() => {
                 commit('SET_IS_LOADING', false);
-            },5000)
+            },2000)
         } catch (error) {
             console.log(error);
         }
@@ -100,6 +100,7 @@ const actions = {
 
 
     async fetchPaginatedPosts({ state, commit }) {
+        commit('SET_IS_LOADING', true);
         try {
             console.log(state.paginate)
             const { data } = await PostRepository.getPostPaginated(state.paginate);
@@ -107,6 +108,10 @@ const actions = {
             state.posts = data;
 
             console.log(data)
+
+            setTimeout(() => {
+                commit('SET_IS_LOADING', false);
+            },2000)
 
             const paginate = {
                 start: state.paginate.start,
