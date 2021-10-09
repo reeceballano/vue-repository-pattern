@@ -1,5 +1,6 @@
 <template>
     <div class="post-list">
+        {{ isLoading }}
         <Post v-for="post in posts" :key="post.id" :post="post" />
 
         <div class="pagination-wrapper my-10">
@@ -42,6 +43,10 @@ export default {
             return store.getters['post/getPaginate'].last_page;
         })
 
+        const isLoading = computed(() => {
+            return store.getters['post/getIsLoading'];
+        })
+
         const pagination = computed(() => {
             return store.getters['post/getPaginate'];
         })
@@ -51,7 +56,8 @@ export default {
             nextPage,
             prevPage,
             pagination,
-            lastPage
+            lastPage,
+            isLoading
         }
 
     }

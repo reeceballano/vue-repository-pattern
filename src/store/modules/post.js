@@ -8,7 +8,7 @@ const state = {
     posts: [],
     post: {},
     userPosts: [],
-    isLoading: false,
+    isLoading: true,
     paginate: {
         start: 0,
         limit: 5,
@@ -90,9 +90,9 @@ const actions = {
         try {
             const { data } = await PostRepository.get();
             commit('SET_ALL_POSTS', data);
-            commit('SET_IS_LOADING', false);
-
-
+            setTimeout(() => {
+                commit('SET_IS_LOADING', false);
+            },5000)
         } catch (error) {
             console.log(error);
         }
@@ -100,14 +100,11 @@ const actions = {
 
 
     async fetchPaginatedPosts({ state, commit }) {
-        commit('SET_IS_LOADING', true);
-
         try {
             console.log(state.paginate)
             const { data } = await PostRepository.getPostPaginated(state.paginate);
             const totalData = await PostRepository.get();
             state.posts = data;
-            commit('SET_IS_LOADING', false);
 
             console.log(data)
 
@@ -124,7 +121,6 @@ const actions = {
             if (!Array.isArray(data) || !data.length) {
                 commit('SET_NO_DATA', true);
             }
-
         } catch (error) {
             console.log(error);
         }
