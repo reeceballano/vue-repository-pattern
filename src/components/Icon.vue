@@ -1,5 +1,5 @@
 <template>
-    <div class="icon-wrapper">
+    <div :class="[ (width) ? `w-${width}` : '' ]" class="icon-wrapper">
         <component :is="heroIcons[tabIcon]" />
     </div>
 </template>
@@ -14,6 +14,10 @@ export default {
         icon: {
             type: String,
             default: 'CogIcon'
+        },
+
+        width: {
+            type: Number
         }
     },
 
