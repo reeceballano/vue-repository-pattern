@@ -1,5 +1,10 @@
 <template>
-    <div :class="[ (width) ? `w-${width}` : '' ]" class="icon-wrapper">
+    <div :class="[
+            (width) ? `w-${width}` : '',
+            animation
+        ]" 
+        class="icon-wrapper mr-2"
+    >
         <component :is="heroIcons[tabIcon]" />
     </div>
 </template>
@@ -18,6 +23,11 @@ export default {
 
         width: {
             type: Number
+        },
+
+        animation: {
+            type: String,
+            default: 'animate-spin'
         }
     },
 
