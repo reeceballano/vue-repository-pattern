@@ -1,7 +1,7 @@
 <template>
     <div class="loading">
-        <h3>
-            <Icon :width="2" icon="RefreshIcon" />
+        <h3 class="flex items-center">
+            <Icon :width="4" icon="RefreshIcon" />
             Loading...
         </h3>
     </div>

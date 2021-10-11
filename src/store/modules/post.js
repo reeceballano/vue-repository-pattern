@@ -92,7 +92,7 @@ const actions = {
             commit('SET_ALL_POSTS', data);
             setTimeout(() => {
                 commit('SET_IS_LOADING', false);
-            },20000)
+            },2000000)
         } catch (error) {
             console.log(error);
         }
@@ -111,7 +111,7 @@ const actions = {
 
             setTimeout(() => {
                 commit('SET_IS_LOADING', false);
-            },20000)
+            },2000000)
 
             const paginate = {
                 start: state.paginate.start,
