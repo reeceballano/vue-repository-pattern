@@ -2,13 +2,15 @@
 const state = {
     size: 4,
     animation: 'spin',
-    icon: 'Refresh',
+    icon: 'Cog',
     text: 'Loading...'
 }
 
 // GETTERS
 const getters = {
-
+    getIcon: state => {
+        return state.icon
+    },
 }
 
 // MUTATIONS

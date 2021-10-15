@@ -1,7 +1,7 @@
 <template>
     <div class="loading">
         <h3 class="flex items-center">
-            <Icon :width="4" icon="RefreshIcon" animation="animate-spin" />
+            <Icon :width="4" :icon="`${icon}Icon`" animation="animate-spin" />
             Loading...
         </h3>
     </div>
@@ -24,6 +24,8 @@ export default {
         const icon = computed(() => {
             return store.getters['loading/getIcon'];
         })
+
+        console.log(icon.value)
 
         return {
             icon,    
