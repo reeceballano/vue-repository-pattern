@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 import Icon from '@/components/Icon';
 
 export default {
@@ -17,8 +19,14 @@ export default {
     },
 
     setup() {
+        const store = useStore();
+
+        const icon = computed(() => {
+            return store.getters['loading/getIcon'];
+        })
+
         return {
-            
+            icon,    
         }
     }
 }
