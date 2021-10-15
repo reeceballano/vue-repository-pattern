@@ -2,7 +2,8 @@
 const state = {
     size: 4,
     animation: 'spin',
-    icon: 'Refresh'
+    icon: 'Refresh',
+    text: 'Loading...'
 }
 
 // GETTERS
@@ -22,6 +23,10 @@ const mutations = {
 
     SET_ICON(state, icon) {
         state.icon = icon;
+    },
+
+    SET_TEXT(state, text) {
+        state.text = text;
     }
 }
 
@@ -37,6 +42,10 @@ const actions = {
 
     setIcon({ commit }, payload) {
         commit('SET_ICON', payload);
+    },
+
+    setText({ commit }, payload) {
+        commit('SET_TEXT', payload);
     }
 }
 
