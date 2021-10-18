@@ -1,5 +1,5 @@
 <template>
-    <div class="post-list">
+    <div ref="postWrapper" class="post-list">
         <Loading v-if="isLoading" />
         <Post v-else v-for="post in posts" :key="post.id" :post="post" />
 
@@ -57,6 +57,7 @@ export default {
 
         const isClick = ref(false);
 
+        const postWrapper = ref(null);
 
         const btnClick = () => {
             isClick.value = true;
@@ -69,7 +70,7 @@ export default {
             // WATCH THE BUTTON CLICKED, THEN SCROLL TO TOP
             if(isClick.value) {
                 setTimeout(() => {
-                    document.querySelector('.post-list').scrollIntoView();
+                    postWrapper.value.scrollIntoView();
                 },4000)
             }
         })
@@ -81,6 +82,7 @@ export default {
             pagination,
             lastPage,
             isLoading,
+            postWrapper
         }
 
     }
