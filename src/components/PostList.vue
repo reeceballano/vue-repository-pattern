@@ -6,7 +6,6 @@
         <div class="pagination-wrapper my-10">
             Current Page: {{pagination.current}} / {{ lastPage }}
             <div class="flex gap-2 my-5">
-                {{isLoading}} / {{isClick}}
             <button :disabled="pagination.start === 0" :class="{ 'disabled-btn': pagination.start  === 0 }" class="btn-blue-outlined" @click="prevPage">Prev</button>
             <button :disabled="pagination.current === lastPage" :class="{ 'disabled-btn': pagination.current === lastPage }" class="btn-blue-outlined" @click="nextPage">Next</button>
             </div>
@@ -58,6 +57,7 @@ export default {
 
         const isClick = ref(false);
 
+
         const btnClick = () => {
             isClick.value = true;
             setTimeout(() => {
@@ -81,7 +81,6 @@ export default {
             pagination,
             lastPage,
             isLoading,
-            isClick
         }
 
     }
