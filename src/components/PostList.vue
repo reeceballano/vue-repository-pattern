@@ -6,6 +6,7 @@
         <div class="pagination-wrapper my-10">
             Current Page: {{pagination.current}} / {{ lastPage }}
             <div class="flex gap-2 my-5">
+                {{isLoading}} / {{isClick}}
             <button :disabled="pagination.start === 0" :class="{ 'disabled-btn': pagination.start  === 0 }" class="btn-blue-outlined" @click="prevPage">Prev</button>
             <button :disabled="pagination.current === lastPage" :class="{ 'disabled-btn': pagination.current === lastPage }" class="btn-blue-outlined" @click="nextPage">Next</button>
             </div>
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useStore } from 'vuex';
 import Post from '@/components/Post';
 import Loading from '@/components/Loading';
@@ -35,10 +36,12 @@ export default {
 
         const nextPage = () => {
             store.dispatch('post/updatePagination', '+');
+            btnClick();
         }
 
         const prevPage = () => {
             store.dispatch('post/updatePagination', '-');
+            btnClick();
         }
 
         const lastPage = computed(() => {
@@ -53,13 +56,32 @@ export default {
             return store.getters['post/getPaginate'];
         })
 
+        const isClick = ref(false);
+
+        const btnClick = () => {
+            isClick.value = true;
+            setTimeout(() => {
+                isClick.value = false;
+            }, 4000);
+        }
+
+        watch(() => [isLoading, isClick.value], () => {
+            // WATCH THE BUTTON CLICKED, THEN SCROLL TO TOP
+            if(isClick.value) {
+                setTimeout(() => {
+                    document.querySelector('.post-list').scrollIntoView();
+                },4000)
+            }
+        })
+
         return {
             posts,
             nextPage,
             prevPage,
             pagination,
             lastPage,
-            isLoading
+            isLoading,
+            isClick
         }
 
     }
