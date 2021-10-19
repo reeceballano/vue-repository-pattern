@@ -1,7 +1,7 @@
 <template>
     <div :class="[
             (width) ? `w-${width}` : '',
-            animation
+            animation //eg. animate-spin
         ]" 
         class="icon-wrapper mr-2"
     >
@@ -26,8 +26,7 @@ export default {
         },
 
         animation: {
-            type: String,
-            default: 'animate-spin'
+            type: String
         }
     },
 
