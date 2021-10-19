@@ -70,7 +70,7 @@ export default {
             // WATCH THE BUTTON CLICKED, THEN SCROLL TO TOP
             if(isClick.value == false ) {
                 setTimeout(() => {
-                    postWrapper.value.scrollIntoView();
+                    postWrapper.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 500)
             }
         })
