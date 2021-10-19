@@ -63,7 +63,7 @@ export default {
             isClick.value = true;
             setTimeout(() => {
                 isClick.value = false;
-            }, 2000);
+            }, 800);
         }
 
         watch(() => [isLoading, isClick.value], () => {
@@ -71,7 +71,7 @@ export default {
             if(isClick.value == false ) {
                 setTimeout(() => {
                     postWrapper.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 500)
+                }, 100)
             }
         })
 
