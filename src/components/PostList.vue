@@ -63,15 +63,15 @@ export default {
             isClick.value = true;
             setTimeout(() => {
                 isClick.value = false;
-            }, 4000);
+            }, 2000);
         }
 
         watch(() => [isLoading, isClick.value], () => {
             // WATCH THE BUTTON CLICKED, THEN SCROLL TO TOP
-            if(isClick.value) {
+            if(isClick.value == false ) {
                 setTimeout(() => {
                     postWrapper.value.scrollIntoView();
-                },4000)
+                }, 500)
             }
         })
 
