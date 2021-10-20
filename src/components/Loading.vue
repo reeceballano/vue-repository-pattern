@@ -1,7 +1,8 @@
 <template>
     <div class="loading">
         <h3 class="flex items-center">
-            <Icon :width="4" :icon="`${icon}Icon`" animation="animate-spin" />
+            <Icon :width="4" :icon="`${icon}Icon`" :animation="`animate-${animation}`" />
+            {{animation }}
             Loading...
         </h3>
     </div>
@@ -25,10 +26,15 @@ export default {
             return store.getters['loading/getIcon'];
         })
 
+        const animation = computed(() => {
+            return store.getters['loading/getAnimation'];
+        })
+
         console.log(icon.value)
 
         return {
-            icon,    
+            icon,
+            animation,
         }
     }
 }

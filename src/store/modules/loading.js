@@ -11,6 +11,10 @@ const getters = {
     getIcon: state => {
         return state.icon
     },
+
+    getAnimation: state => {
+        return state.animation;
+    }
 }
 
 // MUTATIONS
