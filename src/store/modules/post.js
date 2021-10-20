@@ -100,7 +100,9 @@ const actions = {
 
 
     async fetchPaginatedPosts({ state, commit }) {
+        commit('loading/SET_ANIMATION', 'spin', { root: true })
         commit('SET_IS_LOADING', true);
+        
         try {
             console.log(state.paginate)
             const { data } = await PostRepository.getPostPaginated(state.paginate);
