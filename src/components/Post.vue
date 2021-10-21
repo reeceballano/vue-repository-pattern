@@ -4,7 +4,9 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 sm:py-12 sm:gap-x-8 md:py-16">
             <div class="relative z-10 col-start-1 row-start-1 px-4 pb-3 bg-gradient-to-t from-black sm:bg-none">
                 <p class="text-sm font-medium text-white sm:mb-1 sm:text-gray-500">Category</p>
-                <h2 class="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl"><router-link :to="{ name: 'Post', params: { id:postData.id } }">{{ postData.id }}:  {{ postData.title }}</router-link></h2>
+                <h2 class="hover:opacity-20 delay-50 transition-opacity text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">
+                    <router-link :to="{ name: 'Post', params: { id:postData.id } }">{{ postData.id }}:  {{ postData.title }}</router-link>
+                </h2>
             </div>
 
             <div class="col-start-1 row-start-2 px-4 sm:pb-6">
