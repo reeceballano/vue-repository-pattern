@@ -19,7 +19,7 @@
             <div class="col-start-1 row-start-3 space-y-3 px-4">
                 <p class="flex items-center text-black text-sm font-medium mb-5">
                     <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
-                    Author: Choco
+                    Author: {{ user.name }}
                 </p>
                 <router-link 
                     :to="{ name:'Post', params: { id: postData.id } }"
@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
@@ -116,12 +116,26 @@ export default {
             store.dispatch('post/deletePost', props.post.id);
         }
 
+        const fetchUser = () => {
+            const users = store.getters['user/getUsers'];
+            const res = [...users].find(user => user.id === postData.value.userId);
+            user.value = res;
+        }
+
+        const user = ref({});
+
+        onMounted(() => {
+            fetchUser();
+        })
+
         return {
             isEditing,
             editPost,
             postData,
             submitPost,
             deletePost,
+            fetchUser,
+            user,
         }
     }
 }
