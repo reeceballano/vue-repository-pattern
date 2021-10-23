@@ -5,6 +5,7 @@
 
         <div class="pagination-wrapper my-10">
             Current Page: {{pagination.current}} / {{ lastPage }}
+            {{ isLoading }} / {{ isClick }}
             <div class="flex gap-2 my-5">
             <button :disabled="pagination.start === 0" :class="{ 'disabled-btn': pagination.start  === 0 }" class="btn-blue-outlined" @click="prevPage">Prev</button>
             <button :disabled="pagination.current === lastPage" :class="{ 'disabled-btn': pagination.current === lastPage }" class="btn-blue-outlined" @click="nextPage">Next</button>
@@ -59,20 +60,28 @@ export default {
 
         const postWrapper = ref(null);
 
-        const btnClick = () => {
+        const btnClick = async () => {
             isClick.value = true;
-            setTimeout(() => {
-                isClick.value = false;
-            }, 800);
         }
 
-        watch(() => [isLoading, isClick.value], () => {
+        watch(() => isLoading.value, () => {
+            // WATCH isLoading VALUE IF FALSE SET isClick TO FALSE TO GO BACK TO INITIAL STATE
+            if(isLoading.value == false) {
+                isClick.value = false;
+            }
+        }, {
+           // lazy: true // immediate: false
+        })
+
+        watch(() => isClick.value, () => {
             // WATCH THE BUTTON CLICKED, THEN SCROLL TO TOP
             if(isClick.value == false ) {
                 setTimeout(() => {
                     postWrapper.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100)
             }
+        }, {
+            //lazy: true // immediate: false
         })
 
         return {
@@ -82,7 +91,8 @@ export default {
             pagination,
             lastPage,
             isLoading,
-            postWrapper
+            postWrapper,
+            isClick
         }
 
     }
