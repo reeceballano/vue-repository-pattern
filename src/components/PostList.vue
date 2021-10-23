@@ -63,25 +63,31 @@ export default {
             isClick.value = true;
         }
 
-        watch(() => isLoading.value, () => {
-            // WATCH isLoading VALUE IF FALSE SET isClick TO FALSE TO GO BACK TO INITIAL STATE
-            if(isLoading.value == false) {
-                isClick.value = false;
+        watch(
+            () => isLoading.value, 
+            () => {
+                // WATCH isLoading VALUE IF FALSE SET isClick TO FALSE TO GO BACK TO INITIAL STATE
+                if(isLoading.value == false) {
+                    isClick.value = false;
+                }
+            }, {
+            // lazy: true // immediate: false
             }
-        }, {
-           // lazy: true // immediate: false
-        })
+        )
 
-        watch(() => isClick.value, () => {
-            // WATCH THE BUTTON CLICKED, THEN SCROLL TO TOP
-            if(isClick.value == false ) {
-                setTimeout(() => {
-                    postWrapper.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100)
-            }
-        }, {
+        watch(
+            () => isClick.value, 
+            () => {
+                // WATCH THE BUTTON CLICKED, THEN SCROLL TO TOP
+                if(isClick.value == false ) {
+                    setTimeout(() => {
+                        postWrapper.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100)
+                }
+            }, {
             //lazy: true // immediate: false
-        })
+            }
+        )
 
         return {
             posts,
