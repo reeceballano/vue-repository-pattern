@@ -60,6 +60,17 @@ export default {
         const postWrapper = ref(null);
 
         const btnClick = () => {
+            /** 
+             * AFTER CLICK SET isClick to TRUE
+             * 
+             * WATCH THE isLoading VALUE. IF isLoading is FALSE (loading of posts is complete) SET THE isClick
+             * VALUE TO INITIAL STATE (false)
+             * 
+             * WATCH THE isClick VALUE. IN THE FIRST WATCH, WE WATCH THE VALUE OF isLoading THIS IS SOMETHING LIKE
+             * ASYNCHRONOS. IF THE isLoading VALUE IS FALSE (loading of posts is complete) THEN WE WILL SET THE VALUE 
+             * OF isClick TO FALSE. THEN TRIGGER THE scrollIntoView FUNTION
+             * 
+            */
             isClick.value = true;
         }
 
