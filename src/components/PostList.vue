@@ -59,7 +59,7 @@ export default {
 
         const postWrapper = ref(null);
 
-        const btnClick = async () => {
+        const btnClick = () => {
             isClick.value = true;
         }
 
