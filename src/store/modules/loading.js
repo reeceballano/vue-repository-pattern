@@ -14,6 +14,10 @@ const getters = {
 
     getAnimation: state => {
         return state.animation;
+    },
+
+    getLoadingText: state => {
+        return  state.text;
     }
 }
 
