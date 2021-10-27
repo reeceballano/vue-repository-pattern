@@ -2,7 +2,7 @@
     <div class="loading">
         <h3 class="flex items-center">
             <Icon :width="4" :icon="`${icon}Icon`" :animation="`animate-${animation}`" />
-            Loading...
+            {{ loadingText }}
         </h3>
     </div>
 </template>
@@ -29,11 +29,16 @@ export default {
             return store.getters['loading/getAnimation'];
         })
 
+        const loadingText = computed(() => {
+            return store.getters['loading/getLoadingText'];
+        })
+
         console.log(icon.value)
 
         return {
             icon,
             animation,
+            loadingText,
         }
     }
 }
