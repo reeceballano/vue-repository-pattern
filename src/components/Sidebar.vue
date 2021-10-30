@@ -4,11 +4,7 @@
             <div class="pb-5 mb-5 border-b">
                 <h2 class="text-2xl mb-5">Latest Posts</h2>
                 <ul>
-                    <li>Post 1</li>
-                    <li>Post 1</li>
-                    <li>Post 1</li>
-                    <li>Post 1</li>
-                    <li>Post 1</li>
+                    <li v-for="post in latestPosts" :key="post.id">{{ post.title }}</li>
                 </ul>
             </div>
 
