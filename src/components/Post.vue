@@ -2,21 +2,21 @@
     <div class="post-item">
         
         <div class="grid grid-cols-1 sm:grid-cols-2 sm:py-12 sm:gap-x-8 md:py-16">
-            <div class="relative z-10 col-start-1 row-start-1 px-4 pb-3 bg-gradient-to-t from-black sm:bg-none">
+            <div class="relative z-10 col-start-1 row-start-1 pb-3 bg-gradient-to-t from-black sm:bg-none">
                 <p class="text-sm font-medium text-white sm:mb-1 sm:text-gray-500">Category</p>
                 <h2 class="hover:opacity-20 delay-50 transition-opacity text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">
                     <router-link :to="{ name: 'Post', params: { id:postData.id } }">{{ postData.id }}:  {{ postData.title }}</router-link>
                 </h2>
             </div>
 
-            <div class="col-start-1 row-start-2 px-4 sm:pb-6">
+            <div class="col-start-1 row-start-2 sm:pb-6">
                 <div class="flex items-center text-sm font-medium my-5 sm:mt-2 sm:mb-4">
                     <div>Jul, 1, 2021</div>
                 </div>
                 <hr class="w-16 border-gray-300 hidden sm:block">
             </div>
 
-            <div class="col-start-1 row-start-3 space-y-3 px-4">
+            <div class="col-start-1 row-start-3 space-y-3">
                 <p class="flex items-center text-black text-sm font-medium mb-5">
                     <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
                     Author: {{ user.name }}
