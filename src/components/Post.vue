@@ -1,5 +1,5 @@
 <template>
-    <div class="post-item">
+    <div class="post-item border-b border-gray-200">
         
         <div class="grid grid-cols-1 sm:grid-cols-2 sm:py-12 sm:gap-x-8 md:py-16">
             <div class="relative z-10 col-start-1 row-start-1 pb-3 bg-gradient-to-t from-black sm:bg-none">
@@ -142,8 +142,4 @@ export default {
 </script>
 
 <style>
-    .post-item {
-        border-bottom: 1px solid #acacac;
-        padding: 20px 10px;
-    }
 </style>
