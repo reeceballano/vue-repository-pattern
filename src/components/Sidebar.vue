@@ -11,14 +11,9 @@
             </div>
 
             <div class="pb-5 mb-5 border-b">
-                <h2 class="text-2xl mb-5">Active Author</h2>
-                {{ activeUsers }}
+                <h2 class="text-2xl mb-5">Active Authors</h2>
                 <ul>
-                    <li>Author 1</li>
-                    <li>Author 1</li>
-                    <li>Author 1</li>
-                    <li>Author 1</li>
-                    <li>Author 1</li>
+                    <li class="mb-2 pb-2 border-b last:border-0 border-gray-100" v-for="user in activeUsers" :key="user.id">{{ user.name }}</li>
                 </ul>
             </div>
         </section>
