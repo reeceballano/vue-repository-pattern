@@ -12,6 +12,7 @@
 
             <div class="pb-5 mb-5 border-b">
                 <h2 class="text-2xl mb-5">Active Author</h2>
+                {{ activeUsers }}
                 <ul>
                     <li>Author 1</li>
                     <li>Author 1</li>
@@ -33,13 +34,20 @@ export default {
 
     setup() {
         const store = useStore();
+
         const latestPosts = computed(() => {
             const posts = store.getters['post/getAllPosts'];
-            return posts.slice(0, 3);
+            return posts.slice(0,5);
+        })
+
+        const activeUsers = computed(() => {
+            const users = store.getters['user/getUsers'];
+            return users.slice(0,5);
         })
 
         return {
-            latestPosts
+            latestPosts,
+            activeUsers,
         }    
     },
 }
