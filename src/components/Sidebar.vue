@@ -12,7 +12,7 @@
 
             <div class="pb-5 mb-5 border-b">
                 <h2 class="text-2xl mb-5">Active Authors</h2>
-                <User class="mb-2 pb-2 border-b last:border-0 border-gray-100" v-for="user in activeUsers" :key="user.id" :user="user">{{ user.name }}</User>
+                <User class="mb-2 pb-2" v-for="user in activeUsers" :key="user.id" :user="user">{{ user.name }}</User>
             </div>
         </section>
     </div>
