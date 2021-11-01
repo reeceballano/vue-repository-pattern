@@ -68,6 +68,10 @@ export default {
         const filteredComments = (data) => {
             return data.filter(item => Number(item.postId) === Number(route.params.id));
         }
+        
+        onMounted(() => {
+            fetchPost();
+        })
 
         watch(() => route.params.id, (current) => {
             //console.log(route.params.id)
@@ -76,9 +80,6 @@ export default {
             }
         });
 
-        onMounted(() => {
-            fetchPost();
-        })
 
         return {
             post,
