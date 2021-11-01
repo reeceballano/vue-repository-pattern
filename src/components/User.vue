@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
     .user-item {
-        @apply flex flex-col gap-1 bg-gray-100 p-5 rounded-2xl;
+        @apply flex flex-col gap-1 bg-gray-100 p-5 rounded-2xl break-words;
     }
 
     .user-image {
