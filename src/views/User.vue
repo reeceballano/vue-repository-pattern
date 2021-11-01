@@ -28,8 +28,8 @@ export default {
         
 
         const fetchUserInfo = () => {
-            store.dispatch('user/fetchUser', router.params.id);
-            store.dispatch('post/fetchUserPosts', router.params.id);
+            store.dispatch('user/fetchUser', router.params.uid);
+            store.dispatch('post/fetchUserPosts', router.params.uid);
         }
 
         const user = computed(() => {
@@ -41,13 +41,15 @@ export default {
         })
         
         onMounted(() => {
-            console.log(router.params.id);
+            console.log(router.params.uid);
             fetchUserInfo();
         })
 
-        watch(() => router.params.id, () => {
-            fetchUserInfo();
-            console.log('user changed', router.params.id)
+        watch(() => router.params.uid, (current) => {
+            if(typeof current !== 'undefined') {
+                fetchUserInfo();
+                console.log('user changed', router.params.uid)
+            }
         })
 
         return {
