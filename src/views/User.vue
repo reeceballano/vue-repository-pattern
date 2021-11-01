@@ -11,7 +11,7 @@
 <script>
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
-import { onMounted, computed } from 'vue';
+import { onMounted, computed, watch } from 'vue';
 import Post from '@/components/Post';
 import User from '@/components/User';
 
@@ -26,11 +26,11 @@ export default {
         const router = useRoute();
         const store = useStore();
         
-        onMounted(() => {
-            console.log(router.params.id);
+
+        const fetchUserInfo = () => {
             store.dispatch('user/fetchUser', router.params.id);
             store.dispatch('post/fetchUserPosts', router.params.id);
-        })
+        }
 
         const user = computed(() => {
             return store.getters['user/getUser'];
@@ -38,6 +38,16 @@ export default {
 
         const userPosts = computed(() => {
             return store.getters['post/getUserPosts'];
+        })
+        
+        onMounted(() => {
+            console.log(router.params.id);
+            fetchUserInfo();
+        })
+
+        watch(() => router.params.id, () => {
+            fetchUserInfo();
+            console.log('user changed', router.params.id)
         })
 
         return {
