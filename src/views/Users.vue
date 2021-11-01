@@ -3,7 +3,7 @@
         <div class="custom-container">
             <h2>Users</h2>
             
-            <div class="user-list grid md:grid-cols-3 grid-cols-2 gap-4">
+            <div class="user-list grid md:grid-cols-2 grid-cols-2 gap-4">
 
                 <User v-for="user in users" :key="user.id" :user="user" />
             </div>
