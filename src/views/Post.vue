@@ -49,7 +49,7 @@ export default {
         const store = useStore();
 
         const fetchPost = () => {
-            console.log('fetching test', Number(route.params.id))
+            console.log('fetching post', Number(route.params.id))
             store.dispatch('post/fetchPost', Number(route.params.id));
         }
 
@@ -68,7 +68,7 @@ export default {
         const filteredComments = (data) => {
             return data.filter(item => Number(item.postId) === Number(route.params.id));
         }
-        
+
         onMounted(() => {
             fetchPost();
         })
