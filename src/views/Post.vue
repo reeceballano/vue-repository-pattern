@@ -75,7 +75,7 @@ export default {
 
         watch(() => route.params.id, (current) => {
             //console.log(route.params.id)
-            if(current != undefined) {
+            if(typeof current != undefined) {
                 fetchPost()
             }
         });
