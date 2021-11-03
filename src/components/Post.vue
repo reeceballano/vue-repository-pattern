@@ -22,7 +22,7 @@
                     Author: {{ user.name }}
                 </p>
                 <PrimaryButton route-to="Post" :button-params="{ id: postData.id }">
-                    Read more..
+                    Read more
                 </PrimaryButton>    
                 <!-- <router-link 
                     :to="{ name:'Post', params: { id: postData.id } }"
