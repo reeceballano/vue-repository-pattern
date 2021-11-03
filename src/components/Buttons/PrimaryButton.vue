@@ -1,6 +1,6 @@
 <template>
     <router-link 
-        :to="{ name:'Post', params: { id: postData.id } }"
+        :to="{ name:routeTo, params: buttonParams }"
         class="bg-indigo-100 text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg hover:bg-indigo-400 delay-150 hover:transition-all">
         <slot />
     </router-link>
@@ -10,7 +10,11 @@
 export default {
     name: 'PrimaryButton',
     props: {
-        button: {
+        routeTo: {
+            type: String
+        },
+
+        buttonParams: {
             type: Object,
             default: () => {}
         }
