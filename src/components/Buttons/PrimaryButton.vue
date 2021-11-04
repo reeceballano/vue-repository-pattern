@@ -1,7 +1,7 @@
 <template>
     <router-link 
         :to="{ name:routeTo, params: buttonParams }"
-        class="bg-indigo-100 text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg hover:bg-indigo-400 delay-150 hover:transition-all">
+        class="primary-button">
         <slot />
         <Icon icon="MenuAlt2Icon" class="h-5 w-5 mr-2 text-blue-500"/>
     </router-link>
@@ -28,6 +28,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    .primary-button {
+        @apply bg-indigo-100 text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg  delay-150;
+    }
 
+    .primary-button:hover {
+        @apply bg-indigo-400 transition-all;
+    }
 </style>
