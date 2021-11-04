@@ -3,7 +3,7 @@
         :to="{ name:routeTo, params: buttonParams }"
         class="primary-button">
         <slot />
-        <Icon icon="MenuAlt2Icon" class="h-5 w-5 mr-2 text-blue-500"/>
+        <Icon icon="MenuAlt2Icon" class="h-3 w-3 mr-2 text-blue-500"/>
     </router-link>
 </template>
 
