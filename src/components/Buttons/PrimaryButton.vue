@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
     .primary-button {
-        @apply bg-indigo-100 text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg  delay-150;
+        @apply bg-indigo-100 text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg  delay-150 inline-flex justify-center;
     }
 
     .primary-button:hover {
