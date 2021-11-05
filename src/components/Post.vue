@@ -21,7 +21,7 @@
                     <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
                     Author: {{ user.name }}
                 </p>
-                <PrimaryButton route-to="Post" :button-params="{ id: postData.id }">
+                <PrimaryButton :show-icon="true" route-to="Post" :button-params="{ id: postData.id }">
                     Read more
                 </PrimaryButton>    
                 <!-- <router-link 
