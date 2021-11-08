@@ -143,11 +143,14 @@ const actions = {
     },
 
     async fetchPost({ commit }, id) {
-        console.log(`fetching: ${parseInt(id)}`)
+        console.log(`fetching: ${parseInt(id)}`);
+        commit('SET_IS_LOADING_POST', true);
         try {
             const { data } = await PostRepository.getPost(parseInt(id));
-            commit('SET_POST', data);
-            commit('IS_LOADING_POST', false);
+            setTimeout(() => {
+                commit('SET_POST', data);
+                commit('SET_IS_LOADING_POST', false);
+            }, 500);
         } catch (error) {
             console.log(error)
         }
