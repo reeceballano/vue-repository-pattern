@@ -69,6 +69,10 @@ const mutations = {
         state.isLoading = isLoading;
     },
 
+    SET_IS_LOADING_POST(state, isLoadingPost) {
+        state.isLoadingPost = isLoadingPost;
+    },
+
     SET_PAGINATE(state, paginate) {
         state.paginate = paginate;
     },
@@ -143,6 +147,7 @@ const actions = {
         try {
             const { data } = await PostRepository.getPost(parseInt(id));
             commit('SET_POST', data);
+            commit('IS_LOADING_POST', false);
         } catch (error) {
             console.log(error)
         }
