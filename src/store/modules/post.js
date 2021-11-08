@@ -9,6 +9,7 @@ const state = {
     post: {},
     userPosts: [],
     isLoading: true,
+    isLoadingPost: true,
     paginate: {
         start: 0,
         limit: 5,
@@ -31,6 +32,10 @@ const getters = {
 
     getIsLoading: state => {
         return state.isLoading;
+    },
+
+    getIsLoadingPost: state => {
+        return state.isLoadingPost;
     },
 
     getNoData: state => {

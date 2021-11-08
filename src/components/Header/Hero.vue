@@ -4,6 +4,7 @@
             <div class="md:flex">
                 <div class="md:w-2/5 flex flex-col justify-center">
                     <div v-if="route.name == 'Post'" class="hero-content">
+                        ISLOADING: {{isLoading}}
                         <h1>
                             {{ post.title }}
                         </h1>
@@ -61,11 +62,17 @@ export default {
             return props.header;
         })
 
+        const isLoading = computed(() => {
+            return store.getters['post/getIsLoading'];
+        })
+
+
         return {
             heroImg,
             headerType,
             route,
             post,
+            isLoading
         }
     }
 }
