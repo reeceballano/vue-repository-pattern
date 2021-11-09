@@ -1,8 +1,9 @@
 <template>
     <div class="user-info">
-        <h2>User Info:</h2>
-        
-        <User :user="user"/> <hr />
+        <div class="py-5">
+            <h2>User Info:</h2>
+            <User :user="user"/> <hr />
+        </div>
 
         <Post v-for="post in userPosts" :key="post.id" :post="post" />
     </div>
