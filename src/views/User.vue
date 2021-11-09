@@ -2,7 +2,7 @@
     <div class="user-info">
         <div class="py-5">
             <h2>User Info:</h2>
-            <User :user="user"/> <hr />
+            <User :user="user"/>
         </div>
 
         <Post v-for="post in userPosts" :key="post.id" :post="post" />
