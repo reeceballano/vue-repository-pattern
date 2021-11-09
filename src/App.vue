@@ -74,7 +74,7 @@ export default {
         const onScroll = () => {
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
-                if(scrollY > 300) {
+                if(scrollY > 200) {
                     isFixed.value = true;
                 } else {
                     isFixed.value = false;
