@@ -1,7 +1,7 @@
 <template>
     <div class="user-info">
         <div class="py-5">
-            <h2>User Info:</h2>
+            <h2 class="text-xl my-3">User Info:</h2>
             <User :user="user"/>
         </div>
 
