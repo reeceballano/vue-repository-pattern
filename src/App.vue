@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <Header>
-            <Nav>
+            <Nav :class="[(isFixed) ? 'fixed w-full' : '']">
                 <template v-slot:desktop>
                     <NavLink v-for="link in navLinks" :key="link.id" :link="link" />
 
@@ -69,17 +69,32 @@ export default {
 
         const isSearch = ref(false);
 
+        const isFixed = ref(false);
+
+        const onScroll = () => {
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                if(scrollY > 300) {
+                    isFixed.value = true;
+                } else {
+                    isFixed.value = false;
+                }
+            })
+        }
+
         onMounted(() => {
             store.dispatch('post/fetchPaginatedPosts');
             store.dispatch('comment/fetchComments');
             store.dispatch('user/fetchUsers');
-        })        
+            onScroll();
+        })    
 
         return {
             layout,
             navLinks,
             isSearch,
             headerLayout,
+            isFixed
         }
     },
 }
