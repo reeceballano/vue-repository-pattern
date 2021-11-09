@@ -13,9 +13,8 @@
                                 {{ post.body }}
                             </h2>
                         </div>
-                        <div v-else class="content-loader">
-                            Loading...
-                        </div>
+
+                        <Loading v-else />
 
                     </div>
                     <div v-else class="hero-content">
@@ -41,13 +40,17 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
+import Loading from '@/components/Loading';
+
 export default {
     name: 'Hero',
-
     props: {
         header: {
             type: String
         }
+    },
+    components: {
+        Loading
     },
 
     setup(props) {
