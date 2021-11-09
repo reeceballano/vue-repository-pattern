@@ -1,11 +1,11 @@
 <template>
     <div class="user-info">
-        <div class="py-5">
-            <h2 class="text-xl my-3">User Info:</h2>
+        <section class="section">
+            <h2 class="text-2xl mb-5">User Info:</h2>
             <User :user="user"/>
-        </div>
 
-        <Post v-for="post in userPosts" :key="post.id" :post="post" />
+            <Post v-for="post in userPosts" :key="post.id" :post="post" />
+        </section>
     </div>
 </template>
 
