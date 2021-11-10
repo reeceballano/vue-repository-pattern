@@ -1,5 +1,6 @@
 <template>
     <router-link 
+        @click.prevent="buttonClick"
         :to="{ name:routeTo, params: buttonParams }"
         class="primary-button">
         <slot />
@@ -29,6 +30,15 @@ export default {
     },
     components: {
         Icon,
+    },
+
+    setup(props, { emit }) {
+        const buttonClick = () => {
+            emit('buttonClick');
+        }
+        return {
+            buttonClick
+        }
     }
 }
 </script>
