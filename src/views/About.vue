@@ -5,17 +5,19 @@
             
             <div class="w-full h-0 my-10 border-b border-gray-400"></div>
 
+            <h2 class="text-xl mb-10">Tabs Component</h2>
+
             <Tabs>
                 <TabItem v-for="(tab,i) in tabs" icon="MoonIcon" :title="tab.title" :tab-index="i+1" :key="tab.id">{{ tab.content }}</TabItem>
             </Tabs>
-
-            <div class="w-full h-0 my-10 border-b border-gray-400"></div>
 
             <Tabs :active-tab="2">
                 <TabItem title="DESCRIPTION" icon="MenuAlt1Icon" :tab-index="1">this is the description</TabItem>
                 <TabItem title="SPECIFICATION" icon="MenuAlt2Icon" :tab-index="2">this is the specification</TabItem>
                 <TabItem title="FEATURES" icon="MenuAlt3Icon" :tab-index="3">this is the features</TabItem>
             </Tabs>
+
+            <div class="w-full h-0 my-10 border-b border-gray-400"></div>
 
         </div>
         
