@@ -3,7 +3,7 @@
         <div class="custom-container">
             <h1 class="text-2xl">This is an about page</h1>
             
-            <div class="w-full h-0 my-10 border-b border-gray-400"></div>
+            <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Tabs Component</h2>
 
@@ -17,7 +17,7 @@
                 <TabItem title="FEATURES" icon="MenuAlt3Icon" :tab-index="3">this is the features</TabItem>
             </Tabs>
 
-            <div class="w-full h-0 my-10 border-b border-gray-400"></div>
+            <Divider bg="blue" />
 
         </div>
         
@@ -28,12 +28,14 @@
 import { ref } from 'vue';
 import Tabs from '@/components/Tab/Tabs';
 import TabItem from '@/components/Tab/TabItem';
+import Divider from '@/components/Divider';
 
 export default {
     name: 'About',
     components: {
         Tabs,
         TabItem,
+        Divider,
     },  
     setup() {
         const tabs = ref([
