@@ -1,16 +1,22 @@
 <template>
-    <div class="divider"></div>
+    <div :class="[`border-${bg}-400`]" class="divider"></div>
 </template>
 
 <script>
 
 export default {
-    name: 'Divider'
+    name: 'Divider',
+    props: {
+        bg: {
+            type: String,
+            default: 'gray'
+        }
+    }
 }
 </script>
 
 <style scoped>
     .divider {
-        @apply w-full h-0 my-10 border-b border-gray-400;
+        @apply w-full h-0 my-10 border-b;
     }
 </style>
