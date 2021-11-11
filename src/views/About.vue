@@ -31,11 +31,11 @@
                 </PrimaryButton>
 
                 <PrimaryButton>
-                    Another Button
+                    Submit Button
                 </PrimaryButton>
 
                 <PrimaryButton>
-                    Another Button
+                    Call Button
                 </PrimaryButton>
             </div>
 

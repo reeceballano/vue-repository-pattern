@@ -2,6 +2,7 @@
     <router-link 
         @click.prevent="buttonClick"
         :to="{ name:routeTo, params: buttonParams }"
+        :class="[`bg-${bg}-100 hover:bg-${bg}-200`]"
         class="primary-button">
         <slot />
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
@@ -26,6 +27,11 @@ export default {
         showIcon: {
             type: Boolean,
             default: false
+        },
+
+        bg: {
+            type: String,
+            default: 'blue'
         }
     },
     components: {
@@ -45,10 +51,10 @@ export default {
 
 <style scoped>
     .primary-button {
-        @apply bg-indigo-100 text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg  delay-150 inline-flex items-center;
+        @apply text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg  delay-150 inline-flex items-center;
     }
 
     .primary-button:hover {
-        @apply bg-indigo-400 transition-all;
+        @apply transition-all;
     }
 </style>
