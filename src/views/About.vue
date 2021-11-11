@@ -5,7 +5,7 @@
             
             <Divider bg="blue" />
 
-            <h2 class="text-xl mb-10">Tabs Component</h2>
+            <h2 class="text-xl mb-10">Tab Components</h2>
 
             <Tabs>
                 <TabItem v-for="(tab,i) in tabs" icon="MoonIcon" :title="tab.title" :tab-index="i+1" :key="tab.id">{{ tab.content }}</TabItem>
@@ -19,6 +19,12 @@
 
             <Divider bg="blue" />
 
+            <h2 class="text-xl mb-10">Button Components</h2>
+
+            <PrimaryButton>
+                Primary Button
+            </PrimaryButton>
+
         </div>
         
     </section>
@@ -29,6 +35,7 @@ import { ref } from 'vue';
 import Tabs from '@/components/Tab/Tabs';
 import TabItem from '@/components/Tab/TabItem';
 import Divider from '@/components/Divider';
+import PrimaryButton from '@/components/Buttons/PrimaryButton';
 
 export default {
     name: 'About',
@@ -36,6 +43,7 @@ export default {
         Tabs,
         TabItem,
         Divider,
+        PrimaryButton
     },  
     setup() {
         const tabs = ref([
