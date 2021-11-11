@@ -22,7 +22,7 @@
             <h2 class="text-xl mb-10">Button Components</h2>
 
             <div class="grid grid-cols-4 gap-4">
-                <PrimaryButton>
+                <PrimaryButton bg="green">
                     Primary Button
                 </PrimaryButton>
 
