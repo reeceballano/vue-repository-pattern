@@ -26,15 +26,15 @@
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton>
+                <PrimaryButton bg="blue">
                     Another Button
                 </PrimaryButton>
 
-                <PrimaryButton>
+                <PrimaryButton bg="red">
                     Submit Button
                 </PrimaryButton>
 
-                <PrimaryButton>
+                <PrimaryButton bg="yellow">
                     Call Button
                 </PrimaryButton>
             </div>
