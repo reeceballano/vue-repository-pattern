@@ -21,9 +21,23 @@
 
             <h2 class="text-xl mb-10">Button Components</h2>
 
-            <PrimaryButton>
-                Primary Button
-            </PrimaryButton>
+            <div class="grid grid-cols-4 gap-4">
+                <PrimaryButton>
+                    Primary Button
+                </PrimaryButton>
+
+                <PrimaryButton>
+                    Another Button
+                </PrimaryButton>
+
+                <PrimaryButton>
+                    Another Button
+                </PrimaryButton>
+
+                <PrimaryButton>
+                    Another Button
+                </PrimaryButton>
+            </div>
 
         </div>
         
