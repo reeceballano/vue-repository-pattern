@@ -22,19 +22,19 @@
             <h2 class="text-xl mb-10">Button Components</h2>
 
             <div class="grid grid-cols-4 gap-4">
-                <PrimaryButton bg="green">
+                <PrimaryButton @button-click="buttonClick(1)" bg="green">
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton bg="blue">
+                <PrimaryButton @button-click="buttonClick(2)" bg="blue">
                     Another Button
                 </PrimaryButton>
 
-                <PrimaryButton bg="red">
+                <PrimaryButton @button-click="buttonClick(3)" bg="red">
                     Submit Button
                 </PrimaryButton>
 
-                <PrimaryButton bg="yellow">
+                <PrimaryButton @button-click="buttonClick('button click emit')" bg="yellow">
                     Call Button
                 </PrimaryButton>
             </div>
@@ -65,9 +65,14 @@ export default {
             { id: 1, title: 'Tab 2', content: 'content for tab 2' },
             { id: 1, title: 'Tab 3', content: 'content for tab 3' },
         ])
+
+        const buttonClick = (e) => {
+            console.log(e);
+        }
         
         return {
-            tabs
+            tabs,
+            buttonClick
         }
     },
 }
