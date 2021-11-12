@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
     .primary-button {
-        @apply text-gray-700 text-base font-semibold px-6 py-2 rounded-lg  delay-150 inline-flex items-center;
+        @apply text-center text-gray-700 text-base font-semibold px-6 py-2 rounded-lg  delay-150 inline-flex items-center;
     }
 
     .primary-button:hover {
