@@ -21,20 +21,20 @@
 
             <h2 class="text-xl mb-10">Button Components</h2>
 
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-3 gap-4">
                 <PrimaryButton @button-click="buttonClick(1)" bg="green">
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick(2)" bg="blue">
+                <PrimaryButton @button-click="buttonClick(2)" bg="blue" :show-icon="true">
                     Another Button
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick(3)" bg="red">
+                <PrimaryButton @button-click="buttonClick(3)" bg="red" :show-icon="true">
                     Submit Button
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick('button click emit')" bg="yellow">
+                <PrimaryButton @button-click="buttonClick('button click emit')" bg="yellow" :show-icon="true">
                     Call Button
                 </PrimaryButton>
             </div>
