@@ -1,5 +1,7 @@
 <template>
-    <router-link 
+
+    <router-link
+        v-if="type == 'link'" 
         @click.prevent="buttonClick"
         :to="{ name:routeTo, params: buttonParams }"
         :class="[`bg-${bg}-100 hover:bg-${bg}-200`]"
@@ -7,6 +9,10 @@
         <slot />
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </router-link>
+    <button v-else :class="[`bg-${bg}-100 hover:bg-${bg}-200`]" class="primary-button">
+        <slot />
+        <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
+    </button>
 </template>
 
 <script>
@@ -15,6 +21,11 @@ import Icon from '@/components/Icon';
 export default {
     name: 'PrimaryButton',
     props: {
+        type: {
+            type: String,
+            default: 'link'
+        },
+
         routeTo: {
             type: String
         },
