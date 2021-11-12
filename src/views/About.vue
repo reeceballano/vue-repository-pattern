@@ -27,15 +27,15 @@
                 </PrimaryButton>
 
                 <PrimaryButton @button-click="buttonClick(2)" bg="blue" :show-icon="true">
-                    Another Button
+                    Another Link
                 </PrimaryButton>
 
                 <PrimaryButton @button-click="buttonClick(3)" bg="red" :show-icon="true">
-                    Submit Button
+                    Link Button
                 </PrimaryButton>
 
-                <PrimaryButton type="button" @button-click="buttonClick('button click emit')" bg="yellow" :show-icon="true">
-                    Call Button
+                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" bg="yellow" :show-icon="true">
+                    I'm a Button
                 </PrimaryButton>
             </div>
 
@@ -72,7 +72,7 @@ export default {
         
         return {
             tabs,
-            buttonClick
+            buttonClick,
         }
     },
 }
