@@ -9,7 +9,7 @@
         <slot />
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </router-link>
-    <button v-else :class="[`bg-${bg}-100 hover:bg-${bg}-200`]" class="primary-button">
+    <button v-else :class="[`bg-${bg}-100 hover:bg-${bg}-200`]" class="primary-button" @click.prevent="buttonClick">
         <slot />
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </button>

@@ -34,7 +34,7 @@
                     Submit Button
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick('button click emit')" bg="yellow" :show-icon="true">
+                <PrimaryButton type="button" @button-click="buttonClick('button click emit')" bg="yellow" :show-icon="true">
                     Call Button
                 </PrimaryButton>
             </div>
