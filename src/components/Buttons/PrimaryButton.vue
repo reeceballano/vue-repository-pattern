@@ -6,11 +6,15 @@
         :to="{ name:routeTo, params: buttonParams }"
         :class="[`bg-${bg}-100 hover:bg-${bg}-200`]"
         class="primary-button">
-        <slot />
+        <span>
+            <slot />
+        </span>
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </router-link>
     <button v-else :class="[`bg-${bg}-100 hover:bg-${bg}-200`]" :type="(type == 'button') ? 'submit' : ''" class="primary-button" @click.prevent="buttonClick">
-        <slot />
+        <span>
+            <slot />
+        </span>
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </button>
 </template>
@@ -67,5 +71,9 @@ export default {
 
     .primary-button:hover {
         @apply transition-all;
+    }
+
+    .primary-button span {
+        @apply inline-block leading-4;
     }
 </style>
