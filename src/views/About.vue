@@ -26,7 +26,7 @@
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick(2)" bg="blue" :show-icon="true">
+                <PrimaryButton route-to="/users" @button-click="buttonClick(2)" bg="blue" :show-icon="true">
                     Another Link
                 </PrimaryButton>
 

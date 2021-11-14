@@ -3,7 +3,7 @@
     <router-link
         v-if="type == 'link'" 
         @click.prevent="buttonClick"
-        :to="{ name:routeTo, params: buttonParams }"
+        :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
         :class="[`bg-${bg}-100 hover:bg-${bg}-200`]"
         class="primary-button">
         <span>
@@ -57,8 +57,9 @@ export default {
         const buttonClick = () => {
             emit('buttonClick');
         }
+
         return {
-            buttonClick
+            buttonClick,
         }
     }
 }
