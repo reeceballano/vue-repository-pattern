@@ -22,7 +22,7 @@
             <h2 class="text-xl mb-10">Button Components</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <PrimaryButton @button-click="buttonClick(1)" bg="green">
+                <PrimaryButton @button-click="buttonClick('this is a primary button event')" bg="green">
                     Primary Button
                 </PrimaryButton>
 
