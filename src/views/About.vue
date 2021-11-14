@@ -26,12 +26,12 @@
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton route-to="/users" @button-click="buttonClick(2)" bg="blue" :show-icon="true">
-                    Another Link
+                <PrimaryButton route-to="/users" bg="blue" :show-icon="true">
+                    Users Page
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick(3)" bg="red" :show-icon="true">
-                    Link Button
+                <PrimaryButton route-to="User" :button-params="{uid:1}" bg="red" :show-icon="true">
+                    User Page
                 </PrimaryButton>
 
                 <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" bg="yellow" :show-icon="true">
