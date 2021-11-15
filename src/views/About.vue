@@ -56,7 +56,7 @@
                         Beatae, incidunt molestias eius dolor reprehenderit placeat?
                     </template>
                     <template #modalButton>
-                        <PrimaryButton @button-click="isVisibleModalOne = !isVisibleModalOne" bg="green">
+                        <PrimaryButton type="button" @button-click="isVisibleModalOne = !isVisibleModalOne" bg="green">
                             Show Modal 1
                         </PrimaryButton>
 
@@ -76,7 +76,7 @@
                     </template>
 
                     <template #modalButton>
-                        <PrimaryButton @button-click="isVisibleModalTwo = !isVisibleModalTwo" bg="red">
+                        <PrimaryButton type="button" @button-click="isVisibleModalTwo = !isVisibleModalTwo" bg="red">
                             Show Modal 2
                         </PrimaryButton>
 
