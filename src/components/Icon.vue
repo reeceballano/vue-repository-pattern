@@ -3,7 +3,7 @@
             (width) ? `w-${width}` : '',
             animation //eg. animate-spin
         ]" 
-        class="icon-wrapper mr-2"
+        class="icon-wrapper"
     >
         <component :is="heroIcons[tabIcon]" />
     </div>
