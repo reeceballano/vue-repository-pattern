@@ -21,6 +21,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    .modal-container {
+        @apply fixed w-screen h-screen top-0 left-0 bg-gray-400 opacity-80;
+    }
 
 </style>
