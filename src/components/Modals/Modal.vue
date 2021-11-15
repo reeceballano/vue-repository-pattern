@@ -27,7 +27,7 @@ export default {
     }
 
     .modal {
-        @apply bg-white min-h-1/4 md:w-2/5 w-11/12 md:p-9 p-5;
+        @apply bg-white min-h-1/4 md:w-2/5 w-11/12 md:p-9 p-5 shadow-2xl;
     }
 
 </style>
