@@ -1,10 +1,23 @@
 <template>
-    <div class="modal"></div>
+    <div class="modal-container">
+        <div class="modal">
+            <h2 class="text-2xl">Modal Title</h2>
+
+            <div class="modal-content">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Suscipit minima praesentium natus non, quas dolores vitae magnam? 
+                    Earum dolorum perferendis officia totam commodi. 
+                    Beatae, incidunt molestias eius dolor reprehenderit placeat?
+                </p>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
-
+    name: 'Modal',
 }
 </script>
 

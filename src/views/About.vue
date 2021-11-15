@@ -39,6 +39,12 @@
                 </PrimaryButton>
             </div>
 
+            <Divider bg="blue" />
+
+            <h2 class="text-xl mb-10">Modal Components</h2>
+
+            <Modal />
+
         </div>
         
     </section>
@@ -50,6 +56,7 @@ import Tabs from '@/components/Tab/Tabs';
 import TabItem from '@/components/Tab/TabItem';
 import Divider from '@/components/Divider';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
+import Modal from '@/components/Modals/Modal';
 
 export default {
     name: 'About',
@@ -57,7 +64,8 @@ export default {
         Tabs,
         TabItem,
         Divider,
-        PrimaryButton
+        PrimaryButton,
+        Modal
     },  
     setup() {
         const tabs = ref([
