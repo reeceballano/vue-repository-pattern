@@ -23,7 +23,11 @@ export default {
 
 <style scoped>
     .modal-container {
-        @apply fixed w-screen h-screen top-0 left-0 bg-gray-400 opacity-80;
+        @apply fixed w-screen h-screen top-0 left-0 bg-gray-800 opacity-100 flex items-center justify-center;
+    }
+
+    .modal {
+        @apply bg-white min-h-1/4 md:w-2/5 w-11/12 md:p-9 p-5;
     }
 
 </style>
