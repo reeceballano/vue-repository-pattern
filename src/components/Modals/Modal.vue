@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-container">
+    <div v-if="visible" class="modal-container">
         <div class="modal">
             <div class="close-button absolute right-4 top-4">
                 <Icon icon="XIcon" width="5" />
@@ -26,6 +26,12 @@ export default {
     name: 'Modal',
     components: {
         Icon
+    },
+    props: {
+        visible: {
+            type: Boolean,
+            default: false
+        }
     }
 }
 </script>
