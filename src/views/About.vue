@@ -43,15 +43,46 @@
 
             <h2 class="text-xl mb-10">Modal Components</h2>
 
-            <Modal :visible="isVisible" @close-modal="isVisible = false">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-                {{ isVisible }}
+                <Modal :visible="isVisibleModalOne" @close-modal="isVisibleModalOne = false">
+                    <template #modalTitle>
+                        Modal 1 Title
+                    </template>
+                    <template #modalContent>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Suscipit minima praesentium natus non, quas dolores vitae magnam? 
+                        Earum dolorum perferendis officia totam commodi. 
+                        Beatae, incidunt molestias eius dolor reprehenderit placeat?
+                    </template>
+                    <template #modalButton>
+                        <PrimaryButton @button-click="isVisibleModalOne = !isVisibleModalOne" bg="green">
+                            Show Modal 1
+                        </PrimaryButton>
 
-                <PrimaryButton @button-click="isVisible = !isVisible" bg="green">
-                    Show Modal
-                </PrimaryButton>
-            </Modal>
+                    </template>
+                </Modal>
 
+                <Modal :visible="isVisibleModalTwo" @close-modal="isVisibleModalTwo = false">
+                    <template #modalTitle>
+                        Modal 2 Title
+                    </template>
+                    
+                    <template #modalContent>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Suscipit minima praesentium natus non, quas dolores vitae magnam? 
+                        Earum dolorum perferendis officia totam commodi. 
+                        Beatae, incidunt molestias eius dolor reprehenderit placeat?
+                    </template>
+
+                    <template #modalButton>
+                        <PrimaryButton @button-click="isVisibleModalTwo = !isVisibleModalTwo" bg="red">
+                            Show Modal 2
+                        </PrimaryButton>
+
+                    </template>
+                </Modal>
+            </div>
         </div>
         
     </section>
@@ -85,12 +116,14 @@ export default {
             console.log(e);
         }
 
-        const isVisible = ref(false);
+        const isVisibleModalOne = ref(false);
+        const isVisibleModalTwo = ref(false);
 
         return {
             tabs,
             buttonClick,
-            isVisible,
+            isVisibleModalOne,
+            isVisibleModalTwo
         }
     },
 }

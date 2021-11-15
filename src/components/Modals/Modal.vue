@@ -5,21 +5,15 @@
                 <div @click="closeModal" class="close-button absolute right-4 top-4 cursor-pointer">
                     <Icon icon="XIcon" :width="5" />
                 </div>
-                {{ isVisible }}
-                <h2 class="text-2xl">Modal Title</h2>
+                <h2 class="text-2xl"><slot name="modalTitle" /></h2>
 
                 <div class="modal-content">
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Suscipit minima praesentium natus non, quas dolores vitae magnam? 
-                        Earum dolorum perferendis officia totam commodi. 
-                        Beatae, incidunt molestias eius dolor reprehenderit placeat?
-                    </p>
+                    <p><slot name="modalContent" /></p>
                 </div>
             </div>
 
         </div>
-        <slot />
+        <slot name="modalButton"/>
     </div>
 </template>
 
