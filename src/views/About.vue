@@ -43,7 +43,14 @@
 
             <h2 class="text-xl mb-10">Modal Components</h2>
 
-            <Modal />
+            <Modal :visible="isVisible" @close-modal="isVisible = false">
+
+                {{ isVisible }}
+
+                <PrimaryButton @button-click="isVisible = !isVisible" bg="green">
+                    Show Modal
+                </PrimaryButton>
+            </Modal>
 
         </div>
         
@@ -77,10 +84,13 @@ export default {
         const buttonClick = (e) => {
             console.log(e);
         }
-        
+
+        const isVisible = ref(false);
+
         return {
             tabs,
             buttonClick,
+            isVisible,
         }
     },
 }
