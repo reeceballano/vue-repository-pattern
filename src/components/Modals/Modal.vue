@@ -20,17 +20,16 @@
             leave-to-class="opacity-0"
         >
             <div v-show="isVisible" class="modal-container">
-                    <div class="modal">
-                        <div @click="closeModal" class="close-button absolute right-4 top-4 cursor-pointer">
-                            <Icon icon="XIcon" :width="5" />
-                        </div>
-                        {{isVisible}}
-                        <h2 class="text-2xl"><slot name="modalTitle" /></h2>
-
-                        <div class="modal-content">
-                            <p><slot name="modalContent" /></p>
-                        </div>
+                <div class="modal">
+                    <div @click="closeModal" class="close-button absolute right-4 top-4 cursor-pointer">
+                        <Icon icon="XIcon" :width="5" />
                     </div>
+                    <h2 class="text-2xl"><slot name="modalTitle" /></h2>
+
+                    <div class="modal-content">
+                        <p><slot name="modalContent" /></p>
+                    </div>
+                </div>
             </div>
         </transition>
         <slot name="modalButton"/>
