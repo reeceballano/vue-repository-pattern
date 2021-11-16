@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div v-show="isVisible" class="modal-overlay"></div>
         <div v-show="isVisible" class="modal-container">
             <div class="modal">
                 <div @click="closeModal" class="close-button absolute right-4 top-4 cursor-pointer">
@@ -53,6 +54,10 @@ export default {
 </script>
 
 <style scoped>
+
+    .modal-overlay {
+        
+    }
     .modal-container {
         @apply fixed w-screen h-screen top-0 left-0 bg-gray-800 opacity-100 flex items-center justify-center;
     }
