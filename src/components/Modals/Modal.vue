@@ -21,7 +21,7 @@
         >
             <div v-show="isVisible" class="modal-container">
                 <div class="modal">
-                    <div @click="closeModal" class="close-button absolute right-4 top-4 cursor-pointer">
+                    <div @click="closeModal(); onClose();" class="close-button absolute right-4 top-4 cursor-pointer">
                         <Icon icon="XIcon" :width="5" />
                     </div>
                     <h2 class="text-2xl border-b-2 inline-block pb-2 mb-3 border-gray-100"><slot name="modalTitle" /></h2>
@@ -63,8 +63,13 @@ export default {
             //isVisible.value = !isVisible.value;
         }
 
+        const onClose = () => {
+            emit('onClose');
+        }
+
         return {
             closeModal,
+            onClose,
             isVisible,
         }
     }
