@@ -63,7 +63,7 @@
                     </template>
                 </Modal>
 
-                <Modal :visible="isVisibleModalTwo" @close-modal="isVisibleModalTwo = false">
+                <Modal :visible="isVisibleModalTwo" @close-modal="isVisibleModalTwo = false" @on-close="onClose">
                     <template #modalTitle>
                         Modal 2 Title
                     </template>
@@ -119,11 +119,16 @@ export default {
         const isVisibleModalOne = ref(false);
         const isVisibleModalTwo = ref(false);
 
+        const onClose = () => {
+            console.log('on close callback');
+        }
+
         return {
             tabs,
             buttonClick,
             isVisibleModalOne,
-            isVisibleModalTwo
+            isVisibleModalTwo,
+            onClose
         }
     },
 }
