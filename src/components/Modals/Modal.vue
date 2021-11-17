@@ -77,7 +77,7 @@ export default {
         @apply fixed w-screen h-screen bg-gray-800 opacity-80 top-0 left-0 z-10;
     }
     .modal-container {
-        @apply fixed w-screen h-screen top-0 left-0 flex items-center justify-center;
+        @apply fixed w-screen h-screen top-0 left-0 flex items-center justify-center z-20;
     }
 
     .modal {
