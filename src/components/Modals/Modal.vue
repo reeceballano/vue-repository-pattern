@@ -1,24 +1,10 @@
 <template>
     <div>
-        <transition 
-                enter-active-class="transition-opacity delay-150" 
-                enter-from-class="opacity-0" 
-                enter-to-class="opacity-100" 
-                leave-active-class="transition-opacity duration-200" 
-                leave-from-class="opacity-100" 
-                leave-to-class="opacity-0"
-            >
+        <Transition :delayEnter="1000" >
             <div v-show="isVisible" class="modal-overlay"></div>
-        </transition>
+        </Transition>
 
-        <transition 
-            enter-active-class="transition-opacity delay-100" 
-            enter-from-class="opacity-0" 
-            enter-to-class="opacity-100" 
-            leave-active-class="transition-opacity duration-150" 
-            leave-from-class="opacity-100" 
-            leave-to-class="opacity-0"
-        >
+        <Transition>
             <div v-show="isVisible" class="modal-container">
                 <div class="modal">
                     <div @click="closeModal(); onClose();" class="close-button absolute right-4 top-4 cursor-pointer">
@@ -31,19 +17,21 @@
                     </div>
                 </div>
             </div>
-        </transition>
+        </Transition>
         <slot name="modalButton"/>
     </div>
 </template>
 
 <script>
-import Icon from '@/components/Icon';
 import { computed } from 'vue';
+import Icon from '@/components/Icon';
+import Transition from '@/components/Transition';
 
 export default {
     name: 'Modal',
     components: {
-        Icon
+        Icon,
+        Transition
     },
     props: {
         visible: {

@@ -15,14 +15,9 @@
 export default {
     name: 'Transition',
     props: {
-        delayEnter: {
-            type: Number,
-            default: 100
-        },
-
-        delayLeave: {
-            type: Number,
-            default: 100
+        name: {
+            type: String,
+            default: 'fade'
         }
     }
 }
