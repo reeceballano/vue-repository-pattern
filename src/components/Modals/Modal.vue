@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Transition :delayEnter="1000" >
+        <AnimateTransition>
             <div v-show="isVisible" class="modal-overlay"></div>
-        </Transition>
+        </AnimateTransition>
 
-        <Transition>
+        <AnimateTransition>
             <div v-show="isVisible" class="modal-container">
                 <div class="modal">
                     <div @click="closeModal(); onClose();" class="close-button absolute right-4 top-4 cursor-pointer">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-        </Transition>
+        </AnimateTransition>
         <slot name="modalButton"/>
     </div>
 </template>
@@ -25,13 +25,13 @@
 <script>
 import { computed } from 'vue';
 import Icon from '@/components/Icon';
-import Transition from '@/components/Transition';
+import AnimateTransition from '@/components/AnimateTransition';
 
 export default {
     name: 'Modal',
     components: {
         Icon,
-        Transition
+        AnimateTransition
     },
     props: {
         visible: {
