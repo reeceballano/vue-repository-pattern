@@ -28,7 +28,7 @@ export default {
     }
 
     .fade-enter-to {
-        @apply opacity-0;
+        @apply opacity-100;
     }
 
     .fade-leave-active {
