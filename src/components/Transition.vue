@@ -13,7 +13,18 @@
 
 <script>
 export default {
-    name: 'Transition'
+    name: 'Transition',
+    props: {
+        delayEnter: {
+            type: Number,
+            default: 100
+        },
+
+        delayLeave: {
+            type: Number,
+            default: 100
+        }
+    }
 }
 </script>
 
