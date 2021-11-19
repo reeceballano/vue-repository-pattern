@@ -37,6 +37,11 @@ export default {
         visible: {
             type: Boolean,
             default: false
+        },
+
+        overlay: {
+            type: Boolean,
+            default: true
         }
     },
 
