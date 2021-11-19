@@ -1,8 +1,10 @@
 <template>
     <div>
-        <AnimateTransition>
-            <div v-show="isVisible" class="modal-overlay"></div>
-        </AnimateTransition>
+        <div v-if="overlay">
+            <AnimateTransition>
+                <div v-show="isVisible" class="modal-overlay"></div>
+            </AnimateTransition>
+        </div>
 
         <AnimateTransition>
             <div v-show="isVisible" class="modal-container">
