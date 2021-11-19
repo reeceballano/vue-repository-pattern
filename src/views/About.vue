@@ -63,9 +63,9 @@
                     </template>
                 </Modal>
 
-                <Modal :visible="isVisibleModalTwo" @close-modal="isVisibleModalTwo = false" @on-close="onClose">
+                <Modal :overlay="false" :visible="isVisibleModalTwo" @close-modal="isVisibleModalTwo = false" @on-close="onClose">
                     <template #modalTitle>
-                        Modal 2 Title
+                        Modal no overlay
                     </template>
                     
                     <template #modalContent>
@@ -77,7 +77,7 @@
 
                     <template #modalButton>
                         <PrimaryButton type="button" @button-click="isVisibleModalTwo = !isVisibleModalTwo" bg="red">
-                            Show Modal 2
+                            Modal no overlay
                         </PrimaryButton>
 
                     </template>
