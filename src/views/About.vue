@@ -44,7 +44,6 @@
             <h2 class="text-xl mb-10">Modal Components</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
                 <Modal :visible="isVisibleModalOne" @close-modal="isVisibleModalOne = false">
                     <template #modalTitle>
                         Modal 1 Title
@@ -90,7 +89,7 @@
 
             <div class="grid grid-cols-1 gap-4">
                 <PrimaryInput>
-                    
+
                 </PrimaryInput>
             </div>
         </div>
