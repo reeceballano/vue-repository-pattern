@@ -1,6 +1,6 @@
 <template>
     <div class="form-field">
-        <input :type="type" :value="value" class="primary-input" :placeholder="placeholder" />
+        <input :type="type" :value="modelValue" @input="updateValue($event.target.value)" class="primary-input" :placeholder="placeholder" />
     </div>
 </template>
 
@@ -17,9 +17,19 @@ export default {
             default: 'text'
         },
 
-        value: {
+        modelValue: {
             type: String,
             default: ''
+        }
+    },
+    
+    setup(props, { emit }) {
+        const updateValue = (value) => {
+            emit('update:modelValue', value);
+        }
+
+        return {
+            updateValue
         }
     }
 }

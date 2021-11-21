@@ -88,9 +88,10 @@
             <h2 class="text-xl mb-10">Input Components</h2>
 
             <div class="grid grid-cols-1 gap-4">
-                <PrimaryInput placeholder="This a text.">
-
-                </PrimaryInput>
+                {{ userInfo }}
+                <PrimaryInput :modelValue="userInfo.name" @update:modelValue="userInfo.name = $event" placeholder="Your Name" />
+                <PrimaryInput type="email" :modelValue="userInfo.email" @update:modelValue="userInfo.email = $event" placeholder="Your Email" />
+                <PrimaryInput type="password" :modelValue="userInfo.password" @update:modelValue="userInfo.password = $event" placeholder="Password" />
             </div>
         </div>
         
@@ -134,12 +135,19 @@ export default {
             console.log('on close callback');
         }
 
+        const userInfo = ref({
+            name: '',
+            email: '',
+            password: ''
+        })
+
         return {
             tabs,
             buttonClick,
             isVisibleModalOne,
             isVisibleModalTwo,
-            onClose
+            onClose,
+            userInfo
         }
     },
 }
