@@ -1,6 +1,6 @@
 <template>
     <div class="form-field">
-        <input :type="type" class="primary-input" :placeholder="placeholder" />
+        <input :type="type" :value="value" class="primary-input" :placeholder="placeholder" />
     </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
         type: {
             type: String,
             default: 'text'
+        },
+
+        value: {
+            type: String,
+            default: ''
         }
     }
 }
