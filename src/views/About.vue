@@ -88,8 +88,10 @@
 
             <h2 class="text-xl mb-10">Input Components</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
+            <div class="grid grid-cols-1 gap-4">
+                <PrimaryInput>
+                    
+                </PrimaryInput>
             </div>
         </div>
         
@@ -103,6 +105,7 @@ import TabItem from '@/components/Tab/TabItem';
 import Divider from '@/components/Divider';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
+import PrimaryInput from '@/components/Inputs/PrimaryInput';
 
 export default {
     name: 'About',
@@ -111,7 +114,8 @@ export default {
         TabItem,
         Divider,
         PrimaryButton,
-        Modal
+        Modal,
+        PrimaryInput,
     },  
     setup() {
         const tabs = ref([
