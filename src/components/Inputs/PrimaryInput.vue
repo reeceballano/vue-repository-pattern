@@ -1,6 +1,6 @@
 <template>
     <div class="form-field">
-        <input type="text" class="primary-input" />
+        <input type="text" class="primary-input" placeholder="This is a text" />
     </div>
 </template>
 
