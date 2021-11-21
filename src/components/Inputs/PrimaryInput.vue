@@ -17,6 +17,7 @@ export default {
 
 <style scoped>
     .primary-input {
-        @apply bg-gray-100 w-full px-4 py-3 ring-2 ring-gray-100 focus-within:bg-white focus:outline-none transition-colors
+        @apply bg-gray-100 w-full px-4 py-3 ring-2 ring-gray-100
+                hover:bg-white focus-within:bg-white focus:outline-none transition-colors;
     }
 </style>
