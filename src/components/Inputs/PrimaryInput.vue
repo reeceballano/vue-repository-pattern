@@ -1,6 +1,6 @@
 <template>
     <div class="form-field">
-        <input type="text" class="primary-input" placeholder="This is a text" />
+        <input type="text" class="primary-input" :placeholder="placeholder" />
     </div>
 </template>
 
