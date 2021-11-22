@@ -92,6 +92,7 @@
                 <PrimaryInput :modelValue="userInfo.name" @update:modelValue="userInfo.name = $event" placeholder="Your Name" />
                 <PrimaryInput type="email" :modelValue="userInfo.email" @update:modelValue="userInfo.email = $event" placeholder="Your Email" />
                 <PrimaryInput type="password" :modelValue="userInfo.password" @update:modelValue="userInfo.password = $event" placeholder="Password" />
+                <PrimaryInput type="textarea" :modelValue="userInfo.message" @update:modelValue="userInfo.message = $event" placeholder="Message" />
             </div>
         </div>
         
@@ -138,7 +139,8 @@ export default {
         const userInfo = ref({
             name: '',
             email: '',
-            password: ''
+            password: '',
+            message: ''
         })
 
         return {
