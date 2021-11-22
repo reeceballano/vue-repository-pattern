@@ -1,6 +1,7 @@
 <template>
     <div class="form-field">
-        <input :type="type" :value="modelValue" @input="updateValue($event.target.value)" class="primary-input" :placeholder="placeholder" />
+        <textarea v-if="type == 'textarea'" class="primary-input"></textarea>
+        <input v-else :type="type" :value="modelValue" @input="updateValue($event.target.value)" class="primary-input" :placeholder="placeholder" />
     </div>
 </template>
 
