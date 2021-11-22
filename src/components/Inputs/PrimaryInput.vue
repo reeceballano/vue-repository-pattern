@@ -5,6 +5,7 @@
             class="primary-input"  
             :type="type" :value="modelValue" 
             @input="updateValue($event.target.value)"
+            :placeholder="placeholder" 
         >
         </textarea>
 
