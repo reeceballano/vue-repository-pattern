@@ -27,6 +27,12 @@ export default {
     components: {
         Icon
     },
+    
+    /***
+     * LOOP TITLE FROM CHILD ATTRIBUTE
+     * SET PROVIDE/INJECT TO PASS DATA FROM CHILD TO PARENT AND VICE VERSA
+     * THEN ADD EVENT TO SET THE CURRENT TAB INDEX
+     */
 
     setup(props) {
         const currentTab = ref(props.activeTab);
