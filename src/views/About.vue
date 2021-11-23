@@ -89,15 +89,17 @@
 
             <div class="grid grid-cols-1 gap-4">
                 {{ userInfo }}
-                <PrimaryInput
-                    v-for="field in userInfo"
-                    :key="field.id" 
-                    :type="field.type"
-                    :name="field.id"
-                    :modelValue="field.value" 
-                    @update:modelValue="field.value = $event" 
-                    :placeholder="field.label" 
-                />
+                <form>
+                    <PrimaryInput
+                        v-for="field in userInfo"
+                        :key="field.id" 
+                        :type="field.type"
+                        :name="field.id"
+                        :modelValue="field.value" 
+                        @update:modelValue="field.value = $event" 
+                        :placeholder="field.label" 
+                    />
+                </form>
             </div>
         </div>
         
