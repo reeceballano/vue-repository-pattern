@@ -2,7 +2,7 @@
     <div class="form-field">
         <textarea 
             v-if="type == 'textarea'" 
-            class="primary-input"  
+            class="primary-input" 
             :type="type" :value="modelValue" 
             @input="updateValue($event.target.value)"
             :placeholder="placeholder" 
@@ -24,6 +24,10 @@ export default {
     name: 'PrimaryInput',
     props: {
         placeholder: {
+            type: String
+        },
+
+        name: {
             type: String
         },
 
