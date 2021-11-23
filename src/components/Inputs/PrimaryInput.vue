@@ -3,6 +3,7 @@
         <textarea 
             v-if="type == 'textarea'" 
             class="primary-input" 
+            :name="name" 
             :type="type" :value="modelValue" 
             @input="updateValue($event.target.value)"
             :placeholder="placeholder" 
@@ -10,6 +11,7 @@
         </textarea>
 
         <input v-else 
+            :name="name"
             :type="type" 
             :value="modelValue" 
             @input="updateValue($event.target.value)" 
