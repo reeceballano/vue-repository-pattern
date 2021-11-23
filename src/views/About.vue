@@ -89,10 +89,15 @@
 
             <div class="grid grid-cols-1 gap-4">
                 {{ userInfo }}
-                <PrimaryInput :modelValue="userInfo.name" @update:modelValue="userInfo.name = $event" placeholder="Your Name" />
-                <PrimaryInput type="email" :modelValue="userInfo.email" @update:modelValue="userInfo.email = $event" placeholder="Your Email" />
-                <PrimaryInput type="password" :modelValue="userInfo.password" @update:modelValue="userInfo.password = $event" placeholder="Password" />
-                <PrimaryInput type="textarea" :modelValue="userInfo.message" @update:modelValue="userInfo.message = $event" placeholder="Message" />
+                <PrimaryInput
+                    v-for="field in userInfo"
+                    :key="field.id" 
+                    :type="field.type"
+                    :name="field.id"
+                    :modelValue="field.value" 
+                    @update:modelValue="field.value = $event" 
+                    :placeholder="field.label" 
+                />
             </div>
         </div>
         
@@ -136,12 +141,12 @@ export default {
             console.log('on close callback');
         }
 
-        const userInfo = ref({
-            name: '',
-            email: '',
-            password: '',
-            message: ''
-        })
+        const userInfo = ref([
+            { id: 'field-name', type: 'text', label: 'Name', value:'' },
+            { id: 'field-email', type: 'email', label: 'Email', value: '' },
+            { id: 'field-password', type: 'password', label: 'Password', value: '' },
+            { id: 'field-message', type: 'textarea', label: 'Message', value:'' },
+        ])
 
         return {
             tabs,
