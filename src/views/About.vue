@@ -99,6 +99,10 @@
                         @update:modelValue="field.value = $event" 
                         :placeholder="field.label" 
                     />
+                   
+                    <PrimaryButton type="submit" bg="blue">
+                        Submit
+                    </PrimaryButton>
                 </form>
             </div>
         </div>
