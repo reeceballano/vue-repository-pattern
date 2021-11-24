@@ -1,6 +1,6 @@
 <template>
     <div class="form-field">
-        <label :for="name">{{placeholder}}</label>
+        <label v-show="label" :for="name">{{placeholder}}</label>
         <textarea 
             v-if="type == 'textarea'" 
             class="primary-input" 
@@ -42,6 +42,11 @@ export default {
         modelValue: {
             type: String,
             default: ''
+        },
+
+        label: {
+            type: Boolean,
+            default: false
         }
     },
     
