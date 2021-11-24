@@ -96,6 +96,7 @@
                         :type="field.type"
                         :name="field.id"
                         :modelValue="field.value" 
+                        :label="true"
                         @update:modelValue="field.value = $event" 
                         :placeholder="field.label" 
                     />

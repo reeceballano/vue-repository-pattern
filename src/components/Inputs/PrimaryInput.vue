@@ -17,7 +17,7 @@
             :value="modelValue" 
             @input="updateValue($event.target.value)" 
             class="primary-input" 
-            :placeholder="placeholder" 
+            :placeholder="(label) ? '' : placeholder" 
         />
     </div>
 </template>
