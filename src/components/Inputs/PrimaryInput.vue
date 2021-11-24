@@ -7,7 +7,7 @@
             :name="name" 
             :type="type" :value="modelValue" 
             @input="updateValue($event.target.value)"
-            :placeholder="placeholder" 
+            :placeholder="(label) ? '' : placeholder"
         >
         </textarea>
 
