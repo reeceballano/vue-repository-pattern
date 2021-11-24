@@ -1,5 +1,6 @@
 <template>
     <div class="form-field">
+        <label :for="name">{{placeholder}}</label>
         <textarea 
             v-if="type == 'textarea'" 
             class="primary-input" 
