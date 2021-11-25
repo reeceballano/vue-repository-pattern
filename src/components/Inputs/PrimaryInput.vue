@@ -11,7 +11,7 @@
         >
         </textarea>
 
-        <input v-else 
+        <input v-if="type == 'text' || type == 'password' || type == 'email' || type == 'input' " 
             :name="name"
             :type="type" 
             :value="modelValue" 
