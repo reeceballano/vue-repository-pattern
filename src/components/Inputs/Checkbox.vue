@@ -1,6 +1,6 @@
 <template>
   <div class="checkbox-field">
-      
+      <input type="checkbox" />
   </div>
 </template>
 
