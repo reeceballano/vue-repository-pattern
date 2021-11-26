@@ -91,7 +91,15 @@
                 {{ userInfo }}
                 <form>
                     <div v-for="field in userInfo" :key="field.id" class="form-field">
+                        <Textarea 
+                            v-if="field.type == 'textarea'"
+                            :showLabel="false"
+                            :inputData="field" 
+                            :modelValue="field.value" 
+                            @update:modelValue="field.value = $event"
+                        />
                         <Input 
+                            v-if="field.type != 'textarea'"
                             :showLabel="false"
                             :inputData="field" 
                             :modelValue="field.value" 
@@ -117,6 +125,7 @@ import Divider from '@/components/Divider';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
+import Textarea from '@/components/Inputs/Textarea';
 
 export default {
     name: 'About',
@@ -127,6 +136,7 @@ export default {
         PrimaryButton,
         Modal,
         Input,
+        Textarea
     },  
     setup() {
         const tabs = ref([
