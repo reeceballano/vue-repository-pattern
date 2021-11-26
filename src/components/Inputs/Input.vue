@@ -1,11 +1,11 @@
 <template>
     <input 
-        :name="name"
-        :type="type" 
-        :value="modelValue" 
+        :name="inputData.name"
+        :type="inputData.type" 
+        :value="inputData.modelValue" 
         @input="updateValue($event.target.value)" 
         class="primary-input" 
-        :placeholder="(label) ? '' : placeholder" 
+        :placeholder="(inputData.label) ? '' : inputData.placeholder" 
     />
 </template>
 
@@ -17,34 +17,11 @@ export default {
             type: Object,
             default: () => {}
         },
-        
-        placeholder: {
-            type: String
-        },
-
-        name: {
-            type: String
-        },
-
-        type: {
-            type: String,
-            default: 'text'
-        },
-
-        modelValue: {
-            type: String,
-            default: ''
-        },
-
-        label: {
-            type: Boolean,
-            default: false
-        }
     },
     
     setup(props, { emit }) {
         const updateValue = (value) => {
-            emit('update:modelValue', value);
+            emit('update:inputData.modelValue', value);
         }
 
         return {
