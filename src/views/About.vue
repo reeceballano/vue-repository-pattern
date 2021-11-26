@@ -90,16 +90,14 @@
             <div class="grid grid-cols-1 gap-4">
                 {{ userInfo }}
                 <form>
-                    <PrimaryInput
-                        v-for="field in userInfo"
-                        :key="field.id" 
-                        :type="field.type"
-                        :name="field.id"
-                        :modelValue="field.value" 
-                        :label="true"
-                        @update:modelValue="field.value = $event" 
-                        :placeholder="field.label" 
-                    />
+                    <div v-for="field in userInfo" :key="field.id" class="form-field">
+                        <Input 
+                            :showLabel="false"
+                            :inputData="field" 
+                            :modelValue="field.value" 
+                            @update:modelValue="field.value = $event"
+                        />
+                    </div>
                    
                     <PrimaryButton type="submit" bg="blue">
                         Submit
@@ -118,7 +116,7 @@ import TabItem from '@/components/Tab/TabItem';
 import Divider from '@/components/Divider';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
-import PrimaryInput from '@/components/Inputs/PrimaryInput';
+import Input from '@/components/Inputs/Input';
 
 export default {
     name: 'About',
@@ -128,7 +126,7 @@ export default {
         Divider,
         PrimaryButton,
         Modal,
-        PrimaryInput,
+        Input,
     },  
     setup() {
         const tabs = ref([
