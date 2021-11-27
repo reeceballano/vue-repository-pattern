@@ -14,6 +14,10 @@ const fieldType = (type) => {
     if(type == 'checkbox') {
         return 'Checkbox';
     }
+
+    if(type == 'textarea') {
+        return 'Textarea';
+    }
 }
 
 export {
