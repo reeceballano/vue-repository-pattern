@@ -91,6 +91,7 @@
                 {{ userInfo }}
                 <form>
                     <div v-for="field in userInfo" :key="field.id" class="form-field">
+                        <!-- For dynamic component -->
                         <component
                             :is="fieldType(field.type)"
                             :showLabel="false"
@@ -99,7 +100,8 @@
                             @update:modelValue="field.value = $event"
                         >
                         </component>
-                        <!--
+
+                        <!-- For Single component
                         <Textarea 
                             v-if="field.type == 'textarea'"
                             :showLabel="false"
