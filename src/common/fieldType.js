@@ -1,22 +1,23 @@
 const fieldType = (type) => {
-    if(type == 'text' || type == 'email' || type == 'password' || type == 'address' || type == 'number') {
-        return 'Input';
-    }
+    switch(type) {
+        case 'text':
+        case 'email':
+        case 'password':
+        case 'address':
+        case 'number':
+            return 'Input';
+        
+        case 'select':
+            return 'Select';
 
-    if(type == 'select') {
-        return 'Select';
-    }
+        case 'radio':
+            return 'radio';
 
-    if(type == 'radio') {
-        return 'Radio';
-    }
-
-    if(type == 'checkbox') {
-        return 'Checkbox';
-    }
-
-    if(type == 'textarea') {
-        return 'Textarea';
+        case 'checkbox':
+            return 'Checkbox';
+            
+        case 'textarea':
+            return 'Textarea';
     }
 }
 
