@@ -91,6 +91,15 @@
                 {{ userInfo }}
                 <form>
                     <div v-for="field in userInfo" :key="field.id" class="form-field">
+                        <component
+                            :is="fieldType(field.type)"
+                            :showLabel="false"
+                            :inputData="field" 
+                            :modelValue="field.value" 
+                            @update:modelValue="field.value = $event"
+                        >
+                        </component>
+                        <!--
                         <Textarea 
                             v-if="field.type == 'textarea'"
                             :showLabel="false"
@@ -105,6 +114,7 @@
                             :modelValue="field.value" 
                             @update:modelValue="field.value = $event"
                         />
+                        -->
                     </div>
                    
                     <PrimaryButton type="submit" bg="blue">
