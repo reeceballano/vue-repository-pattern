@@ -94,7 +94,7 @@
                         <!-- For dynamic component -->
                         <component
                             :is="fieldType(field.type)"
-                            :showLabel="false"
+                            :showLabel="true"
                             :inputData="field" 
                             :modelValue="field.value" 
                             @update:modelValue="field.value = $event"
