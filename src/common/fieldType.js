@@ -1,18 +1,18 @@
-const fieldType = (type, component) => {
+const fieldType = (type) => {
     if(type == 'text' || type == 'email' || type == 'password' || type == 'address' || type == 'number') {
-        return component;
+        return 'Input';
     }
 
     if(type == 'select') {
-        return component;
+        return 'Select';
     }
 
     if(type == 'radio') {
-        return component;
+        return 'Radio';
     }
 
     if(type == 'checkbox') {
-        return component;
+        return 'Checkbox';
     }
 }
 

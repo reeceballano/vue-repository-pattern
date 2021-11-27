@@ -118,6 +118,7 @@
 </template>
 
 <script>
+import { fieldType } from '../common/fieldType';
 import { ref } from 'vue';
 import Tabs from '@/components/Tab/Tabs';
 import TabItem from '@/components/Tab/TabItem';
@@ -169,7 +170,8 @@ export default {
             isVisibleModalOne,
             isVisibleModalTwo,
             onClose,
-            userInfo
+            userInfo,
+            fieldType
         }
     },
 }
