@@ -1,6 +1,7 @@
 // STATE
 const state = {
-  buttonSettings: []  
+  buttonSettings: [],
+  inputSettings: [],  
 }
 
 // GETTERS
