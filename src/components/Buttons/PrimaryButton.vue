@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
+import { computed } from 'vue';
 import Icon from '@/components/Icon';
 
 export default {
@@ -50,11 +52,18 @@ export default {
     },
 
     setup(props, { emit }) {
+        const store = useStore();
+
+        const buttonSettings = computed(() => {
+            return store.getters['siteSetting/getButtonSetting'];
+        })
+
         const buttonClick = () => {
             emit('buttonClick');
         }
 
         return {
+            buttonSettings,
             buttonClick,
         }
     }
