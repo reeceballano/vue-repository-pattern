@@ -1,7 +1,11 @@
 // STATE
 const state = {
     siteSettings: [],
-    buttonSettings: [],
+    buttonSettings: {
+        color: 'text-white',
+        background: 'blue',
+        borderRadius: 'rounded'
+    },
     inputSettings: [],  
 }
 
