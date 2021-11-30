@@ -11,7 +11,9 @@ const state = {
 
 // GETTERS
 const getters = {
-
+    getButtonSetting: state => {
+        return state.buttonSettings;
+    },
 }
 
 // MUTATIONS
