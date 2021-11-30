@@ -46,6 +46,11 @@ export default {
             default: false
         },
 
+        bg: {
+            type: String,
+            default: 'blue'
+        }
+
     },
     components: {
         Icon,
