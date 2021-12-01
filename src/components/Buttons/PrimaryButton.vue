@@ -75,8 +75,6 @@ export default {
             emit('buttonClick');
         }
 
-        console.log(buttonBg.value)
-
         return {
             buttonSettings,
             buttonBg,
