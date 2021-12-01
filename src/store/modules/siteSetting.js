@@ -4,7 +4,8 @@ const state = {
     buttonSettings: {
         color: 'text-white',
         background: 'blue',
-        borderRadius: 'rounded'
+        borderRadius: 'rounded',
+        icon: 'MenuAlt2Icon'
     },
     inputSettings: [],  
 }
