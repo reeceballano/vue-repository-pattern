@@ -10,8 +10,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </a>
-
-                    <Search v-show="isSearch" :isFocus="isSearch" :count="5" />
+                    
+                    <Search v-if="isSearch" :isFocus="isSearch" :count="5" />
                 </template>
 
                 <template v-slot:mobile>
