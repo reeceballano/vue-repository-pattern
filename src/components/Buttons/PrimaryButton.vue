@@ -63,7 +63,6 @@ export default {
 
         const buttonBg = computed(() => {
             if(props.bg) {
-                console.log('props true', props.bg)
                 return props.bg;
             } else {
                 console.log('props store', buttonSettings.value.background)
