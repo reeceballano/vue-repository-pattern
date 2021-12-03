@@ -11,7 +11,7 @@
                         </svg>
                     </a>
                     
-                    <Search v-if="isSearch" :isFocus="isSearch" :count="5" />
+                    <Search v-if="isSearch" :isFocus="isSearch" :count="5" @close-search="closeSearch" />
                 </template>
 
                 <template v-slot:mobile>
@@ -82,6 +82,10 @@ export default {
             })
         }
 
+        const closeSearch = () => {
+            isSearch.value = false;
+        }
+
         onMounted(() => {
             store.dispatch('post/fetchPaginatedPosts');
             store.dispatch('comment/fetchComments');
@@ -94,7 +98,8 @@ export default {
             navLinks,
             isSearch,
             headerLayout,
-            isFixed
+            isFixed,
+            closeSearch,
         }
     },
 }

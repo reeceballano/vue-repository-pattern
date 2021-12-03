@@ -1,11 +1,12 @@
 <template>
-    <div class="search-overlay absolute top-0 w-full h-screen left-0"></div>
-    <div class="search-results absolute bg-white w-full left-0 top-16 p-10 z-50">
-        <input v-model="search" type="text" placeholder="Search" class="searchInput w-full border border-gray-100 px-5 py-3 focus:outline-none focus:ring-1"/>
+    <div class="search-container">
+        <div @click.prevent="closeSearch" class="search-overlay absolute top-0 w-full h-screen left-0"></div>
+        <div class="search-results absolute bg-white w-full left-0 top-16 p-10 z-50">
+            <input v-model="search" type="text" placeholder="Search" class="searchInput w-full border border-gray-100 px-5 py-3 focus:outline-none focus:ring-1"/>
 
-        <Post v-for="post in searchResults" :key="post.id" :post="post" /> 
+            <Post v-for="post in searchResults" :key="post.id" :post="post" /> 
+        </div>
     </div>
-
 </template> 
 
 <script>
@@ -31,16 +32,22 @@ export default {
         Post,
     },
 
-    setup(context) {
+    setup(props, context) {
         const store = useStore();
+
+        console.log(props.isFocus)
 
         const search = ref('');
 
         let searchResults = ref(null);
 
-        const setFocus = context;
+        const setFocus = computed(() => { return props.isFocus });
 
         const resultCount = context;
+
+        const closeSearch = () => {
+            context.emit('closeSearch');
+        }
 
         const posts = computed(() => {
             return store.getters['post/getAllPosts'];
@@ -60,23 +67,25 @@ export default {
             }
         })
 
-        watch(setFocus,(setFocus) => {
-            if(setFocus.isFocus) {
+        const setFocusSearchbox = () => {
+            if(setFocus.value) {
                 setTimeout(() => {
                     document.querySelector('.searchInput').focus(); // THIS IS NOT THE RIGHT WAY, I WILL REFACTOR THIS LATER
                 },  100)
             }
-        })
+        }
 
         onMounted(() => {
             store.dispatch('post/fetchPosts');
+            setFocusSearchbox();
         })
 
         return {
             search,
             posts,
             searchResults,
-            setFocus
+            setFocus,
+            closeSearch
         }
     },
 }
