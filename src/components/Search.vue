@@ -43,8 +43,6 @@ export default {
 
         const setFocus = computed(() => { return props.isFocus });
 
-        const resultCount = context;
-
         const closeSearch = () => {
             context.emit('closeSearch');
         }
@@ -62,7 +60,7 @@ export default {
                     break;
 
                 default:
-                    searchResults.value = filtered.slice(0,resultCount.count);
+                    searchResults.value = filtered.slice(0,props.count);
                     break;
             }
         })
