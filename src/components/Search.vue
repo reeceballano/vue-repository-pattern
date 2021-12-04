@@ -1,7 +1,7 @@
 <template>
     <div class="search-container">
         <div @click.prevent="closeSearch" class="search-overlay absolute top-0 w-full h-screen left-0"></div>
-        <div class="search-results absolute bg-white w-full left-0 top-16 p-10 z-50 overflow-y-auto max-h-96">
+        <div class="search-results absolute bg-white w-full left-0 top-16 p-10 z-50 overflow-y-auto max-h-96 shadow-2xl rounded-b-lg">
             <input v-model="search" type="text" placeholder="Search" class="searchInput w-full border border-gray-100 px-5 py-3 focus:outline-none focus:ring-1"/>
 
             <Post v-for="post in searchResults" :key="post.id" :post="post" /> 
