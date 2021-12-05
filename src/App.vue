@@ -11,7 +11,9 @@
                         </svg>
                     </a>
                     
-                    <Search v-if="isSearch" :isFocus="isSearch" :count="5" @close-search="closeSearch" />
+                    <AnimateTransition>
+                        <Search v-if="isSearch" :isFocus="isSearch" :count="5" @close-search="closeSearch" />
+                    </AnimateTransition>
                 </template>
 
                 <template v-slot:mobile>
@@ -38,6 +40,7 @@ import Nav from '@/components/Header/Nav';
 import NavLink from '@/components/Header/NavLink';
 import Hero from '@/components/Header/Hero';
 import Search from '@/components/Search';
+import AnimateTransition from '@/components/AnimateTransition';
 
 export default {
     components: {
@@ -45,7 +48,8 @@ export default {
         Nav,
         NavLink,
         Hero,
-        Search
+        Search,
+        AnimateTransition
     },
 
     setup() {
