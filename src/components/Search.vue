@@ -67,9 +67,7 @@ export default {
 
         const setFocusSearchbox = () => {
             if(setFocus.value) {
-                setTimeout(() => {
-                    document.querySelector('.searchInput').focus(); // THIS IS NOT THE RIGHT WAY, I WILL REFACTOR THIS LATER
-                },  50)
+                document.querySelector('.searchInput').focus(); // THIS IS NOT THE RIGHT WAY, I WILL REFACTOR THIS LATER
             }
         }
 
