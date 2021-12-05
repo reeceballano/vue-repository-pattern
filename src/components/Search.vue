@@ -14,6 +14,10 @@ import { ref, computed, onMounted, watch } from 'vue';
 import { useStore } from 'vuex';
 import Post from '@/components/Post';
 
+// TODO LIST
+/**
+ *  ADD RESET SEARCH BUTTON
+ */
 export default {
     name: 'Search',
 
