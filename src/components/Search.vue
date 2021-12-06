@@ -3,7 +3,7 @@
         <div @click.prevent="closeSearch" class="search-overlay absolute top-0 w-full h-screen left-0"></div>
         <div class="search-results absolute bg-white w-full left-0 top-16 p-10 z-50 overflow-y-auto max-h-96 shadow-2xl rounded-b-lg">
             <input v-model="search" type="text" placeholder="Search" class="searchInput w-full border border-gray-100 px-5 py-3 focus:outline-none focus:ring-1"/>
-            <Icon v-if="search" icon="BackspaceIcon" class="absolute right-16 top-14 h-5 w-5 cursor-pointer z-40 ml-2"/>
+            <Icon v-if="search" @click.prevent="clearSearch" icon="BackspaceIcon" class="absolute right-16 top-14 h-5 w-5 cursor-pointer z-40 ml-2"/>
             <Post v-for="post in searchResults" :key="post.id" :post="post" /> 
         </div>
     </div>
@@ -57,6 +57,16 @@ export default {
             return store.getters['post/getAllPosts'];
         })
 
+        const setFocusSearchbox = () => {
+            if(setFocus.value) {
+                document.querySelector('.searchInput').focus(); // THIS IS NOT THE RIGHT WAY, I WILL REFACTOR THIS LATER
+            }
+        }
+
+        const clearSearch = () => {
+            search.value = '';
+        }
+
         watch(search, (search) => {
             const filtered = store.getters['post/getAllPosts'].filter(item => item.title.includes(search));
 
@@ -71,11 +81,6 @@ export default {
             }
         })
 
-        const setFocusSearchbox = () => {
-            if(setFocus.value) {
-                document.querySelector('.searchInput').focus(); // THIS IS NOT THE RIGHT WAY, I WILL REFACTOR THIS LATER
-            }
-        }
 
         onMounted(() => {
             store.dispatch('post/fetchPosts');
@@ -87,7 +92,8 @@ export default {
             posts,
             searchResults,
             setFocus,
-            closeSearch
+            closeSearch,
+            clearSearch
         }
     },
 }
