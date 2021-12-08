@@ -92,6 +92,7 @@
                 <form>
                     <div v-for="field in userInfo" :key="field.id" class="form-field">
                         <!-- For dynamic component -->
+                        <!-- @props options: Input fields with Array e.g Checkbox, Radio, Select -->
                         <component
                             :is="fieldType(field.type)"
                             :showLabel="true"
