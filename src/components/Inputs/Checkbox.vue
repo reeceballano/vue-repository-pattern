@@ -3,6 +3,7 @@
     <div v-for="(option,i) in options" :key="i" class="checkbox-container">
         <label v-show="showLabel" :for="inputData.name" class="block mb-2">{{option}}</label>
         <input
+            v-model="collectedValues"
             :name="inputData.name"
             :type="inputData.type" 
             :value="option" 
@@ -39,15 +40,17 @@ export default {
     },
 
     setup(props, { emit }) {
+        // ASSIGN A MODEL FOR THE REFERENCE
         const collectedValues = ref([]);
 
-        const updateValue = (value) => {
-            collectedValues.value.push(value)
-            emit('update:modelValue', collectedValues);
+        const updateValue = () => {
+            // WE NEED TO MAP THE VALUES IN THE collectedValues ref
+            emit('update:modelValue', collectedValues.value);
         }
 
         return {
             updateValue,
+            collectedValues
         }
     }
 }
