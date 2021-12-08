@@ -1,7 +1,6 @@
 <template>
     <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
-    <div v-for="(option,i) in options" :key="i" class="checkbox-container">
-        <label v-show="showLabel" :for="inputData.name" class="block mb-2">{{option}}</label>
+    <div v-for="(option,i) in options" :key="i" class="checkbox-container flex items-center">
         <input
             v-model="collectedValues"
             :name="inputData.name"
@@ -11,6 +10,7 @@
             class="" 
             :placeholder="(showLabel) ? '' : inputData.label" 
         />
+        <label v-show="showLabel" :for="inputData.name" class="block">{{option}}</label>
     </div>
 </template>
 
