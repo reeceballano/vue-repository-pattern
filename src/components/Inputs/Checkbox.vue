@@ -1,4 +1,5 @@
 <template>
+    <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
     <div v-for="(option,i) in options" :key="i" class="checkbox-container">
         <label v-show="showLabel" :for="inputData.name" class="block mb-2">{{option}}</label>
         <input
