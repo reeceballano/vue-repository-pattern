@@ -27,6 +27,10 @@ export default {
         showLabel: {
             type: Boolean,
             default: false
+        },
+
+        options: {
+            type: Array
         }
     },
     
