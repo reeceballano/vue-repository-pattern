@@ -22,6 +22,11 @@ export default {
         modelValue: {
             type: Array
         },
+
+        showLabel: {
+            type: Boolean,
+            default: false
+        },
     }
 }
 </script>
