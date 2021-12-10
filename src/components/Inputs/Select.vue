@@ -18,6 +18,10 @@ export default {
             type: Object,
             default: () => {}
         },
+
+        modelValue: {
+            type: Array
+        },
     }
 }
 </script>
