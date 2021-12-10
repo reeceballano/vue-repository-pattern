@@ -12,7 +12,13 @@
 
 <script>
 export default {
-
+    name: 'Select',
+    props: {
+        inputData: {
+            type: Object,
+            default: () => {}
+        },
+    }
 }
 </script>
 
