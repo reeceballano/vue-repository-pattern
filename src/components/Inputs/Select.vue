@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
     name: 'Select',
     props: {
@@ -30,6 +32,15 @@ export default {
 
         options: {
             type: Array
+        }
+    },
+
+    setup(props, { emit }) {
+        const updateValue = (value) => {
+            emit('update:modelValue', value);
+        }
+        return {
+            updateValue
         }
     }
 }
