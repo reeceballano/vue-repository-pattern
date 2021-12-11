@@ -1,7 +1,7 @@
 <template>
     <div class="select-container">
         <select>
-            <option v-for="(option,i) in options" :value="option">{{ option }}</option>
+            <option v-for="(option,i) in options" :key="i" :value="option">{{ option }}</option>
         </select>
     </div>
 </template>
