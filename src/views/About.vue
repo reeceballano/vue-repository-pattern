@@ -142,6 +142,7 @@ import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
 import Textarea from '@/components/Inputs/Textarea';
 import Checkbox from '@/components/Inputs/Checkbox';
+import Select from '@/components/Inputs/Select';
 
 export default {
     name: 'About',
@@ -154,6 +155,7 @@ export default {
         Input,
         Textarea,
         Checkbox,
+        Select,
     },  
     setup() {
         const tabs = ref([
