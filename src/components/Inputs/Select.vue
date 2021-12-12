@@ -1,5 +1,6 @@
 <template>
     <div class="select-container">
+        <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
         <select>
             <option v-for="(option,i) in options" :key="i" :value="option">{{ option }}</option>
         </select>
