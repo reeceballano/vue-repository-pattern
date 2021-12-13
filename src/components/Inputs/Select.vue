@@ -4,7 +4,7 @@
         <select 
             :name="inputData.name"
             @change="updateValue($event.target.value)" 
-            class="border px-2.5 py-2"
+            class="border px-2.5 py-2 focus-within:outline-none"
         >
             <option v-for="(option,i) in options" :key="i" :value="option">{{ option }}</option>
         </select>
