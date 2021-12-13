@@ -3,7 +3,8 @@
         <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
         <select 
             :name="inputData.name"
-             @change="updateValue($event.target.value)" 
+            @change="updateValue($event.target.value)" 
+            class="border px-2.5 py-2"
         >
             <option v-for="(option,i) in options" :key="i" :value="option">{{ option }}</option>
         </select>
