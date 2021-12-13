@@ -1,6 +1,6 @@
 <template>
     <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
-    <div class="checkbox-container flex justify-around">
+    <div class="checkbox-container flex justify-around py-1.5 h-px[2500]">
         <div v-for="(option,i) in options" :key="i" class="flex items-center">
             <input
                 v-model="collectedValues"
