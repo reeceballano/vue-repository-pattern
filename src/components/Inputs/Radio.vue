@@ -12,6 +12,12 @@
 <script>
 export default {
     name: 'Radio',
+    props: {
+        inputData: {
+            type: Object,
+            default: () => {}
+        },
+    }
 }
 </script>
 
