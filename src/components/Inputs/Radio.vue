@@ -17,6 +17,10 @@ export default {
             type: Object,
             default: () => {}
         },
+
+        modelValue: {
+            type: String
+        },
     }
 }
 </script>
