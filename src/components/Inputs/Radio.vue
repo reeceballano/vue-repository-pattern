@@ -27,6 +27,9 @@ export default {
             default: false
         },
 
+        options: {
+            type: Array
+        }
     }
 }
 </script>
