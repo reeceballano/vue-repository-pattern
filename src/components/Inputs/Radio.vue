@@ -32,9 +32,9 @@ export default {
         }
     },
 
-    setup() {
+    setup(props, { emit }) {
         return {
-            
+
         }
     }
 }
