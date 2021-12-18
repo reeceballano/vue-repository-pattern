@@ -33,8 +33,12 @@ export default {
     },
 
     setup(props, { emit }) {
+        const updateValue = (value) => {
+            emit('update:modelValue', value);
+        }
+        
         return {
-
+            updateValue
         }
     }
 }
