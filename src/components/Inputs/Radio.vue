@@ -1,6 +1,6 @@
 <template>
     <div class="radio-container">
-        <label for="option1">Option 1</label>
+        <label v-show="showLabel" for="option1">Option 1</label>
         <input 
             :type="inputData.type" 
             name="option1" 
