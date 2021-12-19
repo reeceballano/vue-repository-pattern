@@ -4,7 +4,7 @@
         <input 
             :type="inputData.type" 
             :name="inputData.name" 
-            value="option 1"
+            :value="modelValue"
             class="primary-input"  
         />
     </div>
