@@ -4,7 +4,8 @@
         <input 
             :type="inputData.type" 
             name="option1" 
-            value="option 1" 
+            value="option 1"
+            class="primary-input"  
         />
     </div>
 </template>
