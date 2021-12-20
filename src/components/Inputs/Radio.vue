@@ -5,6 +5,7 @@
             :type="inputData.type" 
             :name="inputData.name" 
             :value="modelValue"
+            @change="updateValue($event.target.value)"
             class="primary-input"  
         />
     </div>
