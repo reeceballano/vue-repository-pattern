@@ -8,9 +8,9 @@
                 :value="radio"
                 v-model="picked"
                 @change="updateValue($event.target.value)"
-                class="" 
+                class="mr-1.5"
             />
-            <label :for="radio">{{ radio }}</label>
+            <label :for="radio" class="block">{{ radio }}</label>
         </div>
     </div>
 </template>
