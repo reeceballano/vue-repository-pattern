@@ -1,15 +1,17 @@
 <template>
     <label v-show="showLabel" for="option1">{{ inputData.label }}</label>
-    {{ modelValue }}
-    <div v-for="(radio, i) in options" :key="i"  class="radio-container">
-        <input 
-            :type="inputData.type" 
-            :name="radio" 
-            :value="radio"
-            v-model="picked"
-            @change="updateValue($event.target.value)"
-            class="primary-input" 
-        />
+    <div class="radio-container  flex justify-around py-1.5">
+        <div v-for="(radio, i) in options" :key="i" class="flex items-center">
+            <input 
+                :type="inputData.type" 
+                :name="radio" 
+                :value="radio"
+                v-model="picked"
+                @change="updateValue($event.target.value)"
+                class="" 
+            />
+            <label :for="radio">{{ radio }}</label>
+        </div>
     </div>
 </template>
 
