@@ -1,6 +1,6 @@
 <template>
+    <label v-show="showLabel" for="option1">{{ inputData.label }}</label>
     <div class="radio-container">
-        <label v-show="showLabel" for="option1">{{ inputData.label }}</label>
         <input 
             :type="inputData.type" 
             :name="inputData.name" 
