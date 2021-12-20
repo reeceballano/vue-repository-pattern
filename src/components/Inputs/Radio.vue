@@ -1,17 +1,21 @@
 <template>
     <label v-show="showLabel" for="option1">{{ inputData.label }}</label>
-    <div class="radio-container">
+    {{ modelValue }}
+    <div v-for="(radio, i) in options" :key="i"  class="radio-container">
         <input 
             :type="inputData.type" 
-            :name="inputData.name" 
-            :value="modelValue"
+            :name="radio" 
+            :value="radio"
+            v-model="picked"
             @change="updateValue($event.target.value)"
-            class="primary-input"  
+            class="primary-input" 
         />
     </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
     name: 'Radio',
     props: {
@@ -38,9 +42,12 @@ export default {
         const updateValue = (value) => {
             emit('update:modelValue', value);
         }
+
+        const picked = ref(null);
         
         return {
-            updateValue
+            updateValue,
+            picked
         }
     }
 }

@@ -103,6 +103,8 @@
                         >
                         </component>
 
+                        
+
                         <!-- For Single component
                         <Textarea 
                             v-if="field.type == 'textarea'"
@@ -194,7 +196,7 @@ export default {
             isVisibleModalTwo,
             onClose,
             userInfo,
-            fieldType
+            fieldType,
         }
     },
 }
