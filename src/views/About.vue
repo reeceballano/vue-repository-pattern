@@ -157,6 +157,7 @@ export default {
         Textarea,
         Checkbox,
         Select,
+        Radio
     },  
     setup() {
         const tabs = ref([
