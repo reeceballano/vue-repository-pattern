@@ -143,6 +143,7 @@ import Input from '@/components/Inputs/Input';
 import Textarea from '@/components/Inputs/Textarea';
 import Checkbox from '@/components/Inputs/Checkbox';
 import Select from '@/components/Inputs/Select';
+import Radio from '@/components/Inputs/Radio';
 
 export default {
     name: 'About',
