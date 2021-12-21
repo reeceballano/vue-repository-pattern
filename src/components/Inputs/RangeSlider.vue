@@ -4,7 +4,10 @@
 
 <script>
 export default {
-    name: 'RangeSlider'
+    name: 'RangeSlider',
+    props: {
+        
+    }
 }
 </script>
 
