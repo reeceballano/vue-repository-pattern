@@ -16,6 +16,11 @@ export default {
         modelValue: {
             type: String
         },
+
+        showLabel: {
+            type: Boolean,
+            default: false
+        },
     }
 }
 </script>
