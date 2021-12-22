@@ -1,5 +1,7 @@
 <template>
-    <div class="range-slider"></div>
+    <div class="range-slider">
+        <input type="range" />
+    </div>
 </template>
 
 <script>
