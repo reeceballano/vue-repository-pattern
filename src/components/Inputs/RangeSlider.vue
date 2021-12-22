@@ -11,7 +11,11 @@ export default {
         inputData: {
             type: Object,
             default: () => {}
-        },        
+        },
+        
+        modelValue: {
+            type: String
+        },
     }
 }
 </script>
