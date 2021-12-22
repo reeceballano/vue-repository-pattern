@@ -21,6 +21,10 @@ export default {
             type: Boolean,
             default: false
         },
+
+        options: {
+            type: Array
+        }
     }
 }
 </script>
