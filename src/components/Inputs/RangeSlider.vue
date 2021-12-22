@@ -8,7 +8,10 @@
 export default {
     name: 'RangeSlider',
     props: {
-        
+        inputData: {
+            type: Object,
+            default: () => {}
+        },        
     }
 }
 </script>
