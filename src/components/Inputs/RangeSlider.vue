@@ -1,6 +1,6 @@
 <template>
     <div class="range-slider">
-        <input type="range" />
+        <input name="range" type="range" />
     </div>
 </template>
 
