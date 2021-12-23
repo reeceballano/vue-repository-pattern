@@ -26,6 +26,10 @@ export default {
         options: {
             type: Array
         }
+    },
+
+    setup() {
+        
     }
 }
 </script>
