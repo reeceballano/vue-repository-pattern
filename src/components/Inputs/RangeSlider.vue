@@ -1,7 +1,7 @@
 <template>
     <div class="range-slider">
         <label for="range">Range Slider</label>
-        <input name="range" type="range" />
+        <input name="range" type="range" min="1" max="100" />
     </div>
 </template>
 
