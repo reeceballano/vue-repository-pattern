@@ -1,6 +1,6 @@
 <template>
     <div class="range-slider">
-        <label class="block mb-2">{{inputData.label}}</label>
+        <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
         <input 
             :name="inputData.name" 
             type="range" 
