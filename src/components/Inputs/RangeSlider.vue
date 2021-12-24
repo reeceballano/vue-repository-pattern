@@ -1,8 +1,12 @@
 <template>
     <div class="range-slider">
-        <label 
-        class="block mb-2">{{inputData.label}}</label>
-        <input :name="inputData.name" type="range" min="1" max="100" />
+        <label class="block mb-2">{{inputData.label}}</label>
+        <input 
+            :name="inputData.name" 
+            type="range" 
+            min="1" 
+            max="100" 
+        />
     </div>
 </template>
 
