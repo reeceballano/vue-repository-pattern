@@ -3,7 +3,7 @@
         <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
         <input 
             :name="inputData.name" 
-
+            @input="updateValue($event.target.value)"
             type="range" 
             min="1" 
             max="100" 
