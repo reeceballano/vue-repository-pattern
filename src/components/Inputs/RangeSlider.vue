@@ -6,6 +6,7 @@
             type="range" 
             min="1" 
             max="100" 
+            class="w-full"
         />
     </div>
 </template>
