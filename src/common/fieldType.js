@@ -15,6 +15,9 @@ const fieldType = (type) => {
 
         case 'checkbox':
             return 'Checkbox';
+
+        case 'range':
+            return 'RangeSlider';    
             
         case 'textarea':
             return 'Textarea';
