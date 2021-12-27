@@ -3,6 +3,7 @@
         <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
         <input 
             :name="inputData.name" 
+
             type="range" 
             min="1" 
             max="100" 
@@ -34,8 +35,14 @@ export default {
         }
     },
 
-    setup() {
-        
+    setup(props, { emit }) {
+        const updateValue = (value) => {
+            emit('update:modelValue', value);
+        }
+
+        return {
+            updateValue
+        }
     }
 }
 </script>
