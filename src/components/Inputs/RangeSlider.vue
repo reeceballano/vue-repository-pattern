@@ -1,12 +1,12 @@
 <template>
     <div class="range-slider">
-        <label v-show="showLabel" class="block mb-2">{{inputData.label}}</label>
+        <label v-show="showLabel" class="block mb-2">{{inputData.label}}: <span>{{modelValue}}</span></label>
         <input 
             :name="inputData.name" 
             @input="updateValue($event.target.value)"
             type="range" 
             min="1" 
-            max="100" 
+            max="10000" 
             class="w-full"
         />
     </div>
