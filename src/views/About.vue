@@ -146,6 +146,7 @@ import Textarea from '@/components/Inputs/Textarea';
 import Checkbox from '@/components/Inputs/Checkbox';
 import Select from '@/components/Inputs/Select';
 import Radio from '@/components/Inputs/Radio';
+import RangeSlider from '@/components/Inputs/RangeSlider';
 
 export default {
     name: 'About',
@@ -159,7 +160,8 @@ export default {
         Textarea,
         Checkbox,
         Select,
-        Radio
+        Radio,
+        RangeSlider
     },  
     setup() {
         const tabs = ref([
