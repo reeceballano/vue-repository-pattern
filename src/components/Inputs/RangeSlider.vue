@@ -1,6 +1,6 @@
 <template>
     <div class="range-slider">
-        <label v-show="showLabel" class="block mb-2">{{inputData.label}}: <span>{{modelValue}}</span></label>
+        <label v-show="showLabel" class="block mb-2">{{inputData.label}}: <span>{{modelValue || 10}}</span></label>
         <input 
             :name="inputData.name" 
             @input="updateValue($event.target.value)"
