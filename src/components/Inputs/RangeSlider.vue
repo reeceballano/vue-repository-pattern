@@ -1,6 +1,5 @@
 <template>
     <div class="range-slider">
-        {{ sliderValue }}
         <label v-show="showLabel" class="block mb-2">{{inputData.label}}: <span>{{sliderValue}}</span></label>
         <input 
             :name="inputData.name" 
