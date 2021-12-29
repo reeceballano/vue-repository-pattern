@@ -1,6 +1,6 @@
 <template>
     <div class="range-slider">
-        <label v-show="showLabel" class="block mb-2">*ON DEVELOPMENT* {{inputData.label}}: <span>{{sliderValue}}, {{sliderValueTwo}}</span></label>
+        <label v-show="showLabel" class="block mb-2">*ON DEVELOPMENT* {{inputData.label}}: <span>{{modelValue}}</span></label>
         
         <!-- TODO
             - add dual handles
@@ -19,10 +19,12 @@
             />
             <input 
                 name="rangeTwo" 
+                @input="updateValue"
                 type="range" 
                 :min="options[0]" 
                 :max="options[1]" 
                 class="w-full"
+                v-model="sliderValueTwo"
             />
         </div>
     </div>
@@ -55,7 +57,7 @@ export default {
 
     setup(props, { emit }) {
         const updateValue = () => {
-            emit('update:modelValue', Number(sliderValue.value));
+            emit('update:modelValue', [Number(sliderValue.value), Number(sliderValueTwo.value)]);
         }
 
         const sliderValue = ref(0);
