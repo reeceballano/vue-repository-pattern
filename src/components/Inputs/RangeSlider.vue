@@ -1,6 +1,6 @@
 <template>
     <div class="range-slider">
-        <label v-show="showLabel" class="block mb-2">{{inputData.label}}: <span>{{sliderValue}}</span></label>
+        <label v-show="showLabel" class="block mb-2">*ON DEVELOPMENT* {{inputData.label}}: <span>{{sliderValue}}, {{sliderValueTwo}}</span></label>
         
         <!-- TODO
             - add dual handles
@@ -59,10 +59,12 @@ export default {
         }
 
         const sliderValue = ref(0);
+        const sliderValueTwo = ref(props.options[1]);
 
         return {
             updateValue,
             sliderValue,
+            sliderValueTwo
         }
     }
 }
