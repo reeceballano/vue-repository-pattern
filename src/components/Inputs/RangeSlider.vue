@@ -4,7 +4,7 @@
         
         <!-- TODO
             - add dual handles - DONE!
-            - modelValue should be in array[min,max]
+            - modelValue should be in array[min,max] - DONE!
         -->
 
         <div class="range-wrapper relative">
