@@ -14,7 +14,7 @@
                 type="range" 
                 :min="options[0]" 
                 :max="options[1]" 
-                class="w-full"
+                class="w-full absolute outline-none h-1"
                 v-model="sliderValue"
             />
             <input 
@@ -23,7 +23,7 @@
                 type="range" 
                 :min="options[0]" 
                 :max="options[1]" 
-                class="w-full"
+                class="w-full absolute outline-none h-0"
                 v-model="sliderValueTwo"
             />
         </div>
