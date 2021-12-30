@@ -5,6 +5,8 @@
         <!-- TODO
             - add dual handles - DONE!
             - modelValue should be in array[min,max] - DONE!
+            - add range background
+            - add value on handles
         -->
 
         <div class="range-wrapper relative">
