@@ -7,7 +7,7 @@
             - modelValue should be in array[min,max]
         -->
 
-        <div class="range-wrapper">
+        <div class="range-wrapper relative">
             <input 
                 :name="inputData.name" 
                 @input="updateValue"
