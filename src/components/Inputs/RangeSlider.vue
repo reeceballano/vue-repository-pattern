@@ -3,7 +3,7 @@
         <label v-show="showLabel" class="block mb-2">*ON DEVELOPMENT* {{inputData.label}}: <span>{{modelValue}}</span></label>
         
         <!-- TODO
-            - add dual handles
+            - add dual handles - DONE!
             - modelValue should be in array[min,max]
         -->
 
