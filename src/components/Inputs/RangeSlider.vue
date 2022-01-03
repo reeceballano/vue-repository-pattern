@@ -5,7 +5,7 @@
         <!-- TODO
             - add dual handles - DONE!
             - modelValue should be in array[min,max] - DONE!
-            - add range background
+            - add range background- DONE!
             - add value on handles
         -->
 
