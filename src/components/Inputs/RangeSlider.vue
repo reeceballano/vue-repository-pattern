@@ -5,8 +5,9 @@
         <!-- TODO
             - add dual handles - DONE!
             - modelValue should be in array[min,max] - DONE!
-            - add range background- DONE!
+            - add range background - DONE!
             - add value on handles
+            - avoid range to overlap
         -->
 
         <div class="range-wrapper relative h-16">
