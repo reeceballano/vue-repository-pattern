@@ -1,5 +1,5 @@
 <template>
-    <div class="post-item border-b border-gray-200 sm:py-12 md:py-16">
+    <div class="post-item border-b border-gray-200 sm:py-12 md:py-16 pb-10 mb-10">
         
         <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8">
             <div class="py-10 px-5 md:px-0 md:py-0 relative z-10 col-start-1 row-start-1 pb-3 bg-gradient-to-t from-black sm:bg-none">
