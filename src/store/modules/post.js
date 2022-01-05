@@ -150,7 +150,7 @@ const actions = {
             setTimeout(() => {
                 commit('SET_POST', data);
                 commit('SET_IS_LOADING_POST', false);
-            }, 500);
+            }, 100);
         } catch (error) {
             console.log(error)
         }
