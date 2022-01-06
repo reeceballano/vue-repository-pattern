@@ -1,7 +1,9 @@
 <template>
     <div class="login">
         <section class="section">
-            <h2 class="text-2xl mb-5">Login</h2>
+            <div class="custom-container">
+                <h2 class="text-2xl mb-5">Login</h2>
+            </div>
         </section>
     </div>
 </template>
