@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { ref } from 'vue';
 
 export default {
     name: 'RangeSlider',
@@ -65,19 +65,6 @@ export default {
 
         const sliderValue = ref(0);
         const sliderValueTwo = ref(props.options[1]);
-
-        watch(
-            () => sliderValueTwo.value, 
-            () => {
-                /**
-                 * NOT THE BEST SOLUTION HERE
-                 */
-                const rangeSliders = document.querySelectorAll('.range-wrapper input');
-                rangeSliders[0].setAttribute("max",sliderValueTwo.value);
-            }, {
-            // lazy: true // immediate: false
-            }
-        )
 
         return {
             updateValue,
