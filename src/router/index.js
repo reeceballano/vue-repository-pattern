@@ -40,6 +40,13 @@ const routes = [{
         name: 'Suspense',
         component: () =>
             import ( /* webpackChunkName: "suspense" */ '../views/Suspense.vue')
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: () => 
+            import ( /* webpackChunkName: "login" */ '../views/Login.vue'),
+        meta: { layout: 'default-layout', header: 'half' }
     }
 ]
 
