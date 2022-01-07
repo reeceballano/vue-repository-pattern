@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <Header>
+        <Header v-show="layout != 'login-layout'">
             <Nav :class="[(isFixed) ? 'fixed w-full' : '']">
                 <template v-slot:desktop>
                     <NavLink v-for="link in navLinks" :key="link.id" :link="link" />
