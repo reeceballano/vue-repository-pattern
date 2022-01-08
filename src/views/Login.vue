@@ -55,7 +55,6 @@ import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
 import Textarea from '@/components/Inputs/Textarea';
-import Checkbox from '@/components/Inputs/Checkbox';
 
 export default {
     name: 'LoginView',
@@ -64,7 +63,6 @@ export default {
         Modal,
         Input,
         Textarea,
-        Checkbox,
     },
 
     setup() {
@@ -73,7 +71,6 @@ export default {
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
             { id: 'field-message', type: 'textarea', label: 'Message', value:'' },
-            { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:[], option:['Developer', 'Designer', 'DevOp'] },
         ])
 
         return {
