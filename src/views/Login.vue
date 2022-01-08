@@ -39,7 +39,7 @@
                         </div>
                     
                         <PrimaryButton type="submit" bg="blue">
-                            Submit
+                            Login
                         </PrimaryButton>
                     </form>
                 </div>
