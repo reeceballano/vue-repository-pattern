@@ -56,7 +56,6 @@ import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
 import Textarea from '@/components/Inputs/Textarea';
 import Checkbox from '@/components/Inputs/Checkbox';
-import Select from '@/components/Inputs/Select';
 
 export default {
     name: 'LoginView',
@@ -66,7 +65,6 @@ export default {
         Input,
         Textarea,
         Checkbox,
-        Select,
     },
 
     setup() {
@@ -76,7 +74,6 @@ export default {
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
             { id: 'field-message', type: 'textarea', label: 'Message', value:'' },
             { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:[], option:['Developer', 'Designer', 'DevOp'] },
-            { id: 'field-select', type: 'select', label: 'Salary Expectation', value:'', option:['50000-70000', '70000-90000', '90000-120000'] },
         ])
 
         return {
