@@ -1,8 +1,8 @@
 <template>
-    <div class="login bg-gradient-to-r from-indigo-500 login-layout to-indigo-900">
+    <div class="login">
         <section class="section">
             <div class="custom-container">
-                <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl">
+                <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
                     <h2 class="text-2xl mb-5">Login</h2>
                     <form>
                         <div v-for="field in userInfo" :key="field.id" class="form-field">
@@ -38,7 +38,7 @@
                             -->
                         </div>
                     
-                        <PrimaryButton type="submit" bg="blue">
+                        <PrimaryButton type="submit" bg="indigo">
                             Login
                         </PrimaryButton>
                     </form>
@@ -78,5 +78,7 @@ export default {
 </script>
 
 <style>
-
+.login-layout {
+    @apply bg-gradient-to-r from-indigo-500 to-indigo-900;
+}
 </style>
