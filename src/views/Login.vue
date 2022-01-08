@@ -1,8 +1,8 @@
 <template>
-    <div class="login">
+    <div class="login bg-gradient-to-r from-indigo-500 login-layout to-indigo-900">
         <section class="section">
             <div class="custom-container">
-                <div class="md:w-1/2 mx-auto h-full">
+                <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl">
                     <h2 class="text-2xl mb-5">Login</h2>
                     <form>
                         <div v-for="field in userInfo" :key="field.id" class="form-field">
