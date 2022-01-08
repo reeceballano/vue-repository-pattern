@@ -57,7 +57,6 @@ import Input from '@/components/Inputs/Input';
 import Textarea from '@/components/Inputs/Textarea';
 import Checkbox from '@/components/Inputs/Checkbox';
 import Select from '@/components/Inputs/Select';
-import Radio from '@/components/Inputs/Radio';
 
 export default {
     name: 'LoginView',
@@ -68,7 +67,6 @@ export default {
         Textarea,
         Checkbox,
         Select,
-        Radio,
     },
 
     setup() {
@@ -79,7 +77,6 @@ export default {
             { id: 'field-message', type: 'textarea', label: 'Message', value:'' },
             { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:[], option:['Developer', 'Designer', 'DevOp'] },
             { id: 'field-select', type: 'select', label: 'Salary Expectation', value:'', option:['50000-70000', '70000-90000', '90000-120000'] },
-            { id: 'field-radio', type: 'radio', label: 'Experience', value:'', option:['Junior', 'Mid', 'Senior'] },
         ])
 
         return {
