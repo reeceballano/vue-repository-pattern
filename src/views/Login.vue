@@ -54,7 +54,6 @@ import { ref } from 'vue';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
-import Textarea from '@/components/Inputs/Textarea';
 
 export default {
     name: 'LoginView',
@@ -62,7 +61,6 @@ export default {
         PrimaryButton,
         Modal,
         Input,
-        Textarea,
     },
 
     setup() {
@@ -70,7 +68,6 @@ export default {
             { id: 'field-name', type: 'text', label: 'Name', value:'' },
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
-            { id: 'field-message', type: 'textarea', label: 'Message', value:'' },
         ])
 
         return {
