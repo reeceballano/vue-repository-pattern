@@ -51,8 +51,6 @@
 <script>
 import { fieldType } from '../common/fieldType';
 import { ref } from 'vue';
-import Tabs from '@/components/Tab/Tabs';
-import TabItem from '@/components/Tab/TabItem';
 import Divider from '@/components/Divider';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
@@ -66,8 +64,6 @@ import RangeSlider from '@/components/Inputs/RangeSlider';
 export default {
     name: 'LoginView',
     components: {
-        Tabs,
-        TabItem,
         Divider,
         PrimaryButton,
         Modal,
