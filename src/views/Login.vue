@@ -65,7 +65,6 @@ export default {
 
     setup() {
         const userInfo = ref([
-            { id: 'field-name', type: 'text', label: 'Name', value:'' },
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
         ])
