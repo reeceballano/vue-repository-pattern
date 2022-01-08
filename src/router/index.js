@@ -22,7 +22,8 @@ const routes = [{
         path: '/users',
         name: 'Users',
         component: () =>
-            import ( /* webpackChunkName: "users" */ '../views/Users.vue')
+            import ( /* webpackChunkName: "users" */ '../views/Users.vue'),
+        meta: { requiresAuth: true }
     },
     {
         path: '/user/:uid',
@@ -46,7 +47,7 @@ const routes = [{
         name: 'Login',
         component: () => 
             import ( /* webpackChunkName: "login" */ '../views/Login.vue'),
-        meta: { layout: 'login-layout', header: 'full' }
+        meta: { layout: 'login-layout', header: 'full' },
     }
 ]
 
@@ -56,6 +57,22 @@ const router = createRouter({
     scrollBehavior() {
         window.scrollTo(0, 0);
     }
+})
+
+router.beforeEach((to, from, next) => {
+    /**
+        SET isLogged in VUEX STORE
+    */
+    const isLogged = true;
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if(isLogged) { 
+            next();
+        } else {
+            next({ path: '/login' });
+        } 
+    } else {
+        next();
+    }    
 })
 
 export default router
