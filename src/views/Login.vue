@@ -58,7 +58,6 @@ import Textarea from '@/components/Inputs/Textarea';
 import Checkbox from '@/components/Inputs/Checkbox';
 import Select from '@/components/Inputs/Select';
 import Radio from '@/components/Inputs/Radio';
-import RangeSlider from '@/components/Inputs/RangeSlider';
 
 export default {
     name: 'LoginView',
@@ -70,7 +69,6 @@ export default {
         Checkbox,
         Select,
         Radio,
-        RangeSlider
     },
 
     setup() {
@@ -82,7 +80,6 @@ export default {
             { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:[], option:['Developer', 'Designer', 'DevOp'] },
             { id: 'field-select', type: 'select', label: 'Salary Expectation', value:'', option:['50000-70000', '70000-90000', '90000-120000'] },
             { id: 'field-radio', type: 'radio', label: 'Experience', value:'', option:['Junior', 'Mid', 'Senior'] },
-            { id: 'field-range-slider', type: 'range', label:'Annual Income', value: [], option:[1000,5000] }
         ])
 
         return {
