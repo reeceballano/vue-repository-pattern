@@ -51,7 +51,6 @@
 <script>
 import { fieldType } from '../common/fieldType';
 import { ref } from 'vue';
-import Divider from '@/components/Divider';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
@@ -64,7 +63,6 @@ import RangeSlider from '@/components/Inputs/RangeSlider';
 export default {
     name: 'LoginView',
     components: {
-        Divider,
         PrimaryButton,
         Modal,
         Input,
