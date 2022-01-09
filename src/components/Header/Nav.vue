@@ -41,6 +41,10 @@
                             <slot name="desktop"></slot>
                         </div>
                     </div>
+
+                    <div class="user-utility">
+
+                    </div>
                 </div>
             </div>
         </div>
