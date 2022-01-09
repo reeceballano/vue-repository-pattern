@@ -42,8 +42,10 @@
                         </div>
                     </div>
 
-                    <div class="user-utility">
-
+                    <div class="user-utility md:w-full md:text-right">
+                        <PrimaryButton>
+                            Login
+                        </PrimaryButton>
                     </div>
                 </div>
             </div>
@@ -60,9 +62,13 @@
 </template>
 
 <script>
+import PrimaryButton from "@/components/Buttons/PrimaryButton.vue";
 
 export default {
     name: 'MainNav',
+    components: {
+        PrimaryButton,
+    }
 }
 </script>
 
