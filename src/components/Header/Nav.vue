@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-                    <div class="user-utility md:w-full md:text-right">
+                    <div class="user-utility md:w-full md:text-right md:block hidden">
                         <PrimaryButton type="button">
                             Login
                         </PrimaryButton>
