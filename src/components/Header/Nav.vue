@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="user-utility md:w-full md:text-right">
-                        <PrimaryButton>
+                        <PrimaryButton type="button">
                             Login
                         </PrimaryButton>
                     </div>
