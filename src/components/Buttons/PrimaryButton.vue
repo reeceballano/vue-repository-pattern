@@ -19,6 +19,11 @@
 </template>
 
 <script>
+/**
+ * TODO LIST
+ * - remove default classes style when cssStyle is not empty
+*/
+
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 import Icon from '@/components/Icon';
