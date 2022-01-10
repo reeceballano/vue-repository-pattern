@@ -3,7 +3,7 @@
         v-if="type == 'link'" 
         @click.prevent="buttonClick"
         :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
-        :class="[`bg-${buttonBg}-400 hover:bg-${buttonBg}-200`]"
+        :class="[`bg-${buttonBg}-400 hover:bg-${buttonBg}-200 ${cssStyle}`]"
         class="primary-button">
         <span>
             <slot />
@@ -45,7 +45,7 @@ export default {
             default: false
         },
 
-        style: {
+        cssStyle: {
             type: String
         },
 
