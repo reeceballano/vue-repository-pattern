@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="user-utility md:w-full md:text-right md:block hidden">
-                        <PrimaryButton type="link" routeTo="/login">
+                        <PrimaryButton bg="blue" type="link" routeTo="/login">
                             Login
                         </PrimaryButton>
                     </div>

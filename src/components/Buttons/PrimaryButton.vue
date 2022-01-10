@@ -10,7 +10,7 @@
         </span>
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </router-link>
-    <button v-else :class="[`bg-${buttonBg}-100 hover:bg-${buttonBg}-200`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
+    <button v-else :class="[`bg-${buttonBg}-400 hover:bg-${buttonBg}-200`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
         <span>
             <slot />
         </span>
