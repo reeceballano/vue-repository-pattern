@@ -45,6 +45,10 @@ export default {
             default: false
         },
 
+        style: {
+            type: String
+        },
+
         bg: {
             type: String,
         }
