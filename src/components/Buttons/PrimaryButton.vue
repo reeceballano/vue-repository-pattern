@@ -51,7 +51,8 @@ export default {
         },
 
         cssStyle: {
-            type: String
+            type: String,
+            default: 'text-gray-700 text-base font-semibold rounded'
         },
 
         bg: {
@@ -94,7 +95,7 @@ export default {
 
 <style scoped>
     .primary-button {
-        @apply text-center text-gray-700 text-base font-semibold px-6 py-4 rounded-md  delay-150  inline-flex items-center justify-center;
+        @apply text-center px-6 py-4 delay-150  inline-flex items-center justify-center;
     }
 
     .primary-button:hover {
