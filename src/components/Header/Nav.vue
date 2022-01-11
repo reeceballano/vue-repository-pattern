@@ -43,11 +43,11 @@
                     </div>
 
                     <div class="user-utility md:w-full md:text-right md:block hidden sm:mt-1.5">
-                        <PrimaryButton css-style="h-10 uppercase text-sm" bg="gray" type="link" routeTo="/login">
+                        <PrimaryButton css-style="h-10 uppercase text-sm text-white" bg="blue" type="link" routeTo="/login">
                             Login
                         </PrimaryButton>
 
-                        <PrimaryButton css-style="h-10 uppercase ml-2 text-sm" bg="red" type="link" routeTo="/login">
+                        <PrimaryButton css-style="h-10 uppercase ml-2 text-sm text-white" bg="red" type="link" routeTo="/login">
                             Register
                         </PrimaryButton>
                     </div>
