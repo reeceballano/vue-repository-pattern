@@ -38,7 +38,7 @@
                             -->
                         </div>
                     
-                        <PrimaryButton type="submit" css-style="bg-blue-500 mt-5">
+                        <PrimaryButton type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5">
                             Login
                         </PrimaryButton>
                     </form>
