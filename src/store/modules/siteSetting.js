@@ -3,7 +3,7 @@ const state = {
     siteSettings: [],
     buttonSettings: {
         color: 'text-white',
-        background: 'blue',
+        background: 'bg-indigo-400 hover:bg-indigo-200',
         borderRadius: 'rounded',
         icon: 'MenuAlt2Icon'
     },

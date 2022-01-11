@@ -34,7 +34,11 @@
                     User Page
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" :show-icon="true" css-style="bg-green-400 hover:bg-green-200">
+                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" :show-icon="true" css-style="bg-green-400 hover:bg-green-200 text-white">
+                    I'm a Button
+                </PrimaryButton>
+
+                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" :show-icon="true">
                     I'm a Button
                 </PrimaryButton>
             </div>
