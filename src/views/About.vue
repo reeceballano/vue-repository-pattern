@@ -22,19 +22,19 @@
             <h2 class="text-xl mb-10">Button Components</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <PrimaryButton @button-click="buttonClick('this is a primary button event')" bg="green">
+                <PrimaryButton @button-click="buttonClick('this is a primary button event')" css-style="bg-blue-400 hover:bg-blue-200">
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton route-to="/users" bg="blue" :show-icon="true">
+                <PrimaryButton route-to="/users" bg="blue" :show-icon="true" css-style="bg-red-400 hover:bg-red-200">
                     Users Page
                 </PrimaryButton>
 
-                <PrimaryButton route-to="User" :button-params="{uid:1}" bg="red" :show-icon="true">
+                <PrimaryButton route-to="User" :button-params="{uid:1}" :show-icon="true" css-style="bg-yellow-400 hover:bg-yellow-200">
                     User Page
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" bg="yellow" :show-icon="true">
+                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" :show-icon="true" css-style="bg-green-400 hover:bg-green-200">
                     I'm a Button
                 </PrimaryButton>
             </div>
@@ -55,7 +55,7 @@
                         Beatae, incidunt molestias eius dolor reprehenderit placeat?
                     </template>
                     <template #modalButton>
-                        <PrimaryButton type="button" @button-click="isVisibleModalOne = !isVisibleModalOne" bg="green">
+                        <PrimaryButton type="button" @button-click="isVisibleModalOne = !isVisibleModalOne" css-style="bg-blue-400 hover:bg-blue-200">
                             Show Modal 1
                         </PrimaryButton>
 
@@ -75,7 +75,7 @@
                     </template>
 
                     <template #modalButton>
-                        <PrimaryButton type="button" @button-click="isVisibleModalTwo = !isVisibleModalTwo" bg="red">
+                        <PrimaryButton type="button" @button-click="isVisibleModalTwo = !isVisibleModalTwo" css-style="bg-red-400 hover:bg-red-200">
                             Modal no overlay
                         </PrimaryButton>
 
@@ -123,7 +123,7 @@
                         -->
                     </div>
                    
-                    <PrimaryButton type="submit" bg="blue">
+                    <PrimaryButton type="submit" css-style="bg-blue-400 hover:bg-blue-200">
                         Submit
                     </PrimaryButton>
                 </form>

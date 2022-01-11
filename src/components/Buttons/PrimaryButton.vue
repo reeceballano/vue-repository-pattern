@@ -3,14 +3,14 @@
         v-if="type == 'link'" 
         @click.prevent="buttonClick"
         :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
-        :class="[`bg-${buttonBg}-400 hover:bg-${buttonBg}-200 ${cssStyle}`]"
+        :class="[`${buttonBg}`]"
         class="primary-button">
         <span>
             <slot />
         </span>
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </router-link>
-    <button v-else :class="[`bg-${buttonBg}-400 hover:bg-${buttonBg}-200`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
+    <button v-else :class="[`${buttonBg}`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
         <span>
             <slot />
         </span>
@@ -55,10 +55,6 @@ export default {
             default: 'text-gray-700 text-base font-semibold rounded'
         },
 
-        bg: {
-            type: String,
-        }
-
     },
     components: {
         Icon,
@@ -72,8 +68,10 @@ export default {
         })
 
         const buttonBg = computed(() => {
-            if(props.bg) {
-                return props.bg;
+            const checkBg = props.cssStyle;
+            
+            if(checkBg.includes('bg-')) {
+                return props.cssStyle;
             } else {
                 console.log('props store', buttonSettings.value.background)
                 return buttonSettings.value.background;
