@@ -38,8 +38,12 @@
                             -->
                         </div>
                     
-                        <PrimaryButton type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5">
+                        <PrimaryButton type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
                             Login
+                        </PrimaryButton>
+
+                        <PrimaryButton type="link" route-to="/" css-style="bg-red-400 hover:bg-red-200 mt-5 ml-3 text-white">
+                            Cancel
                         </PrimaryButton>
                     </form>
                 </div>
