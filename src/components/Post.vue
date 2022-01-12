@@ -21,7 +21,7 @@
                     <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
                     Author: {{ user.name }}
                 </p>
-                
+
                 <PrimaryButton css-style="bg-blue-400 hover:bg-blue-200" :show-icon="true" route-to="Post" :button-params="{ id: postData.id }">
                     Read more
                 </PrimaryButton>    
@@ -42,44 +42,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- <div class="grid sm:grid-cols-2 grid-cols-1 gap-10">
-            <div class="col-span-1 row-start-2 sm:row-start-1">
-                <p class="font-extralight uppercase text-xs">
-                    Category
-                </p>
-
-                <h2 class="md:text-2xl font-semibold my-3">dolorem eum magni eos aperiam quia</h2>
-
-                <p class="font-semibold uppercase text-xs">
-                    Jul, 1, 2021
-                </p>
-
-                <div class="w-12 my-5 bg-gray-400 h-px "></div>
-
-                <p class="font-semibold uppercase text-xs">
-                    Author: Juan dela Cruz
-                </p>
-
-                <button class="bg-indigo-300 rounded py-3 my-7 px-7 text-sm hover:bg-indigo-400 delay-150 hover:transition-all ">
-                    Read more
-                </button>
-
-
-            </div>
-
-            <div class="col-span-1 md:order-2 order-1">
-                <img class="rounded-lg shadow-lg" src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="">
-            </div>
-        </div> -->
-
-        <!-- {{ postData.id }} | {{ postData.title }}
-        <button @click="deletePost">Delete</button>
-
-        <input v-if="isEditing" v-model="postData.title" type="text" />
-
-        <button v-if="!isEditing" @click="editPost">Edit</button>
-        <button v-else @click="submitPost">Submit</button> -->
     </div>
 </template>
 
