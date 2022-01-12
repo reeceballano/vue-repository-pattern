@@ -21,14 +21,11 @@
                     <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
                     Author: {{ user.name }}
                 </p>
+                
                 <PrimaryButton css-style="bg-blue-400 hover:bg-blue-200" :show-icon="true" route-to="Post" :button-params="{ id: postData.id }">
                     Read more
                 </PrimaryButton>    
-                <!-- <router-link 
-                    :to="{ name:'Post', params: { id: postData.id } }"
-                    class="bg-indigo-100 text-indigo-700 text-base font-semibold px-6 py-2 rounded-lg hover:bg-indigo-400 delay-150 hover:transition-all">
-                    Read more
-                </router-link> -->
+
             </div>
 
             <div class="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
