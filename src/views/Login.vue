@@ -17,25 +17,6 @@
                                 :options="field.option"
                             >
                             </component>
-
-                            
-
-                            <!-- For Single component
-                            <Textarea 
-                                v-if="field.type == 'textarea'"
-                                :showLabel="false"
-                                :inputData="field" 
-                                :modelValue="field.value" 
-                                @update:modelValue="field.value = $event"
-                            />
-                            <Input 
-                                v-if="field.type != 'textarea'"
-                                :showLabel="false"
-                                :inputData="field" 
-                                :modelValue="field.value" 
-                                @update:modelValue="field.value = $event"
-                            />
-                            -->
                         </div>
                     
                         <PrimaryButton type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
