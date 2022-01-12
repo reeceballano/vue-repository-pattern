@@ -21,7 +21,7 @@
 <script>
 /**
  * TODO LIST
- * - remove default classes style when cssStyle is not empty
+ * - DONE-remove default classes style when cssStyle is not empty
 */
 
 import { useStore } from 'vuex';
