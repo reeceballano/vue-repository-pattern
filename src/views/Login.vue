@@ -19,7 +19,7 @@
                             </component>
                         </div>
 
-                        <PrimaryButton @button-click="checkLogin" type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
+                        <PrimaryButton @button-click="checkLogin()" type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
                             Login
                         </PrimaryButton>
 
@@ -63,7 +63,12 @@ export default {
         }
 
         const checkLogin = () => {
-            console.log('login')
+            const email = userInfo.value.filter(item => item.id === 'field-email');
+            const password = userInfo.value.filter(item => item.id === 'field-password');
+
+            if(email[0].value !== userLogin.email && password[0].value !== userLogin.password) { return console.log('access denied') }
+            
+            return console.log('access granted')
         }
 
         return {
