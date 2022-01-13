@@ -54,9 +54,15 @@ export default {
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
         ])
 
+        const userLogin = {
+            email: 'superuser@locahost.dev',
+            password: 'guesswhat'
+        }
+
         return {
             userInfo,
             fieldType,
+            userLogin,
         }
     }
 }
