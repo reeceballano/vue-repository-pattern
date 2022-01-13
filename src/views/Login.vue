@@ -54,6 +54,9 @@ export default {
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
         ])
 
+        /**
+         * TEMP USER DATA
+         */
         const userLogin = {
             email: 'superuser@locahost.dev',
             password: 'guesswhat'
