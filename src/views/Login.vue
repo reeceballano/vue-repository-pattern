@@ -62,10 +62,15 @@ export default {
             password: 'guesswhat'
         }
 
+        const checkLogin = () => {
+            console.log('login')
+        }
+
         return {
             userInfo,
             fieldType,
             userLogin,
+            checkLogin
         }
     }
 }
