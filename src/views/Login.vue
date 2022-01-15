@@ -62,6 +62,11 @@ export default {
             password: 'guesswhat'
         }
 
+        /**
+         * TODO
+         * - check if valid email
+         */
+
         const checkLogin = () => {
             const email = userInfo.value.filter(item => item.id === 'field-email');
             const password = userInfo.value.filter(item => item.id === 'field-password');
