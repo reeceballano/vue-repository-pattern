@@ -66,7 +66,7 @@ export default {
          * TODO
          * - check if valid email
          * - add error class
-         * 
+         * - add message box
          */
 
         const checkLogin = () => {
