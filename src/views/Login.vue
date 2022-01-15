@@ -65,6 +65,8 @@ export default {
         /**
          * TODO
          * - check if valid email
+         * - add error class
+         * 
          */
 
         const checkLogin = () => {
