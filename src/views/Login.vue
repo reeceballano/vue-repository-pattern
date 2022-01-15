@@ -66,7 +66,7 @@ export default {
             const email = userInfo.value.filter(item => item.id === 'field-email');
             const password = userInfo.value.filter(item => item.id === 'field-password');
 
-            if(!email[0].value && !password[0].value) { return console.log('please fill all the required fields') }
+            if(!email[0].value.length && !password[0].value.length) { return console.log('please fill all the required fields') }
 
             if(email[0].value !== userLogin.email && password[0].value !== userLogin.password) { 
                 return console.log('access denied') 
