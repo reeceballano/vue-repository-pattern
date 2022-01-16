@@ -12,7 +12,9 @@ const getters = {
 
 // MUTATIONS
 const mutations = {
-
+    SET_IS_LOGGED(state, isLogged) {
+        state.isLogged = isLogged;
+    }
 }
 
 // ACTIONS
