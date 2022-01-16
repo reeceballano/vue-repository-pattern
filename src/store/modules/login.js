@@ -5,7 +5,9 @@ const state = {
 
 // GETTERS
 const getters = {
-
+    getIsLogged: state => {
+        return state.isLogged;
+    }
 }
 
 // MUTATIONS
