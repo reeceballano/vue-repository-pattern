@@ -3,6 +3,7 @@ import post from './modules/post';
 import user from './modules/user';
 import comment from './modules/comment';
 import loading from './modules/loading';
+import login from './modules/login';
 import siteSetting from './modules/siteSetting';
 
 export default createStore({
@@ -17,6 +18,7 @@ export default createStore({
         user,
         comment,
         loading,
-        siteSetting
+        siteSetting,
+        login
     }
 })
