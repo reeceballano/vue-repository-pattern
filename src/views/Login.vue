@@ -34,8 +34,10 @@
 </template>
 
 <script>
+
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
 import { fieldType } from '../common/fieldType';
-import { ref } from 'vue';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
@@ -49,6 +51,12 @@ export default {
     },
 
     setup() {
+        const store = useStore();
+
+        const isLogged = computed(() => {
+            return store.getters['login/getIsLogged'];
+        })
+
         const userInfo = ref([
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
@@ -86,7 +94,8 @@ export default {
             userInfo,
             fieldType,
             userLogin,
-            checkLogin
+            checkLogin,
+            isLogged
         }
     }
 }
