@@ -4,6 +4,7 @@
             <div class="custom-container">
                 <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
                     <h2 class="text-2xl mb-5">Login</h2>
+                    isLogged: {{ isLogged }}
                     <form @submit="checkLogin">
                         <div v-for="field in userInfo" :key="field.id" class="form-field">
                             <!-- For dynamic component -->
