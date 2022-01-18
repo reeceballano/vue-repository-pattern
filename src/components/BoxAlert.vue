@@ -6,7 +6,12 @@
 
 <script>
 export default {
-    name: 'BoxAlert'
+    name: 'BoxAlert',
+    props: {
+        msg: {
+            type: String,
+        }
+    }
 }
 </script>
 
