@@ -10,6 +10,11 @@ export default {
     props: {
         msg: {
             type: String,
+        },
+
+        alertType: {
+            type: String,
+            default: 'success'
         }
     }
 }
