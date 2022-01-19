@@ -1,7 +1,9 @@
 <template>
     <div class="box-alert">
         <div class="custom-container">
-            {{ msg }}
+            <div>
+                {{ msg }}
+            </div>
         </div>
     </div>
 </template>
