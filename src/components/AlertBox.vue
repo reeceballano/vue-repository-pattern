@@ -1,9 +1,7 @@
 <template>
     <div class="box-alert">
-        <div class="custom-container">
-            <div class="bg-green-300">
-                <slot />
-            </div>
+        <div class="bg-green-300 p-4 w-full">
+            <slot />
         </div>
     </div>
 </template>
