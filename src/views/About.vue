@@ -90,6 +90,7 @@
             <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Alert Components</h2>
+            <AlertBox />
 
             <Divider bg="blue" />
 
@@ -155,6 +156,7 @@ import Checkbox from '@/components/Inputs/Checkbox';
 import Select from '@/components/Inputs/Select';
 import Radio from '@/components/Inputs/Radio';
 import RangeSlider from '@/components/Inputs/RangeSlider';
+import AlertBox from '@/components/AlertBox';
 
 export default {
     name: 'About',
@@ -169,7 +171,8 @@ export default {
         Checkbox,
         Select,
         Radio,
-        RangeSlider
+        RangeSlider,
+        AlertBox
     },  
     setup() {
         const tabs = ref([
