@@ -2,7 +2,7 @@
     <div class="box-alert">
         <div class="custom-container">
             <div class="bg-green-300">
-                {{ msg }}
+                <slot />
             </div>
         </div>
     </div>
@@ -12,10 +12,6 @@
 export default {
     name: 'AlertBox',
     props: {
-        msg: {
-            type: String,
-        },
-
         alertType: {
             type: String,
             default: 'success'
