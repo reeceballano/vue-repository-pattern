@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    name: 'BoxAlert',
+    name: 'AlertBox',
     props: {
         msg: {
             type: String,
