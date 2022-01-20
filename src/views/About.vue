@@ -89,6 +89,10 @@
 
             <Divider bg="blue" />
 
+            <h2 class="text-xl mb-10">Alert Components</h2>
+
+            <Divider bg="blue" />
+
             <h2 class="text-xl mb-10">Input Components</h2>
 
             <div class="grid grid-cols-1 gap-4">
