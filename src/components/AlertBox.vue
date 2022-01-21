@@ -1,6 +1,6 @@
 <template>
     <div class="box-alert">
-        <div :class="`bg-${alert}-400`" class="p-4 w-full">
+        <div :class="`bg-${alert}-400`" class="p-4 w-full mb-5">
             <slot />
         </div>
     </div>
