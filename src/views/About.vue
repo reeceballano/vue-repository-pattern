@@ -99,6 +99,10 @@
                 This is a warning alert box!
             </AlertBox>
 
+             <AlertBox alert-type="error">
+                This is an error alert box!
+            </AlertBox>
+
             <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Input Components</h2>
