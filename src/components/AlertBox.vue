@@ -1,6 +1,6 @@
 <template>
     <div class="box-alert">
-        <div class="bg-green-300 p-4 w-full">
+        <div class="p-4 w-full">
             <slot />
         </div>
     </div>
@@ -20,7 +20,11 @@ export default {
 
     setup(props) {
         const alert = computed(() => {
-            return props.alertType;
+            const aType = props.alertType;
+            if(aType === 'success') return 'green';
+            if(aType === 'warning') return 'yellow';
+            if(aType === 'error') return 'red';
+            return 'gray';
         })
 
         return {
