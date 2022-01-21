@@ -1,6 +1,6 @@
 <template>
     <div class="box-alert">
-        <div class="p-4 w-full">
+        <div :class="alert" class="p-4 w-full">
             <slot />
         </div>
     </div>
