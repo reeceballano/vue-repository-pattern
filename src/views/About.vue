@@ -90,9 +90,13 @@
             <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Alert Components</h2>
-            
+
             <AlertBox alert-type="success">
                 This is a success alert box!
+            </AlertBox>
+
+            <AlertBox alert-type="warning">
+                This is a warning alert box!
             </AlertBox>
 
             <Divider bg="blue" />
