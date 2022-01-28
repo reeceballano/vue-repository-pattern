@@ -3,14 +3,14 @@
         v-if="type == 'link'" 
         @click.prevent="buttonClick"
         :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
-        :class="[`${buttonBg}`]"
+        :class="[`${buttonBg} rounded`]"
         class="primary-button">
         <span>
             <slot />
         </span>
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </router-link>
-    <button v-else :class="[`${buttonBg}`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
+    <button v-else :class="[`${buttonBg} rounded`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
         <span>
             <slot />
         </span>
