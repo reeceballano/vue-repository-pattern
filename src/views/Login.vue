@@ -5,6 +5,8 @@
                 <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
                     <h2 class="text-2xl mb-5">Login</h2>
                     {{isLogged}}
+                    {{ userLogin }}<hr />
+                    {{ userInfo }}
                     <AlertBox alert-type="success">
                         Access granted!
                     </AlertBox>
@@ -39,7 +41,7 @@
 
 <script>
 
-import { ref, computed } from 'vue';
+import { reactive, computed } from 'vue';
 import { useStore } from 'vuex';
 import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
@@ -61,7 +63,7 @@ export default {
             return store.getters['login/getIsLogged'];
         })
 
-        const userInfo = ref([
+        const userInfo = reactive([
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
         ])
@@ -82,15 +84,17 @@ export default {
          */
 
         const checkLogin = () => {
-            const email = userInfo.value.filter(item => item.id === 'field-email');
-            const password = userInfo.value.filter(item => item.id === 'field-password');
+            const email = userInfo[0].value;
+            const password = userInfo[1].value;
 
-            if(!email[0].value.length && !password[0].value.length) { return console.log('please fill all the required fields') }
+            console.log(email, password, userLogin);
 
-            if(email[0].value !== userLogin.email && password[0].value !== userLogin.password) { 
-                console.log('access denied',email[0].value, password[0].value) 
+            if(!email.length && !password.length) { return console.log('please fill all the required fields') }
+
+            if(email === userLogin.email && password === userLogin.password) { 
+                console.log('access granted',password, password)
             } else {
-                console.log('access granted',password[0].value, password[0].value)
+                console.log('access denied',email, password) 
             }
         }
 
