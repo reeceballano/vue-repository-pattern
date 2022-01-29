@@ -42,6 +42,7 @@ import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
+import AlertBox from '@/components/AlertBox';
 
 export default {
     name: 'LoginView',
@@ -49,6 +50,7 @@ export default {
         PrimaryButton,
         Modal,
         Input,
+        AlertBox
     },
 
     setup() {
