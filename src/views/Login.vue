@@ -9,18 +9,25 @@
                         Access granted!
                     </AlertBox>
                     <form @submit="checkLogin">
-                        <div v-for="field in userInfo" :key="field.id" class="form-field">
-                            <!-- For dynamic component -->
-                            <!-- @props options: Input fields with Array e.g Checkbox, Radio, Select -->
-                            <component
-                                :is="fieldType(field.type)"
-                                :showLabel="true"
-                                :inputData="field" 
-                                :modelValue="field.value" 
-                                @update:modelValue="field.value = $event"
-                                :options="field.option"
-                            >
-                            </component>
+                        <div class="form-field">
+                            <Input 
+                                :showLabel="false"
+                                :inputData="userInfo[0]" 
+                                :modelValue="userInfo[0].value" 
+                                @update:modelValue="userInfo[0].value = $event"
+
+                            />
+                        </div>
+
+                        <div class="form-field">
+                            <Input 
+                                :showLabel="false"
+                                :inputData="userInfo[1]" 
+                                :modelValue="userInfo[1].value" 
+                                @update:modelValue="userInfo[1].value = $event"
+
+                            />
+
                         </div>
 
                         <PrimaryButton @button-click="checkLogin()" type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
@@ -43,7 +50,6 @@ import { ref, computed } from 'vue';
 import { useStore } from 'vuex';
 import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
-import Modal from '@/components/Modals/Modal';
 import Input from '@/components/Inputs/Input';
 import AlertBox from '@/components/AlertBox';
 
@@ -51,7 +57,6 @@ export default {
     name: 'LoginView',
     components: {
         PrimaryButton,
-        Modal,
         Input,
         AlertBox
     },
@@ -90,10 +95,10 @@ export default {
             if(!email[0].value.length && !password[0].value.length) { return console.log('please fill all the required fields') }
 
             if(email[0].value !== userLogin.email && password[0].value !== userLogin.password) { 
-                return console.log('access denied') 
+                console.log('access denied',email[0].value, password[0].value) 
+            } else {
+                console.log('access granted',password[0].value, password[0].value)
             }
-            
-            return console.log('access granted')
         }
 
         return {
