@@ -20,7 +20,6 @@ const mutations = {
 // ACTIONS
 const actions = {
     login({ commit }, payload) {
-        payload = true;
         commit('SET_IS_LOGGED', payload);    
     }
 }
