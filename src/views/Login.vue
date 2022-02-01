@@ -96,6 +96,7 @@ export default {
                 store.dispatch('login/login', true);
             } else {
                 console.log('access denied',email, password); 
+                store.dispatch('login/login', false);
             }
         }
 
