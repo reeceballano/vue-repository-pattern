@@ -92,9 +92,10 @@ export default {
             if(!email.length && !password.length) { return console.log('please fill all the required fields') }
 
             if(email === userLogin.email && password === userLogin.password) { 
-                console.log('access granted',password, password)
+                console.log('access granted',password, password);
+                store.dispatch('login/login', true);
             } else {
-                console.log('access denied',email, password) 
+                console.log('access denied',email, password); 
             }
         }
 
