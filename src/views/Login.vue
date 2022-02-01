@@ -7,7 +7,7 @@
                     {{isLogged}}
                     {{ userLogin }}<hr />
                     {{ userInfo }}
-                    <AlertBox alert-type="success">
+                    <AlertBox v-show="isLogged != null" alert-type="success">
                         Access granted!
                     </AlertBox>
                     <form @submit="checkLogin">
