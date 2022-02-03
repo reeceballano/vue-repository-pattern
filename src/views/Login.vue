@@ -7,7 +7,8 @@
                     {{isLogged}}
                     {{ userLogin }}<hr />
                     {{ userInfo }}
-                    <AlertBox v-if="isLogged != null" :alert-type="alertType">
+                    {{ autoClose }}
+                    <AlertBox v-if="autoClose" :alert-type="alertType">
                         Access granted! {{ alertType }}
                     </AlertBox>
                     <form @submit="checkLogin">
@@ -41,7 +42,7 @@
 
 <script>
 
-import { reactive, computed, watch } from 'vue';
+import { ref, reactive, computed, watch } from 'vue';
 import { useStore } from 'vuex';
 import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
@@ -63,7 +64,6 @@ export default {
             return store.getters['login/getIsLogged'];
         })
 
-        
         const alertType = computed(() => {
             if(isLogged.value) {
                 return 'success';
@@ -71,6 +71,8 @@ export default {
 
             return 'error';
         })
+
+        const autoClose = ref(false);
 
         const userInfo = reactive([
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
@@ -110,7 +112,12 @@ export default {
         }
 
         watch(isLogged, () => {
-            console.log('watching islogged', isLogged.value)
+            if(isLogged.value || !isLogged.value) {
+                autoClose.value = true;
+                setTimeout(() => {
+                    autoClose.value = false;
+                },3000)
+            }
         })
 
         return {
@@ -119,7 +126,8 @@ export default {
             userLogin,
             checkLogin,
             isLogged,
-            alertType
+            alertType,
+            autoClose
         }
     }
 }
