@@ -41,7 +41,7 @@
 
 <script>
 
-import { reactive, computed } from 'vue';
+import { reactive, computed, watch } from 'vue';
 import { useStore } from 'vuex';
 import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
@@ -99,6 +99,10 @@ export default {
                 store.dispatch('login/login', false);
             }
         }
+
+        watch(isLogged, () => {
+            console.log('watching islogged', isLogged.value)
+        })
 
         return {
             userInfo,
