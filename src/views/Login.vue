@@ -7,8 +7,8 @@
                     {{isLogged}}
                     {{ userLogin }}<hr />
                     {{ userInfo }}
-                    <AlertBox v-if="isLogged != null" alert-type="success">
-                        Access granted!
+                    <AlertBox v-if="isLogged != null" :alert-type="alertType">
+                        Access granted! {{ alertType }}
                     </AlertBox>
                     <form @submit="checkLogin">
                         <div v-for="field in userInfo" :key="field.id" class="form-field">
@@ -64,13 +64,13 @@ export default {
         })
 
         
-        const alertType = () => {
+        const alertType = computed(() => {
             if(isLogged.value) {
                 return 'success';
             }
 
             return 'error';
-        }
+        })
 
         const userInfo = reactive([
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
