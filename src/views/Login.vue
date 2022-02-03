@@ -63,6 +63,15 @@ export default {
             return store.getters['login/getIsLogged'];
         })
 
+        
+        const alertType = () => {
+            if(isLogged.value) {
+                return 'success';
+            }
+
+            return 'error';
+        }
+
         const userInfo = reactive([
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
             { id: 'field-password', type: 'password', label: 'Password', value: '' },
@@ -109,7 +118,8 @@ export default {
             fieldType,
             userLogin,
             checkLogin,
-            isLogged
+            isLogged,
+            alertType
         }
     }
 }
