@@ -42,7 +42,7 @@
 
 <script>
 
-import { ref, reactive, computed, watch } from 'vue';
+import { ref, reactive, computed, watch, onBeforeMount } from 'vue';
 import { useStore } from 'vuex';
 import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
@@ -118,6 +118,10 @@ export default {
                     autoClose.value = false;
                 },3000)
             }
+        })
+
+        onBeforeMount(() => {
+            
         })
 
         return {
