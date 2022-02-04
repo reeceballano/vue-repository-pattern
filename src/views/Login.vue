@@ -44,6 +44,7 @@
 
 import { ref, reactive, computed, watch, onBeforeMount } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Input from '@/components/Inputs/Input';
@@ -59,6 +60,8 @@ export default {
 
     setup() {
         const store = useStore();
+
+        const router = useRouter();
 
         const isLogged = computed(() => {
             return store.getters['login/getIsLogged'];
@@ -121,7 +124,9 @@ export default {
         })
 
         onBeforeMount(() => {
-            
+            if(isLogged.value) {
+                router.push('/')
+            }
         })
 
         return {
