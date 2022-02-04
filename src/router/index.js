@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import User from '../views/User.vue'
+import store from '../store/';
+
+console.log(store.getters['login/getIsLogged']);
 
 const routes = [{
         path: '/',
@@ -63,7 +66,9 @@ router.beforeEach((to, from, next) => {
     /**
         SET isLogged in VUEX STORE
     */
-    const isLogged = true;
+ 
+    const isLogged = false;
+
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if(isLogged) { 
             next();
