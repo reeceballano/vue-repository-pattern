@@ -125,7 +125,7 @@ export default {
 
         onBeforeMount(() => {
             if(isLogged.value) {
-                router.push('/')
+                router.back();
             }
         })
 
