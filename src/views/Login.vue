@@ -4,10 +4,13 @@
             <div class="custom-container">
                 <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
                     <h2 class="text-2xl mb-5">Login</h2>
-                    {{isLogged}}
-                    {{ userLogin }}<hr />
-                    {{ userInfo }}
-                    {{ autoClose }}
+                    <small>
+                        isLOGGED: {{isLogged}} <hr />
+                        LOGIN DETAILS: {{ userLogin }}<hr />
+                        USER INPUT: {{ userInfo }}<hr />
+                        AUTOCLOSE: {{ autoClose }} 
+                    </small>
+
                     <AlertBox v-if="autoClose" :alert-type="alertType">
                         Access granted! {{ alertType }}
                     </AlertBox>
@@ -49,13 +52,15 @@ import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Input from '@/components/Inputs/Input';
 import AlertBox from '@/components/AlertBox';
+import AnimateTransition from '@/components/AnimateTransition';
 
 export default {
     name: 'LoginView',
     components: {
         PrimaryButton,
         Input,
-        AlertBox
+        AlertBox,
+        AnimateTransition,
     },
 
     setup() {
