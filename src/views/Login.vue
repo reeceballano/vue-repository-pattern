@@ -119,6 +119,8 @@ export default {
                 autoClose.value = true;
                 setTimeout(() => {
                     autoClose.value = false;
+                    // CHECK IF LOGGED IS TRUE, THEN REDIRECT TO PREVIOUS PAGE
+                    if(isLogged.value) { router.back() }
                 },3000)
             }
         })
