@@ -17,6 +17,11 @@ export default {
     components: {
         Icon
     },
+    props: {
+        text: {
+            type: String
+        }
+    },
 
     setup() {
         const store = useStore();
