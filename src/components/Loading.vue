@@ -2,7 +2,12 @@
     <div class="loading">
         <h3 class="flex items-center">
             <Icon :width="4" :icon="`${icon}Icon`" :animation="`animate-${animation}`" />
-            {{ loadingText }}
+            <span v-if="text">
+                {{ text }}
+            </span>
+            <span v-else>
+                {{ loadingText }}
+            </span>
         </h3>
     </div>
 </template>
