@@ -11,6 +11,8 @@
                         AUTOCLOSE: {{ autoClose }} 
                     </small>
 
+                    <Loading v-if="isLogged" text="Checking Session..." />
+
                     <AlertBox v-if="autoClose" :alert-type="alertType">
                         Access granted! {{ alertType }}
                     </AlertBox>
@@ -52,6 +54,7 @@ import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Input from '@/components/Inputs/Input';
 import AlertBox from '@/components/AlertBox';
+import Loading from '@/components/Loading';
 
 export default {
     name: 'LoginView',
@@ -59,6 +62,7 @@ export default {
         PrimaryButton,
         Input,
         AlertBox,
+        Loading
     },
 
     setup() {
@@ -130,7 +134,9 @@ export default {
 
         onBeforeMount(() => {
             if(isLogged.value) {
-                router.back();
+                setTimeout(() => {
+                    router.back();
+                }, 3000);
             }
         })
 
