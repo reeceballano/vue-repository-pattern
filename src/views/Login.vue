@@ -4,12 +4,12 @@
             <div class="custom-container">
                 <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
                     <h2 class="text-2xl mb-5">Login</h2>
-                    <small>
+                    <!-- <small>
                         isLOGGED: {{isLogged}} <hr />
                         LOGIN DETAILS: {{ userLogin }}<hr />
                         USER INPUT: {{ userInfo }}<hr />
                         AUTOCLOSE: {{ autoClose }} 
-                    </small>
+                    </small> -->
 
                     <Loading v-if="isLogged" text="Checking Session..." />
 
