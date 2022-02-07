@@ -52,7 +52,6 @@ import { fieldType } from '../common/fieldType';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Input from '@/components/Inputs/Input';
 import AlertBox from '@/components/AlertBox';
-import AnimateTransition from '@/components/AnimateTransition';
 
 export default {
     name: 'LoginView',
@@ -60,7 +59,6 @@ export default {
         PrimaryButton,
         Input,
         AlertBox,
-        AnimateTransition,
     },
 
     setup() {
