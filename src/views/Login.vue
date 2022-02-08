@@ -139,7 +139,7 @@ export default {
             if(isLogged.value) {
                 setTimeout(() => {
                     router.back();
-                }, 2000);
+                }, 3000);
             }
         })
 
