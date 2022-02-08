@@ -10,35 +10,38 @@
                         USER INPUT: {{ userInfo }}<hr />
                         AUTOCLOSE: {{ autoClose }} 
                     </small> -->
+                    <div class="check-session">
+                        <Loading v-if="isLogged" text="Checking Session..." />
+                    </div>
 
-                    <Loading v-if="isLogged" text="Checking Session..." />
+                    <div class="login-form">
+                        <AlertBox v-if="autoClose" :alert-type="alertType">
+                            Access granted! {{ alertType }}
+                        </AlertBox>
+                        <form @submit="checkLogin">
+                            <div v-for="field in userInfo" :key="field.id" class="form-field">
+                                <!-- For dynamic component -->
+                                <!-- @props options: Input fields with Array e.g Checkbox, Radio, Select -->
+                                <component
+                                    :is="fieldType(field.type)"
+                                    :showLabel="true"
+                                    :inputData="field" 
+                                    v-model="field.value" 
+                                    @update:modelValue="field.value = $event"
+                                    :options="field.option"
+                                >
+                                </component>
+                            </div>
 
-                    <AlertBox v-if="autoClose" :alert-type="alertType">
-                        Access granted! {{ alertType }}
-                    </AlertBox>
-                    <form @submit="checkLogin">
-                        <div v-for="field in userInfo" :key="field.id" class="form-field">
-                            <!-- For dynamic component -->
-                            <!-- @props options: Input fields with Array e.g Checkbox, Radio, Select -->
-                            <component
-                                :is="fieldType(field.type)"
-                                :showLabel="true"
-                                :inputData="field" 
-                                v-model="field.value" 
-                                @update:modelValue="field.value = $event"
-                                :options="field.option"
-                            >
-                            </component>
-                        </div>
+                            <PrimaryButton @button-click="checkLogin()" type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
+                                Login
+                            </PrimaryButton>
 
-                        <PrimaryButton @button-click="checkLogin()" type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
-                            Login
-                        </PrimaryButton>
-
-                        <PrimaryButton type="link" route-to="/" css-style="bg-red-400 hover:bg-red-200 mt-5 ml-3 text-white">
-                            Cancel
-                        </PrimaryButton>
-                    </form>
+                            <PrimaryButton type="link" route-to="/" css-style="bg-red-400 hover:bg-red-200 mt-5 ml-3 text-white">
+                                Cancel
+                            </PrimaryButton>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
