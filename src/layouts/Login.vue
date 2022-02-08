@@ -1,6 +1,6 @@
 <template>
-    <div class="login-layout">
-        <section class="section">
+    <div class="login-layout h-screen">
+        <section class="section p-0">
             <div class="custom-container">
                 <slot />
             </div>

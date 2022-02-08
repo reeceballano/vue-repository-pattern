@@ -2,7 +2,7 @@
     <div class="login">
         <section class="section">
             <div class="custom-container">
-                <div class="h-full md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
+                <div class="md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
                     <h2 class="text-2xl mb-5">Login</h2>
                     <!-- <small>
                         isLOGGED: {{isLogged}} <hr />
@@ -10,11 +10,11 @@
                         USER INPUT: {{ userInfo }}<hr />
                         AUTOCLOSE: {{ autoClose }} 
                     </small> -->
-                    <div class="check-session">
-                        <Loading v-if="isLogged" text="Checking Session..." />
+                    <div v-if="isLogged" class="check-session">
+                        <Loading  text="Checking Session..." />
                     </div>
 
-                    <div class="login-form">
+                    <div v-else class="login-form">
                         <AlertBox v-if="autoClose" :alert-type="alertType">
                             Access granted! {{ alertType }}
                         </AlertBox>
@@ -88,8 +88,8 @@ export default {
         const autoClose = ref(false);
 
         const userInfo = reactive([
-            { id: 'field-email', type: 'email', label: 'Email', value: '' },
-            { id: 'field-password', type: 'password', label: 'Password', value: '' },
+            { id: 'field-email', type: 'email', label: 'Email', value: 'superuser@locahost.dev' },
+            { id: 'field-password', type: 'password', label: 'Password', value: '1234' },
         ])
 
         /**
@@ -97,7 +97,7 @@ export default {
          */
         const userLogin = {
             email: 'superuser@locahost.dev',
-            password: 'guesswhat'
+            password: '1234'
         }
 
         /**
@@ -131,7 +131,7 @@ export default {
                     autoClose.value = false;
                     // CHECK IF LOGGED IS TRUE, THEN REDIRECT TO PREVIOUS PAGE
                     if(isLogged.value) { router.back() }
-                },3000)
+                },3000000)
             }
         })
 
@@ -139,7 +139,7 @@ export default {
             if(isLogged.value) {
                 setTimeout(() => {
                     router.back();
-                }, 2000);
+                }, 20000000);
             }
         })
 
