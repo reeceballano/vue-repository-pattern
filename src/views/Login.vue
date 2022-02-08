@@ -131,7 +131,7 @@ export default {
                     autoClose.value = false;
                     // CHECK IF LOGGED IS TRUE, THEN REDIRECT TO PREVIOUS PAGE
                     if(isLogged.value) { router.back() }
-                },3000000)
+                },3000)
             }
         })
 
@@ -139,7 +139,7 @@ export default {
             if(isLogged.value) {
                 setTimeout(() => {
                     router.back();
-                }, 20000000);
+                }, 2000);
             }
         })
 
