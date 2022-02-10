@@ -12,8 +12,21 @@
 </template>
 
 <script>
+import { reactive } from 'vue';
+
 export default {
     name: 'Register',
+
+    setup() {
+        const userInfo = reactive([
+            { id: 'field-email', type: 'email', label: 'Email', value: 'superuser@locahost.dev' },
+            { id: 'field-password', type: 'password', label: 'Password', value: '1234' },
+        ])
+
+        return {
+            userInfo
+        }
+    }
 
 }
 </script>
