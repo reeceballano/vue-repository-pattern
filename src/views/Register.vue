@@ -36,6 +36,7 @@ export default {
     setup() {
         const userInfo = reactive([
             { id: 'field-email', type: 'email', label: 'Email', value: 'superuser@locahost.dev' },
+            { id: 'field-name', type: 'text', label: 'Name', value: 'superman' },
             { id: 'field-password', type: 'password', label: 'Password', value: '1234' },
             { id: 'field-password-repeat', type: 'password', label: 'Repeat Password', value: '1234' },
         ])
