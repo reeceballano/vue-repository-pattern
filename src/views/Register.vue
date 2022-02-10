@@ -15,6 +15,14 @@
                             >
                             </component>
                         </div>
+
+                        <PrimaryButton type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
+                            Register
+                        </PrimaryButton>
+
+                        <PrimaryButton type="link" route-to="/" css-style="bg-red-400 hover:bg-red-200 mt-5 ml-3 text-white">
+                            Cancel
+                        </PrimaryButton>
                     </form>
                 </div>
             </div>
@@ -26,11 +34,13 @@
 import { reactive } from 'vue';
 import { fieldType } from '../common/fieldType';
 import Input from '@/components/Inputs/Input';
+import PrimaryButton from '@/components/Buttons/PrimaryButton';
 
 export default {
     name: 'Register',
     components: {
-        Input
+        Input,
+        PrimaryButton
     },
 
     setup() {
