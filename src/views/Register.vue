@@ -59,3 +59,9 @@ export default {
 
 }
 </script>
+
+<style scoped>
+    section {
+        @apply pb-0;
+    }
+</style>
