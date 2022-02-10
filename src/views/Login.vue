@@ -157,7 +157,5 @@ export default {
 </script>
 
 <style>
-.login-layout {
-    @apply bg-gradient-to-r from-indigo-500 to-indigo-900;
-}
+
 </style>
