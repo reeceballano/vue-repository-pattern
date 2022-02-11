@@ -16,7 +16,7 @@
                             </component>
                         </div>
 
-                        <PrimaryButton type="submit" css-style="bg-blue-500 hover:bg-blue-200 mt-5 text-white">
+                        <PrimaryButton @button-click="register()" type="submit" css-style="disabled-btn bg-blue-500 hover:bg-blue-200 mt-5 text-white">
                             Register
                         </PrimaryButton>
 
@@ -51,6 +51,10 @@ export default {
             { id: 'field-password-repeat', type: 'password', label: 'Repeat Password', value: '1234' },
         ])
 
+        const register = () => {
+            console.log('register');
+        }
+
         const verifyPassword = () => {
 
         }
@@ -58,7 +62,8 @@ export default {
         return {
             userInfo,
             fieldType,
-            verifyPassword
+            verifyPassword,
+            register
         }
     }
 
