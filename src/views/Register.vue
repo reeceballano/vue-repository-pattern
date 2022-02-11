@@ -51,9 +51,14 @@ export default {
             { id: 'field-password-repeat', type: 'password', label: 'Repeat Password', value: '1234' },
         ])
 
+        const verifyPassword = () => {
+
+        }
+
         return {
             userInfo,
-            fieldType
+            fieldType,
+            verifyPassword
         }
     }
 
