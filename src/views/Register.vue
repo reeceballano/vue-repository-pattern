@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { reactive, computed } from 'vue';
 import { fieldType } from '../common/fieldType';
 import Input from '@/components/Inputs/Input';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
@@ -57,9 +57,9 @@ export default {
             console.log('register');
         }
 
-        const verifyPassword = () => {
-
-        }
+        const verifyPassword = computed(() => {
+            return '';
+        })
 
         return {
             userInfo,
