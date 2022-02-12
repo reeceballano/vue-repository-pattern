@@ -19,7 +19,7 @@
                             </component>
                         </div>
 
-                        <PrimaryButton :disabled="!verifyPassword" @button-click="register()" type="submit" css-style="disabled-btn bg-blue-500 hover:bg-blue-200 mt-5 text-white">
+                        <PrimaryButton :disabled="!verifyPassword" @button-click="register()" type="submit" :css-style="(verifyPassword) ? 'bg-blue-500 hover:bg-blue-200 mt-5 text-white' : 'bg-gray-300 b-1 disabled-btn'">
                             Register
                         </PrimaryButton>
 
