@@ -6,8 +6,6 @@
                     <h2 class="text-2xl mb-5">Register</h2>
                     VERIFY PASSWORD: {{ verifyPassword }}
                     <hr />
-                    P1 VALUE: {{userInfo[2].value}} <br />
-                    P2 VALUE: {{userInfo[3].value}}
                     <form>
                         <div v-for="field in userInfo" :key="field.id" class="form-field">
                             <component
