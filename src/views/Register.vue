@@ -45,12 +45,14 @@ import { reactive, computed } from 'vue';
 import { fieldType } from '../common/fieldType';
 import Input from '@/components/Inputs/Input';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
+import AlertBox from '@/components/AlertBox';
 
 export default {
     name: 'Register',
     components: {
         Input,
-        PrimaryButton
+        PrimaryButton,
+        AlertBox
     },
 
     setup() {
