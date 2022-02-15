@@ -4,6 +4,9 @@
             <div class="custom-container">
                 <div class="md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
                     <h2 class="text-2xl mb-5">Register</h2>
+                    <AlertBox v-if="isRegistered">
+                        Success! Registered Successfully!
+                    </AlertBox>
                     <form>
                         <div v-for="field in userInfo" :key="field.id" class="form-field">
                             <component
@@ -41,7 +44,7 @@
 </template>
 
 <script>
-import { reactive, computed } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import { fieldType } from '../common/fieldType';
 import Input from '@/components/Inputs/Input';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
@@ -56,6 +59,8 @@ export default {
     },
 
     setup() {
+        const isRegistered = ref(null);
+
         const userInfo = reactive([
             { id: 'field-email', type: 'email', label: 'Email', value: 'superuser@locahost.dev' },
             { id: 'field-name', type: 'text', label: 'Name', value: 'superman' },
@@ -76,7 +81,8 @@ export default {
             userInfo,
             fieldType,
             verifyPassword,
-            register
+            register,
+            isRegistered
         }
     }
 
