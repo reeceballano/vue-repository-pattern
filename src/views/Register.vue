@@ -75,7 +75,7 @@ export default {
             /*eslint-disable */
             for(const [i, f] of userInfo.entries()) {
                 if(f.value.length != 0 && verifyPassword.value) {
-                    return isRegistered.value = true;
+                    return isRegistered.value = true; // THERE IS A BUG HERE
                 }
 
                 return isRegistered.value = false;
