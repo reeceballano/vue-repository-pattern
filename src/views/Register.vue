@@ -74,10 +74,10 @@ export default {
             /*eslint-disable */
             for(const [i, f] of userInfo.entries()) {
                 if(f.value.length != 0 && verifyPassword.value) {
-                    return console.log('registered');
+                    return isRegistered.value = true;
                 }
 
-                return console.log('fill all the required fields');
+                return isRegistered.value = false;
             }
             /*eslint-enable */
         }
