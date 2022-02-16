@@ -69,7 +69,13 @@ export default {
         ])
 
         const register = () => {
-            console.log('register');
+            for(const [i, f] of userInfo.entries()) {
+                if(f.value.length != 0 && verifyPassword.value) {
+                    return console.log(i,'registered');
+                }
+
+                return console.log('fill all the required fields');
+            }
         }
 
         const verifyPassword = computed(() => {
