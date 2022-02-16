@@ -44,6 +44,7 @@
 </template>
 
 <script>
+// prettier-ignore	
 import { ref, reactive, computed } from 'vue';
 import { fieldType } from '../common/fieldType';
 import Input from '@/components/Inputs/Input';
@@ -70,13 +71,15 @@ export default {
 
         const register = () => {
             // LOOP ALL FIELDS AND CHECK VALUES
+            /*eslint-disable */
             for(const [i, f] of userInfo.entries()) {
                 if(f.value.length != 0 && verifyPassword.value) {
-                    return console.log(i,'registered');
+                    return console.log('registered');
                 }
 
                 return console.log('fill all the required fields');
             }
+            /*eslint-enable */
         }
 
         const verifyPassword = computed(() => {
