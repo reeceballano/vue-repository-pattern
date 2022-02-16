@@ -69,6 +69,7 @@ export default {
         ])
 
         const register = () => {
+            // LOOP ALL FIELDS AND CHECK VALUES
             for(const [i, f] of userInfo.entries()) {
                 if(f.value.length != 0 && verifyPassword.value) {
                     return console.log(i,'registered');
