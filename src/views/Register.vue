@@ -88,7 +88,11 @@ export default {
         }
 
         const verifyPassword = computed(() => {
-            if(userInfo[2].value != userInfo[3].value) { return false; }
+            if(userInfo[2].value != userInfo[3].value || 
+                userInfo[2].value.length == 0 || 
+                userInfo[3].value.length == 0) { 
+                    return false; 
+            }
             return true;
         })
 
