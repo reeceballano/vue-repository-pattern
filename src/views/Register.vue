@@ -76,11 +76,8 @@ export default {
             let countInvalid = 0;
 
             const isValid = (val) => {
-                if(val) {
-                    isRegistered.value = true;
-                } else {
-                    isRegistered.value = false;
-                }
+                if(val) { return isRegistered.value = true; } 
+                return isRegistered.value = false;
             }
 
             for(let i = 0; i < userInfo.length; i++) {
