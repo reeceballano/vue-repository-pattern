@@ -83,13 +83,11 @@ export default {
                 }
             }
 
-
             for(let i = 0; i < userInfo.length; i++) {
                 if(userInfo[i].value.length == 0 ) { countInvalid++; }
                 if(countInvalid >= 1) { isValid(false) }
                 if(countInvalid == 0) { isValid(true) }
             }
-
         }
 
         const verifyPassword = computed(() => {
