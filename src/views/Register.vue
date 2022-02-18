@@ -72,15 +72,24 @@ export default {
 
         const register = () => {
             // LOOP ALL FIELDS AND CHECK VALUES
-            /*eslint-disable */
-            for(const [i, f] of userInfo.entries()) {
-                if(f.value.length != 0 && verifyPassword.value) {
-                    return isRegistered.value = true; // THERE IS A BUG HERE
-                }
 
-                return isRegistered.value = false;
+            let countInvalid = 0;
+
+            const isValid = (val) => {
+                if(val) {
+                    isRegistered.value = true;
+                } else {
+                    isRegistered.value = false;
+                }
             }
-            /*eslint-enable */
+
+
+            for(let i = 0; i < userInfo.length; i++) {
+                if(userInfo[i].value.length == 0 ) { countInvalid++; }
+                if(countInvalid >= 1) { isValid(false) }
+                if(countInvalid == 0) { isValid(true) }
+            }
+
         }
 
         const verifyPassword = computed(() => {
