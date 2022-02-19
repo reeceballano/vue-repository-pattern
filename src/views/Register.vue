@@ -46,7 +46,7 @@
 
 <script>
 // prettier-ignore	
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, computed, watch } from 'vue';
 import { fieldType } from '../common/fieldType';
 import Input from '@/components/Inputs/Input';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
@@ -94,6 +94,10 @@ export default {
                     return false; 
             }
             return true;
+        })
+
+        watch(isRegistered, () => {
+            console.log(isRegistered.value)
         })
 
         return {
