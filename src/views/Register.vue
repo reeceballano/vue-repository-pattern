@@ -97,6 +97,10 @@ export default {
         })
 
         watch(isRegistered, () => {
+            /***
+                TODO:
+                - set isRegistered value to null after 3-5 seconds
+             */
             console.log(isRegistered.value)
         })
 
