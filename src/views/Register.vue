@@ -6,6 +6,7 @@
                     <h2 class="text-2xl mb-5">Register</h2>
                     <AlertBox v-if="isRegistered != null" :alert-type="(isRegistered) ? 'success': 'error'">
                         <span v-if="isRegistered">Success! Registered Successfully!</span>
+                        <span v-else>Please fill all the required fields!</span>
                     </AlertBox>
                     <form>
                         <div v-for="field in userInfo" :key="field.id" class="form-field">
