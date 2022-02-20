@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param state 
+ * only ref property; reactive property cannot set to null
+ */
 const resetState = (state) => {
     const newState = state;
     setTimeout(() => {
