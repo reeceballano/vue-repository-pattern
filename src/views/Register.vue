@@ -47,10 +47,11 @@
 <script>
 // prettier-ignore	
 import { ref, reactive, computed, watch } from 'vue';
-import { fieldType } from '../common/fieldType';
+import { fieldType } from '@/common/fieldType';
 import Input from '@/components/Inputs/Input';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import AlertBox from '@/components/AlertBox';
+import resetState from '@/common/resetState';
 
 export default {
     name: 'Register',
@@ -97,11 +98,7 @@ export default {
         })
 
         watch(isRegistered, () => {
-            /***
-                TODO:
-                - set isRegistered value to null after 3-5 seconds
-             */
-            console.log(isRegistered.value)
+            resetState(isRegistered);
         })
 
         return {
