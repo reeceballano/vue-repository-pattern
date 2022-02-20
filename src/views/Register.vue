@@ -63,7 +63,7 @@ export default {
 
     setup() {
         const isRegistered = ref(null);
-
+        
         const userInfo = reactive([
             { id: 'field-email', type: 'email', label: 'Email', value: 'superuser@locahost.dev' },
             { id: 'field-name', type: 'text', label: 'Name', value: 'superman' },

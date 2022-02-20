@@ -1,10 +1,8 @@
-import { ref, toRef } from 'vue';
-
 const resetState = (state) => {
-    const newState = ref(state);
+    const newState = state;
     setTimeout(() => {
         newState.value = null;
-        return toRef(newState);
+        return newState;
     }, 3000)
 }
 
