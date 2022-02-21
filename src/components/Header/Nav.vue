@@ -66,6 +66,7 @@
 </template>
 
 <script>
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 import PrimaryButton from "@/components/Buttons/PrimaryButton.vue";
 
@@ -77,9 +78,11 @@ export default {
 
     setup() {
         const store = useStore();
-        const isLogged = false;
+        const isLogged = computed(() => {
+            return store.getters['login/getIsLogged'];
+        });
+
         return {
-            store,
             isLogged
         }
     }
