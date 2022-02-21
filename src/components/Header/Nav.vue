@@ -66,12 +66,22 @@
 </template>
 
 <script>
+import { useStore } from 'vuex';
 import PrimaryButton from "@/components/Buttons/PrimaryButton.vue";
 
 export default {
     name: 'MainNav',
     components: {
         PrimaryButton,
+    },
+
+    setup() {
+        const store = useStore();
+        const isLogged = false;
+        return {
+            store,
+            isLogged
+        }
     }
 }
 </script>
