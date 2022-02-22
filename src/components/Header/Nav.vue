@@ -79,9 +79,11 @@ export default {
 
     setup() {
         const store = useStore();
+        
         const isLogged = computed(() => {
             return store.getters['login/getIsLogged'];
         });
+
 
         return {
             isLogged
