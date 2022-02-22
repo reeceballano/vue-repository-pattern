@@ -21,6 +21,10 @@ const mutations = {
 const actions = {
     login({ commit }, payload) {
         commit('SET_IS_LOGGED', payload);    
+    },
+
+    logout({ commit }) {
+        commit('SET_IS_LOGGED', false);
     }
 }
 
