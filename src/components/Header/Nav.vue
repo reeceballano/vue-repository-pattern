@@ -84,9 +84,14 @@ export default {
             return store.getters['login/getIsLogged'];
         });
 
+        const logout = () => {
+            return store.dispatch('login/logout');
+        }
+
 
         return {
-            isLogged
+            isLogged,
+            logout
         }
     }
 }
