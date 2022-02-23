@@ -44,7 +44,9 @@
 
                     <div class="user-utility md:w-full md:text-right md:block hidden sm:mt-1.5">
                         <PrimaryButton @button-click="logout" css-style="h-10 uppercase text-sm text-white bg-indigo-500 hover:bg-blue-200" type="link" :routeTo="(isLogged) ? '' : '/login'">
-                            <span v-if="isLogged">Logout</span>
+                            <span v-if="isLogged">
+                                <Loading text="Logging out" />
+                            </span>
                             <span v-else>Login</span>
                         </PrimaryButton>
 
@@ -71,11 +73,13 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import PrimaryButton from "@/components/Buttons/PrimaryButton.vue";
+import Loading from '@/components/Loading';
 
 export default {
     name: 'MainNav',
     components: {
         PrimaryButton,
+        Loading
     },
 
     setup() {
