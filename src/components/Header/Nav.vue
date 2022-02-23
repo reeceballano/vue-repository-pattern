@@ -50,7 +50,7 @@
                             <span v-else>Login</span>
                         </PrimaryButton>
 
-                        <PrimaryButton css-style="h-10 uppercase ml-2 text-sm text-white bg-red-500 hover:bg-red-200" type="link" routeTo="/register">
+                        <PrimaryButton v-if="!isLogged" css-style="h-10 uppercase ml-2 text-sm text-white bg-red-500 hover:bg-red-200" type="link" routeTo="/register">
                             Register
                         </PrimaryButton>
                     </div>
