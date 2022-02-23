@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import PrimaryButton from "@/components/Buttons/PrimaryButton.vue";
@@ -87,13 +87,20 @@ export default {
         
         const router = useRouter();
 
+        const isClick = ref(false);
+
         const isLogged = computed(() => {
             return store.getters['login/getIsLogged'];
         });
 
         const logout = () => {
-            store.dispatch('login/logout');
-            router.push('/login');
+            isClick.value = true;
+
+            setTimeout(() => {
+                store.dispatch('login/logout');
+                router.push('/login');
+                isClick.value = false;
+            },3000)
         }
 
 
