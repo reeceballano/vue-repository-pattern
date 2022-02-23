@@ -69,6 +69,7 @@
 <script>
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 import PrimaryButton from "@/components/Buttons/PrimaryButton.vue";
 
 export default {
@@ -80,12 +81,15 @@ export default {
     setup() {
         const store = useStore();
         
+        const router = useRouter();
+
         const isLogged = computed(() => {
             return store.getters['login/getIsLogged'];
         });
 
         const logout = () => {
-            return store.dispatch('login/logout');
+            store.dispatch('login/logout');
+            router.push('/login');
         }
 
 
