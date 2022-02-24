@@ -1,5 +1,7 @@
 <template>
-  
+    <div class="accordion-content">
+        
+    </div>
 </template>
 
 <script>
