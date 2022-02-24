@@ -3,11 +3,15 @@
  * @param state 
  * only ref property; reactive property cannot set to null
  */
-const resetState = (state) => {
+const resetState = (state, cb) => {
     const newState = state;
     setTimeout(() => {
         newState.value = null;
-        return newState;
+        console.log('reset')
+        if(typeof cb === 'function') {
+            console.log('cb')
+            cb();
+        }
     }, 3000)
 }
 
