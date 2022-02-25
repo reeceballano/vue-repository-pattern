@@ -3,12 +3,9 @@
         <ul class="flex justify-start md:flex-row flex-col">
             <li class="accordion-title">
                 Accordion 1
-            </li>
-            <li class="accordion-title">
-                Accordion 2
-            </li>
-            <li class="accordion-title">
-                Accordion 3
+                <div class="accordion-content-wrapper">
+                    <slot />
+                </div>
             </li>
         </ul>
     </div>
