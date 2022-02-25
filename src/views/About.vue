@@ -19,6 +19,16 @@
 
             <Divider bg="blue" />
 
+            <h2 class="text-xl mb-10">Accordion Components</h2>
+
+            <Accordion>
+                <AccordionItem title="DESCRIPTION" :accordion-index="1" desc="this is the description 1" />
+                <AccordionItem title="SPECIFICATION" :accordion-index="2" desc="this is the description 2" />
+                <AccordionItem title="FEATURES" :accordion-index="3" desc="this is the description 3" />
+            </Accordion>
+
+            <Divider bg="blue" />
+
             <h2 class="text-xl mb-10">Button Components</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -168,7 +178,8 @@ import Select from '@/components/Inputs/Select';
 import Radio from '@/components/Inputs/Radio';
 import RangeSlider from '@/components/Inputs/RangeSlider';
 import AlertBox from '@/components/AlertBox';
-
+import Accordion from '@/components/Accordion/Accordion';
+import AccordionItem from '@/components/Accordion/AccordionItem';
 export default {
     name: 'About',
     components: {
@@ -183,7 +194,9 @@ export default {
         Select,
         Radio,
         RangeSlider,
-        AlertBox
+        AlertBox,
+        Accordion,
+        AccordionItem
     },  
     setup() {
         const tabs = ref([

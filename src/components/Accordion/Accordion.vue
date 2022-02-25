@@ -1,19 +1,47 @@
 <template>
     <div class="accordion">
-        <ul class="flex justify-start md:flex-row flex-col">
-            <li class="accordion-title">
-                Accordion 1
-                <div class="accordion-content-wrapper">
-                    <slot />
+        <ul class="test">
+            <li :class="[currentAccordion == i+1 ? 'active' : '']" class="accordion-title flex flex-col" v-for="(acc, i) in registeredchild" :key="i" @click.prevent="changeAccordion(i+1)">
+                {{ acc.title }}
+                <div v-show="currentAccordion == i+1" class="accordion-content-wrapper">
+                    {{acc.desc}}
                 </div>
             </li>
         </ul>
+        <slot />
     </div>
 </template>
 
 <script>
-export default {
+import { ref, provide } from 'vue';
 
+export default {
+    name: 'Accordion',
+    props: {
+        activeAccordion: {
+            type: Number,
+            default: 1
+        }
+    },
+    setup(props) {
+        const currentAccordion = ref(props.activeAccordion);
+        const changeAccordion = (tab) => {
+            currentAccordion.value = tab;
+            console.log(currentAccordion.value)
+        }
+
+        const registerChild = (child) => registeredchild.value.push(child);
+        
+        const registeredchild = ref([]);
+
+        provide('tab', { currentAccordion,  registerChild });
+
+        return {
+            currentAccordion,
+            changeAccordion,
+            registeredchild,
+        }
+    },
 }
 </script>
 
