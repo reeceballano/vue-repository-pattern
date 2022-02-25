@@ -19,7 +19,7 @@
 
             <Divider bg="blue" />
 
-            <h2 class="text-xl mb-10">Accordion Components</h2>
+            <h2 class="text-xl mb-10">Accordion Components *Under Development</h2>
 
             <Accordion>
                 <AccordionItem title="DESCRIPTION" :accordion-index="1" desc="this is the description 1" />
