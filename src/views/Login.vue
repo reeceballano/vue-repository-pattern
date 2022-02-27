@@ -3,7 +3,7 @@
         <section class="section">
             <div class="custom-container">
                 <div class="md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
-                    <h2 class="text-2xl mb-5">Login</h2>
+                    <h2 class="text-2xl mb-5">Login {{isLogged}}/ AUTOCLOSE: {{autoClose}}</h2>
                     <!-- <small>
                         isLOGGED: {{isLogged}} <hr />
                         LOGIN DETAILS: {{ userLogin }}<hr />
@@ -14,9 +14,9 @@
                         <Loading  text="Checking Session..." />
                     </div>
 
-                    <div v-else class="login-form">
+                    <div v-if="!isLogged" class="login-form">
                         <AlertBox v-if="autoClose" :alert-type="alertType">
-                            Access granted! {{ alertType }}
+                            Access Denied! {{ alertType }}
                         </AlertBox>
                         <form @submit="checkLogin">
                             <div v-for="field in userInfo" :key="field.id" class="form-field">
@@ -121,18 +121,27 @@ export default {
             } else {
                 console.log('access denied',email, password); 
                 store.dispatch('login/login', false);
+                autoCloseAlert();
             }
+        }
+
+        const autoCloseAlert = () => {
+            autoClose.value = true;
+            setTimeout(() => {
+                autoClose.value = false;
+            },3000)
         }
 
         watch(isLogged, () => {
             console.log('watching isLogged', isLogged.value)
             if(isLogged.value || !isLogged.value) {
-                autoClose.value = true;
-                setTimeout(() => {
-                    autoClose.value = false;
-                    // CHECK IF LOGGED IS TRUE, THEN REDIRECT TO PREVIOUS PAGE
-                    if(isLogged.value) { router.back() }
-                },3000)
+                autoCloseAlert();
+                // CHECK IF LOGGED IS TRUE, THEN REDIRECT TO PREVIOUS PAGE
+                if(isLogged.value) { 
+                    setTimeout(() => {
+                        router.back() 
+                    },2000)
+                }
             }
         })
 

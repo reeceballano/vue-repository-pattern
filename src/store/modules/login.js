@@ -1,6 +1,6 @@
 // STATE
 const state = {
-    isLogged: null,
+    isLogged: false,
 }
 
 // GETTERS
