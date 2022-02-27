@@ -21,7 +21,7 @@
 
             <h2 class="text-xl mb-10">Accordion Components *Under Development</h2>
 
-            <Accordion>
+            <Accordion :active-accordion="2">
                 <AccordionItem title="DESCRIPTION" :accordion-index="1" desc="this is the description 1" />
                 <AccordionItem title="SPECIFICATION" :accordion-index="2" desc="this is the description 2" />
                 <AccordionItem title="FEATURES" :accordion-index="3" desc="this is the description 3" />
