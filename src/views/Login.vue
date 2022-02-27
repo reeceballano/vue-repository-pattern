@@ -3,7 +3,7 @@
         <section class="section">
             <div class="custom-container">
                 <div class="md:w-1/2 mx-auto p-10 rounded shadow-2xl bg-white">
-                    <h2 class="text-2xl mb-5">Login {{isLogged}}/ AUTOCLOSE: {{autoClose}}</h2>
+                    <h2 class="text-2xl mb-5">Login</h2>
                     <!-- <small>
                         isLOGGED: {{isLogged}} <hr />
                         LOGIN DETAILS: {{ userLogin }}<hr />
