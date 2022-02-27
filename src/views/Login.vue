@@ -50,7 +50,7 @@
 
 <script>
 
-import { ref, reactive, computed, watch, onBeforeMount } from 'vue';
+import { ref, reactive, computed, watch } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import { fieldType } from '../common/fieldType';
@@ -125,6 +125,7 @@ export default {
         }
 
         watch(isLogged, () => {
+            console.log('watching isLogged', isLogged.value)
             if(isLogged.value || !isLogged.value) {
                 autoClose.value = true;
                 setTimeout(() => {
@@ -132,14 +133,6 @@ export default {
                     // CHECK IF LOGGED IS TRUE, THEN REDIRECT TO PREVIOUS PAGE
                     if(isLogged.value) { router.back() }
                 },3000)
-            }
-        })
-
-        onBeforeMount(() => {
-            if(isLogged.value) {
-                setTimeout(() => {
-                    router.back();
-                }, 3000);
             }
         })
 
