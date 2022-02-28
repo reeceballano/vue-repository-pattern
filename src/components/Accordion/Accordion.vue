@@ -47,7 +47,7 @@ export default {
 
 <style scoped>
     .accordion-title {
-        @apply px-10 py-3 bg-gray-100 cursor-pointer flex justify-around items-center;
+        @apply px-10 py-3 bg-gray-100 cursor-pointer text-left;
     }
 
     .active {
