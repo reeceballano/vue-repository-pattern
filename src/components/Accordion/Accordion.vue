@@ -47,10 +47,14 @@ export default {
 
 <style scoped>
     .accordion-title {
-        @apply bg-gray-100 cursor-pointer text-left mb-0.5;
+        @apply  cursor-pointer text-left mb-0.5;
     }
 
-    .active {
+    .active .title-wrapper {
         @apply bg-gray-50;
+    }
+
+    .title-wrapper {
+        @apply px-10 py-3 bg-gray-100;
     }
 </style>
