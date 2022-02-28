@@ -2,7 +2,7 @@
     <div class="accordion">
         <ul class="test">
             <li :class="[currentAccordion == i+1 ? 'active' : '']" class="accordion-title flex flex-col" v-for="(acc, i) in registeredchild" :key="i" @click.prevent="changeAccordion(i+1)">
-                {{ acc.title }}
+                <div class="title-wrapper">{{ acc.title }}</div>
                 <div v-show="currentAccordion == i+1" class="accordion-content-wrapper">
                     {{acc.desc}}
                 </div>
@@ -47,10 +47,10 @@ export default {
 
 <style scoped>
     .accordion-title {
-        @apply px-10 py-3 bg-gray-100 cursor-pointer text-left mb-0.5;
+        @apply bg-gray-100 cursor-pointer text-left mb-0.5;
     }
 
     .active {
-        @apply bg-white;
+        @apply bg-gray-50;
     }
 </style>
