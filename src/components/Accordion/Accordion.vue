@@ -51,6 +51,6 @@ export default {
     }
 
     .active {
-        @apply bg-white border-b;
+        @apply bg-white;
     }
 </style>
