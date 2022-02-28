@@ -24,6 +24,10 @@ export default {
         }
     },
     setup(props) {
+        /**
+         * TODOS
+         * - add an option to toggle or autoclose accordion on click
+         */
         const currentAccordion = ref(props.activeAccordion);
         const changeAccordion = (tab) => {
             currentAccordion.value = tab;
