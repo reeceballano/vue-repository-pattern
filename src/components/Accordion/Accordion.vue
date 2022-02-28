@@ -57,4 +57,8 @@ export default {
     .title-wrapper {
         @apply px-10 py-3 bg-gray-100;
     }
+
+    .accordion-content-wrapper {
+        @apply px-10 py-3;
+    }
 </style>
