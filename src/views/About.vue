@@ -27,6 +27,14 @@
                 <AccordionItem title="FEATURES" :accordion-index="3" desc="this is the description 3" />
             </Accordion>
 
+            <h2 class="text-xl mb-10">Toggle Components *Under Development</h2>
+
+            <Toggle title="Description">
+                <p>
+                    Description content
+                </p>
+            </Toggle>
+
             <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Button Components</h2>
@@ -180,6 +188,8 @@ import RangeSlider from '@/components/Inputs/RangeSlider';
 import AlertBox from '@/components/AlertBox';
 import Accordion from '@/components/Accordion/Accordion';
 import AccordionItem from '@/components/Accordion/AccordionItem';
+import Toggle from '@/components/AccordionToggle/Toggle';
+
 export default {
     name: 'About',
     components: {
@@ -196,7 +206,8 @@ export default {
         RangeSlider,
         AlertBox,
         Accordion,
-        AccordionItem
+        AccordionItem,
+        Toggle
     },  
     setup() {
         const tabs = ref([
