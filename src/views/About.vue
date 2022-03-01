@@ -30,9 +30,15 @@
             <h2 class="text-xl my-10">Toggle Components *Under Development</h2>
 
             <Toggle title="Description">
-                <p>
-                    Description content
-                </p>
+                <p>Description content</p>
+            </Toggle>
+
+            <Toggle title="Specification">
+                <p>Specification content</p>
+            </Toggle>
+
+            <Toggle title="Features">
+                <p>Features content</p>
             </Toggle>
 
             <Divider bg="blue" />
