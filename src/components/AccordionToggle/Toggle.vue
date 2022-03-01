@@ -1,6 +1,6 @@
 <template>
     <div class="toggle-item">
-        <div class="toggle-title"></div>
+        <div class="toggle-title">{{ title }}</div>
         <div class="toggle-description">
             <slot />
         </div>

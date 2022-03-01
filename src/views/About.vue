@@ -27,7 +27,7 @@
                 <AccordionItem title="FEATURES" :accordion-index="3" desc="this is the description 3" />
             </Accordion>
 
-            <h2 class="text-xl mb-10">Toggle Components *Under Development</h2>
+            <h2 class="text-xl my-10">Toggle Components *Under Development</h2>
 
             <Toggle title="Description">
                 <p>
