@@ -14,10 +14,6 @@ export default {
         title: {
             type: String,
             default: 'Toggle Title'
-        },
-        description: {
-            type: String,
-            default: 'Toggle Description'
         }
     }
 }
