@@ -1,19 +1,34 @@
 <template>
     <div class="toggle-item">
-        <div class="toggle-title">{{ title }}</div>
-        <div class="toggle-description">
+        <div @click.prevent="toggleItem()" class="toggle-title">{{ title }}</div>
+        <div v-if="isActive" class="toggle-description">
             <slot />
         </div>
     </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
     name: 'Toggle',
     props: {
         title: {
             type: String,
             default: 'Toggle Title'
+        }
+    },
+
+    setup() {
+        const isActive = ref(false);
+
+        const toggleItem = () => {
+            isActive.value = !isActive.value;
+        }
+
+        return {
+            isActive,
+            toggleItem
         }
     }
 }
