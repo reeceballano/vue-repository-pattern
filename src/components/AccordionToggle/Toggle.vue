@@ -2,7 +2,7 @@
     <div class="toggle-item">
         <div @click.prevent="toggleItem()" class="toggle-title">
             {{ title }}
-            <Icon icon="MenuAlt1Icon" class="h-5 w-5 mr-2 text-blue-500"/>
+            <Icon icon="PlusIcon" class="h-5 w-5 mr-2 text-blue-500"/>
         </div>
         <div v-if="isActive" class="toggle-description">
             <slot />
@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
     .toggle-title {
-        @apply cursor-pointer text-left mb-0.5 px-10 py-3 bg-gray-100;
+        @apply cursor-pointer text-left mb-0.5 px-10 py-3 bg-gray-100 flex justify-between;
     }
 
     .toggle-description {
