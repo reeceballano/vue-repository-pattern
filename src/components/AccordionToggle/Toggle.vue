@@ -2,7 +2,7 @@
     <div class="toggle-item">
         <div @click.prevent="toggleItem()" class="toggle-title">
             {{ title }}
-            <Icon icon="PlusSmIcon" class="h-5 w-5 mr-2 text-blue-500"/>
+            <Icon :icon="toggleState" class="h-5 w-5 mr-2 text-blue-500"/>
         </div>
         <div v-if="isActive" class="toggle-description">
             <slot />
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import Icon from '@/components/Icon.vue';
 
 export default {
@@ -33,9 +33,15 @@ export default {
             isActive.value = !isActive.value;
         }
 
+        const toggleState = computed(() => {
+            if(isActive.value) { return 'MinusSmIcon' }
+            return 'PlusSmIcon';
+        })
+
         return {
             isActive,
-            toggleItem
+            toggleItem,
+            toggleState
         }
     }
 }
