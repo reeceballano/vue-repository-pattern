@@ -2,7 +2,7 @@
     <div class="toggle-item">
         <div @click.prevent="toggleItem()" class="toggle-title">
             {{ title }}
-            <Icon icon="PlusIcon" class="h-5 w-5 mr-2 text-blue-500"/>
+            <Icon icon="PlusSmIcon" class="h-5 w-5 mr-2 text-blue-500"/>
         </div>
         <div v-if="isActive" class="toggle-description">
             <slot />
