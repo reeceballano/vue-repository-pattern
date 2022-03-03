@@ -1,6 +1,9 @@
 <template>
     <div class="toggle-item">
-        <div @click.prevent="toggleItem()" class="toggle-title">{{ title }}</div>
+        <div @click.prevent="toggleItem()" class="toggle-title">
+            {{ title }}
+            <Icon icon="MenuAlt1Icon" class="h-5 w-5 mr-2 text-blue-500"/>
+        </div>
         <div v-if="isActive" class="toggle-description">
             <slot />
         </div>
@@ -9,9 +12,13 @@
 
 <script>
 import { ref } from 'vue';
+import Icon from '@/components/Icon.vue';
 
 export default {
     name: 'Toggle',
+    components: {
+        Icon
+    },
     props: {
         title: {
             type: String,
