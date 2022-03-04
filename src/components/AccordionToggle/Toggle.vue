@@ -23,6 +23,10 @@ export default {
         title: {
             type: String,
             default: 'Toggle Title'
+        },
+        setActive: {
+            type: Boolean,
+            default: false
         }
     },
 
