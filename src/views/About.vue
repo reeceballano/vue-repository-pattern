@@ -37,7 +37,7 @@
                 <p>Specification content</p>
             </Toggle>
 
-            <Toggle title="Features">
+            <Toggle :set-active="true" title="Features">
                 <p>Features content</p>
             </Toggle>
 
