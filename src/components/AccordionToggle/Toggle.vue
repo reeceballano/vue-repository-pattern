@@ -30,8 +30,8 @@ export default {
         }
     },
 
-    setup() {
-        const isActive = ref(false);
+    setup(props) {
+        const isActive = ref(props.setActive);
 
         const toggleItem = () => {
             isActive.value = !isActive.value;

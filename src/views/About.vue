@@ -29,7 +29,7 @@
 
             <h2 class="text-xl my-10">Toggle Components *Under Development</h2>
 
-            <Toggle title="Description">
+            <Toggle :set-active="true" title="Description">
                 <p>Description content</p>
             </Toggle>
 
