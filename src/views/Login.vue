@@ -26,7 +26,6 @@
                                     :is="fieldType(field.type)"
                                     :showLabel="true"
                                     :inputData="field" 
-                                    v-model="field.value"
                                     @update:modelValue="field.value = $event"
                                     :options="field.option"
                                 >
@@ -137,10 +136,10 @@ export default {
             if(isLogged.value || !isLogged.value) {
                 autoCloseAlert();
                 // CHECK IF LOGGED IS TRUE, THEN REDIRECT TO PREVIOUS PAGE
-                if(isLogged.value) { 
+                if(isLogged.value == true) { 
                     setTimeout(() => {
                         router.back() 
-                    },2000)
+                    },3000)
                 }
             }
         })
