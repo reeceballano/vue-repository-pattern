@@ -4,7 +4,7 @@
             {{ title }}
             <Icon :icon="(isActive) ? 'MinusSmIcon' : 'PlusSmIcon'" class="h-5 w-5 mr-2 text-blue-500"/>
         </div>
-        <AnimateTransition>
+        <AnimateTransition name="slidedown">
             <div v-if="isActive" class="toggle-description">
                 <slot />
             </div>
