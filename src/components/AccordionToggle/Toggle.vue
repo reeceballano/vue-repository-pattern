@@ -4,20 +4,24 @@
             {{ title }}
             <Icon :icon="(isActive) ? 'MinusSmIcon' : 'PlusSmIcon'" class="h-5 w-5 mr-2 text-blue-500"/>
         </div>
-        <div v-if="isActive" class="toggle-description">
-            <slot />
-        </div>
+        <AnimateTransition>
+            <div v-if="isActive" class="toggle-description">
+                <slot />
+            </div>
+        </AnimateTransition>
     </div>
 </template>
 
 <script>
 import { ref } from 'vue';
 import Icon from '@/components/Icon.vue';
+import AnimateTransition from '@/components/AnimateTransition';
 
 export default {
     name: 'Toggle',
     components: {
-        Icon
+        Icon,
+        AnimateTransition
     },
     props: {
         title: {
