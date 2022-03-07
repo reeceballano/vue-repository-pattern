@@ -26,6 +26,7 @@
                                     :is="fieldType(field.type)"
                                     :showLabel="true"
                                     :inputData="field" 
+                                    v-model="field.value"
                                     @update:modelValue="field.value = $event"
                                     :options="field.option"
                                 >
