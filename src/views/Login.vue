@@ -140,7 +140,7 @@ export default {
                 if(isLogged.value == true) { 
                     setTimeout(() => {
                         router.back() 
-                    },3000)
+                    },4000)
                 }
             }
         })
