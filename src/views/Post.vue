@@ -24,9 +24,23 @@
             </div>
         </div>
 
+        <div class="comments">
+            *ON DEVELOPMENT
+            <Suspense>
+                <template #default>
+                    <CommentList />
+                </template>
+
+                <template #fallback>
+                    Loading comments...
+                </template>
+            </Suspense>
+        </div>
+
         <div class="related-pst">
             <RelatedPosts :limit="5" />
         </div>
+
         
     </section>
 </template>
@@ -36,11 +50,13 @@ import { useRoute } from 'vue-router';
 import { watch, computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import RelatedPosts from '@/components/RelatedPosts';
+import CommentList from '@/components/CommentList';
 
 export default {
     name: 'Post',
     components: {
         RelatedPosts,
+        CommentList
     },
 
     setup() {

@@ -11,7 +11,7 @@ import { defineAsyncComponent } from 'vue';
 //import Comment from '@/components/Comment';
 
 const AsyncComment = defineAsyncComponent({
-  loader: () => import("./Comment.vue" /* webpackChunkName: "comment" */),
+  loader: () => import("@/components/Comment.vue" /* webpackChunkName: "comment" */),
   delay: 200,
   suspensible: false
 });
