@@ -1,5 +1,5 @@
 <template>
-    <div class="comment-item">
+    <div class="comment-item m-5 border-b pb-5">
         {{ data }}
         <strong>{{ data.comment.author }}</strong>
     </div>
