@@ -21,21 +21,22 @@
                         </strong>
                     </div>
                 </div>
+                
+                <div class="suspense-comments">
+                    *ON DEVELOPMENT
+                    <Suspense>
+                        <template #default>
+                            <CommentList />
+                        </template>
+
+                        <template #fallback>
+                            Loading comments...
+                        </template>
+                    </Suspense>
+                </div>
             </div>
         </div>
 
-        <div class="suspense-comments">
-            *ON DEVELOPMENT
-            <Suspense>
-                <template #default>
-                    <CommentList />
-                </template>
-
-                <template #fallback>
-                    Loading comments...
-                </template>
-            </Suspense>
-        </div>
 
         <div class="related-pst">
             <RelatedPosts :limit="5" />
