@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="comments">
+        <div class="suspense-comments">
             *ON DEVELOPMENT
             <Suspense>
                 <template #default>
