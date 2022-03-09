@@ -10,8 +10,8 @@ import Comment from '@/components/Comment';
 
 let fetchComments = new Promise((resolve) => {
         const data = [
-            { id: 1, postId: 1, author: 'user 1', comment: 'comment 1 '},
-            { id: 2, postId: 2, author: 'user 2', comment: 'comment 2 '},
+            { id: 1, postId: 1, name: 'user 1', body: 'comment 1 '},
+            { id: 2, postId: 2, name: 'user 2', body: 'comment 2 '},
         ]
 
         setTimeout(() => {

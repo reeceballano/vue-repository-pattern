@@ -1,7 +1,11 @@
 <template>
     <div class="comment-item m-5 border-b pb-5">
-        {{ data }}
-        <strong>{{ data.comment.author }}</strong>
+        {{comment}}
+        {{ comment.body }}
+
+        <strong class="uppercase block text-sm">
+            - {{ comment.name }}
+        </strong>
     </div>
 </template>
 
