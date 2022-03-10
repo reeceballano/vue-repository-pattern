@@ -8,16 +8,6 @@
 import { ref } from 'vue';
 import Comment from '@/components/Comment';
 
-let fetchComments = new Promise((resolve) => {
-        const data = [
-            { id: 1, postId: 1, name: 'user 1', body: 'comment 1 '},
-            { id: 2, postId: 2, name: 'user 2', body: 'comment 2 '},
-        ]
-
-        setTimeout(() => {
-            return resolve(data)
-        }, 3000);
-})
 
 export default {
     name: 'CommentList',
@@ -25,7 +15,25 @@ export default {
         Comment,
     },
 
-    async setup() {
+    props: {
+        commentData: {
+            type: Object,
+            default: () => {}
+        }
+    },
+
+    async setup(props) {
+        let fetchComments = new Promise((resolve) => {
+                // const data = [
+                //     { id: 1, postId: 1, name: 'user 1', body: 'comment 1 '},
+                //     { id: 2, postId: 2, name: 'user 2', body: 'comment 2 '},
+                // ]
+        
+                setTimeout(() => {
+                    return resolve(props.commentData)
+                }, 3000);
+        })
+
         const comments = ref(await fetchComments);
 
         return {

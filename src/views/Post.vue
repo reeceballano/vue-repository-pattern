@@ -26,7 +26,7 @@
                     *ON DEVELOPMENT
                     <Suspense>
                         <template #default>
-                            <CommentList />
+                            <CommentList :commentData="filteredComments(comments.data)" />
                         </template>
 
                         <template #fallback>
