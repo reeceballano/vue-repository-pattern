@@ -1,6 +1,5 @@
 <template>
     <div class="comment-item m-5 border-b pb-5">
-        {{comment}}
         {{ comment.body }}
 
         <strong class="uppercase block text-sm">
