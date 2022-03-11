@@ -50,8 +50,6 @@ export default {
 
     .slidedown-enter-to,
     .slidedown-leave-from {
-        overflow: hidden;
-        max-height: 1000px;
         @apply overflow-hidden max-h-screen;
     }
 
