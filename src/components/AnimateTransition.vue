@@ -45,7 +45,7 @@ export default {
 
     .slidedown-enter-active,
     .slidedown-leave-active {
-        transition: max-height 0.5s ease-in-out;
+        @apply transition-all;
     }
 
     .slidedown-enter-to,
