@@ -52,6 +52,7 @@ export default {
     .slidedown-leave-from {
         overflow: hidden;
         max-height: 1000px;
+        @apply overflow-hidden max-h-screen;
     }
 
     .slidedown-enter-from,
