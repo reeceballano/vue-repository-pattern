@@ -56,7 +56,6 @@ export default {
 
     .slidedown-enter-from,
     .slidedown-leave-to {
-        overflow: hidden;
-        max-height: 0;
+        @apply overflow-hidden max-h-0;
     }
 </style>
