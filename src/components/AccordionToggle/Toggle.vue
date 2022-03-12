@@ -1,6 +1,6 @@
 <template>
     <div class="toggle-item">
-        <div @click.prevent="toggleItem()" class="toggle-title">
+        <div @click.prevent="toggleItem()" :class="(isActive) ? 'bg-gray-50' : 'bg-gray-100'" class="toggle-title">
             {{ title }}
             <Icon :icon="(isActive) ? 'MinusSmIcon' : 'PlusSmIcon'" class="h-5 w-5 mr-2 text-blue-500"/>
         </div>
@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
     .toggle-title {
-        @apply cursor-pointer text-left mb-0.5 px-10 py-3 bg-gray-100 flex justify-between;
+        @apply cursor-pointer text-left mb-0.5 px-10 py-3 flex justify-between;
     }
 
     .toggle-description {
