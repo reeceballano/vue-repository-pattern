@@ -12,7 +12,7 @@ const state = {
     isLoadingPost: true,
     paginate: {
         start: 0,
-        limit: 5,
+        limit: 3,
         current: 1,
         last_page: 0,
         totalPage: 0,
