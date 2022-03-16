@@ -179,7 +179,7 @@
 
 <script>
 import { fieldType } from '../common/fieldType';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Tabs from '@/components/Tab/Tabs';
 import TabItem from '@/components/Tab/TabItem';
 import Divider from '@/components/Divider';
@@ -243,6 +243,28 @@ export default {
             { id: 'field-radio', type: 'radio', label: 'Experience', value:'', option:['Junior', 'Mid', 'Senior'] },
             { id: 'field-range-slider', type: 'range', label:'Annual Income', value: [], option:[1000,5000] }
         ])
+
+        const fetchCountries = async () => {
+            const countArray = [];
+            
+            try {
+                const res = await fetch('https://restcountries.com/v3.1/all');
+                const countries = await res.json();
+                
+                for(let i = 0; i < countries.length; i++) {
+                    countArray.push(countries[i].name.common)
+                }
+
+            } catch(err) {
+                console.log(err)
+            }
+
+            console.log(countArray)
+        }
+
+        onMounted(() => {
+            fetchCountries();
+        })
 
         return {
             tabs,
