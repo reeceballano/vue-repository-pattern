@@ -4,9 +4,9 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-8">
             <div class="py-10 px-5 md:px-0 md:py-0 relative z-10 col-start-1 row-start-1 pb-3 bg-gradient-to-t from-black sm:bg-none">
                 <p class="text-sm font-medium text-white sm:mb-1 sm:text-gray-500">Category</p>
-                <h2 class="hover:opacity-20 delay-50 transition-opacity text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">
+                <Title>
                     <router-link :to="{ name: 'Post', params: { id:postData.id } }">{{ postData.id }}:  {{ postData.title }}</router-link>
-                </h2>
+                </Title>
             </div>
 
             <div class="col-start-1 row-start-2 sm:pb-6">
@@ -87,6 +87,7 @@
 import { ref, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
+import Title from '@/components/Title';
 
 export default {
     name: 'Post',
@@ -97,7 +98,8 @@ export default {
         }
     },
     components: {
-        PrimaryButton
+        PrimaryButton,
+        Title,
     },
 
     setup(props) {
