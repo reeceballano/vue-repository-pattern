@@ -94,6 +94,7 @@ export default {
         }
 
         onMounted(() => {
+            store.dispatch('post/fetchPosts');
             store.dispatch('post/fetchPaginatedPosts');
             store.dispatch('comment/fetchComments');
             store.dispatch('user/fetchUsers');
