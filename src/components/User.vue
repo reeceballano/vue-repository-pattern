@@ -23,7 +23,7 @@ export default {
 
     setup(props) {
         const updatedUserData = computed(() => {
-            const user = {...props.user, image: `https://i.pravatar.cc/300${props.user.id}` };
+            const user = {...props.user, image: `https://i.pravatar.cc/150?u=${props.user.id}` };
             return user;
         })
 
