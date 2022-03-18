@@ -1,16 +1,17 @@
 <template>
     <div class="user">
-        <router-link :to="{ name: 'User', params: { uid: user.id } }">
+        <router-link :to="{ name: 'User', params: { uid: updatedUserData.id } }">
             <div class="user-item">
-                <div class="user-image"></div>
-                <span class="user-name">{{ user.name }}</span>
-                <span class="user-email">{{ user.email }}</span>
+                <div class="user-image"><img :src="updatedUserData.image" /></div>
+                <span class="user-name">{{ updatedUserData.name }}</span>
+                <span class="user-email">{{ updatedUserData.email }}</span>
             </div>
         </router-link>
     </div>
 </template>
 
 <script>
+import { computed } from 'vue';
 export default {
     name: 'User',
     props: {
@@ -20,7 +21,17 @@ export default {
         }
     },
 
-    setup() {
+    setup(props) {
+        const updatedUserData = computed(() => {
+            const user = {...props.user, image: `https://i.pravatar.cc/300${props.user.id}` };
+            return user;
+        })
+
+        console.log(updatedUserData.value)
+
+        return {
+            updatedUserData
+        }
     }
 }
 </script>
