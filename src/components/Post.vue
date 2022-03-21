@@ -18,7 +18,7 @@
 
             <div class="col-start-1 row-start-3 space-y-3">
                 <p class="flex items-center text-black text-sm font-medium mb-5">
-                    <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
+                    <img :src="profileImage(user.id)" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
                     Author: {{ user.name }}
                 </p>
                 
@@ -88,6 +88,7 @@ import { ref, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Title from '@/components/Title';
+import profileImage from '../api/profileImage';
 
 export default {
     name: 'Post',
@@ -142,6 +143,7 @@ export default {
             deletePost,
             fetchUser,
             user,
+            profileImage
         }
     }
 }
