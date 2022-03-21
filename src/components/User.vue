@@ -12,6 +12,8 @@
 
 <script>
 import { computed } from 'vue';
+import profileImage from '../api/profileImage';
+
 export default {
     name: 'User',
     props: {
@@ -23,7 +25,7 @@ export default {
 
     setup(props) {
         const updatedUserData = computed(() => {
-            const user = {...props.user, image: `https://i.pravatar.cc/150?u=${props.user.id}` };
+            const user = {...props.user, image: profileImage(props.user.id) };
             return user;
         })
 
