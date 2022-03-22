@@ -18,7 +18,7 @@
 
             <div class="col-start-1 row-start-3 space-y-3">
                 <p class="flex items-center text-black text-sm font-medium mb-5">
-                    <img :src="profileImage(user.id)" alt="" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
+                    <img :src="profileImage(user.id)" :alt="user.name" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
                     Author: {{ user.name }}
                 </p>
                 
