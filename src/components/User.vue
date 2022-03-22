@@ -2,7 +2,7 @@
     <div class="user">
         <router-link :to="{ name: 'User', params: { uid: updatedUserData.id } }">
             <div class="user-item">
-                <div class="user-image"><img class="rounded-full" :src="updatedUserData.image" /></div>
+                <div class="user-image"><img class="rounded-full" :alt="updatedUserData.name" :src="updatedUserData.image" /></div>
                 <span class="user-name">{{ updatedUserData.name }}</span>
                 <span class="user-email">{{ updatedUserData.email }}</span>
             </div>
