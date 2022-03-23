@@ -4,7 +4,12 @@
 
 <script>
 export default {
-    name: 'Image'
+    name: 'Image',
+    props: {
+        imgSrc: {
+            type: String
+        }
+    }
 }
 </script>
 
