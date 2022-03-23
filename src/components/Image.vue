@@ -1,7 +1,5 @@
 <template>
-    <div class="image">
-
-    </div>
+    <img class="image" />
 </template>
 
 <script>
