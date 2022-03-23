@@ -8,6 +8,9 @@ export default {
     props: {
         imgSrc: {
             type: String
+        },
+        style: {
+            type: String
         }
     }
 }
