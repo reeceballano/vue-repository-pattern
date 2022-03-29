@@ -18,7 +18,7 @@
 
             <div class="col-start-1 row-start-3 space-y-3">
                 <p class="flex items-center text-black text-sm font-medium mb-5">
-                    <img :src="profileImage(user.id)" :alt="user.name" class="w-6 h-6 rounded-full mr-2 bg-gray-100">
+                    <Image :src="profileImage(user.id)" style="w-6 h-6 rounded-full mr-2 bg-gray-100" />
                     Author: {{ user.name }}
                 </p>
                 
@@ -89,6 +89,7 @@ import { useStore } from 'vuex';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Title from '@/components/Title';
 import profileImage from '../api/profileImage';
+import Image from '@/components/Image';
 
 export default {
     name: 'Post',
@@ -101,6 +102,7 @@ export default {
     components: {
         PrimaryButton,
         Title,
+        Image
     },
 
     setup(props) {
