@@ -1,5 +1,5 @@
 <template>
-    <img :src="imgSrc" :class="style" class="image" />
+    <img :src="imgSrc" :class="cssStyle" class="image" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
         imgSrc: {
             type: String
         },
-        style: {
+        cssStyle: {
             type: String
         }
     }
