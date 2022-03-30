@@ -2,7 +2,9 @@
     <div class="user">
         <router-link :to="{ name: 'User', params: { uid: updatedUserData.id } }">
             <div class="user-item">
-                <div class="user-image"><img class="rounded-full" :alt="updatedUserData.name" :src="updatedUserData.image" /></div>
+                <div class="user-image">
+                    <Image css-style="rounded-full" :alt="updatedUserData.name" :imgSrc="updatedUserData.image" />
+                </div>
                 <span class="user-name">{{ updatedUserData.name }}</span>
                 <span class="user-email">{{ updatedUserData.email }}</span>
             </div>
@@ -13,6 +15,7 @@
 <script>
 import { computed } from 'vue';
 import profileImage from '../api/profileImage';
+import Image from './Image';
 
 export default {
     name: 'User',
@@ -21,6 +24,9 @@ export default {
             type: Object,
             default: () => {}
         }
+    },
+    components: {
+        Image
     },
 
     setup(props) {
