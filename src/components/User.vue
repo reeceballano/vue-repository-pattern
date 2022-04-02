@@ -6,7 +6,7 @@
                     <Image css-style="rounded-full" :alt="updatedUserData.name" :imgSrc="updatedUserData.image" />
                 </div>
                 <span class="user-name">{{ updatedUserData.name }}</span>
-                <span class="user-email">{{ updatedUserData.email }}</span>
+                <span v-if="email" class="user-email">{{ updatedUserData.email }}</span>
             </div>
         </router-link>
     </div>
@@ -23,6 +23,10 @@ export default {
         user: {
             type: Object,
             default: () => {}
+        },
+        email: {
+            type: Boolean,
+            default: true
         }
     },
     components: {
