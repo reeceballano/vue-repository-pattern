@@ -18,8 +18,7 @@
 
             <div class="col-start-1 row-start-3 space-y-3">
                 <p class="flex items-center text-black text-sm font-medium mb-5">
-                    <Image :src="profileImage(user.id)" :alt="user.name" css-style="w-6 h-6 rounded-full mr-2 bg-gray-100" />
-                    Author: {{ user.name }}
+                    <User :user="user" />
                 </p>
                 
                 <PrimaryButton css-style="bg-blue-400 hover:bg-blue-200" :show-icon="true" route-to="Post" :button-params="{ id: postData.id }">
@@ -89,7 +88,7 @@ import { useStore } from 'vuex';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Title from '@/components/Title';
 import profileImage from '../api/profileImage';
-import Image from '@/components/Image';
+import User from '@/components/User';
 
 export default {
     name: 'Post',
@@ -102,7 +101,7 @@ export default {
     components: {
         PrimaryButton,
         Title,
-        Image
+        User
     },
 
     setup(props) {
