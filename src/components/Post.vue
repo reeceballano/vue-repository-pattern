@@ -18,7 +18,7 @@
 
             <div class="col-start-1 row-start-3 space-y-3">
                 <p class="flex items-center text-black text-sm font-medium mb-5">
-                    <User :user="user" />
+                    <User :user="user" :email="false" />
                 </p>
                 
                 <PrimaryButton css-style="bg-blue-400 hover:bg-blue-200" :show-icon="true" route-to="Post" :button-params="{ id: postData.id }">
