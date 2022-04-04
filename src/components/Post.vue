@@ -30,13 +30,14 @@
             <div class="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
                 <div class="w-full grid grid-cols-3 grid-rows-2 gap-2">
                     <div class="relative col-span-3 row-span-2 md:col-span-2">
-                        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg" />
+                        <Image imgSrc="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" css-style="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg" />
+                        <Image imgSrc="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" css-style="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg" />
                     </div>
                     <div class="relative hidden md:block">
-                        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
+                        <Image imgSrc="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" css-style="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
                     </div>
                     <div class="relative hidden md:block">
-                        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
+                        <Image imgSrc="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80" alt="" css-style="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
                     </div>
                 </div>
             </div>
@@ -89,6 +90,7 @@ import PrimaryButton from '@/components/Buttons/PrimaryButton';
 import Title from '@/components/Title';
 import profileImage from '../api/profileImage';
 import User from '@/components/User';
+import Image from '@/components/Image';
 
 export default {
     name: 'Post',
@@ -101,7 +103,8 @@ export default {
     components: {
         PrimaryButton,
         Title,
-        User
+        User,
+        Image
     },
 
     setup(props) {
