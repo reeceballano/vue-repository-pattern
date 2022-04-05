@@ -22,6 +22,6 @@ export default {
 
 <style scoped>
     .divider {
-        @apply w-full h-0 my-10;
+        @apply w-full my-10;
     }
 </style>
