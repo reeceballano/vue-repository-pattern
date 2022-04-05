@@ -1,5 +1,5 @@
 <template>
-    <div :class="[`border-${bg}-400`, `h-${height}`]" class="divider"></div>
+    <div :class="[`bg-${bg}-400`, `h-${height}`]" class="divider"></div>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
 
         height: {
             type: String,
-            default: '1',
+            default: '0.5',
         }
     }
 }
@@ -22,6 +22,6 @@ export default {
 
 <style scoped>
     .divider {
-        @apply w-full h-0 my-10 border-b;
+        @apply w-full h-0 my-10;
     }
 </style>
