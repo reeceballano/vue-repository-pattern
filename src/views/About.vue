@@ -3,7 +3,7 @@
         <div class="custom-container">
             <h1 class="text-2xl">This is an about page</h1>
             
-            <Divider bg="blue" height="10" />
+            <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Tab Components</h2>
 
