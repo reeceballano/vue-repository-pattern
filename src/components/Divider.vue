@@ -1,5 +1,5 @@
 <template>
-    <div :class="[`border-${bg}-400`]" class="divider"></div>
+    <div :class="[`border-${bg}-400`, `h-${height}`]" class="divider"></div>
 </template>
 
 <script>
@@ -10,6 +10,11 @@ export default {
         bg: {
             type: String,
             default: 'gray'
+        },
+
+        height: {
+            type: String,
+            default: '1',
         }
     }
 }
