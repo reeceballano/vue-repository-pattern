@@ -1,5 +1,5 @@
 <template>
-    <div :class="[`bg-${bg}-400`, `h-${height}`]" class="divider"></div>
+    <div :class="[`bg-${bg}-200`, `h-${height}`]" class="divider"></div>
 </template>
 
 <script>
