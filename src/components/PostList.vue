@@ -7,7 +7,7 @@
             Current Page: {{pagination.current}} / {{ lastPage }}
             <div class="flex gap-2 my-5">
             <SecondaryButton :disabled="pagination.start === 0" :class="{ 'disabled-btn': pagination.start  === 0 }" @click="prevPage">Prev</SecondaryButton>
-            <SecondaryButton :disabled="pagination.current === lastPage" :class="{ 'disabled-btn': pagination.current === lastPage }" class="btn-blue-outlined" @click="nextPage">Next</SecondaryButton>
+            <SecondaryButton :disabled="pagination.current === lastPage" :class="{ 'disabled-btn': pagination.current === lastPage }" @click="nextPage">Next</SecondaryButton>
             </div>
         </div>
     </div>
