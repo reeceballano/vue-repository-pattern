@@ -6,7 +6,7 @@
         <div class="pagination-wrapper my-10">
             Current Page: {{pagination.current}} / {{ lastPage }}
             <div class="flex gap-2 my-5">
-            <button :disabled="pagination.start === 0" :class="{ 'disabled-btn': pagination.start  === 0 }" class="btn-blue-outlined" @click="prevPage">Prev</button>
+            <SecondaryButton :disabled="pagination.start === 0" :class="{ 'disabled-btn': pagination.start  === 0 }" class="btn-blue-outlined" @click="prevPage">Prev</SecondaryButton>
             <button :disabled="pagination.current === lastPage" :class="{ 'disabled-btn': pagination.current === lastPage }" class="btn-blue-outlined" @click="nextPage">Next</button>
             </div>
         </div>
@@ -22,12 +22,14 @@ import { computed, ref, watch } from 'vue';
 import { useStore } from 'vuex';
 import Post from '@/components/Post';
 import Loading from '@/components/Loading';
+import SecondaryButton from '@/components/Buttons/SecondaryButton';
 
 export default {
     name: 'PostList',
     components: {
         Post,
-        Loading
+        Loading,
+        SecondaryButton
     },
 
     setup() {
