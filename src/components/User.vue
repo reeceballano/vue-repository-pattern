@@ -39,8 +39,6 @@ export default {
             return user;
         })
 
-        console.log(updatedUserData.value)
-
         return {
             updatedUserData
         }
