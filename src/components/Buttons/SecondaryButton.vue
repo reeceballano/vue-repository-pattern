@@ -6,7 +6,13 @@
 
 <script>
 export default {
-    name: 'SecondaryButton'
+    name: 'SecondaryButton',
+    props: {
+        outlined: {
+            type: Boolean,
+            default: false
+        }
+    }
 }
 </script>
 
