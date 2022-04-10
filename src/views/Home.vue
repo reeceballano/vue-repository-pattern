@@ -11,9 +11,9 @@
                         Contact
                     </SecondaryButton>
 
-                    <button class="btn-blue">
+                    <SecondaryButton>
                         Explore
-                    </button>
+                    </SecondaryButton>
                 </div>
 
             </div>
