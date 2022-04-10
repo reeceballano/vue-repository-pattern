@@ -116,8 +116,8 @@ const actions = {
             console.log(state.paginate)
             const { data } = await PostRepository.getPostPaginated(state.paginate);
             const totalData = await PostRepository.get();
-            state.posts = data;
-
+            //state.posts = data;
+            commit('SET_POSTS', data);
             console.log(data)
 
             setTimeout(() => {
