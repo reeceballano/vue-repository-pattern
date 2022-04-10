@@ -7,9 +7,9 @@
                 </h2>
 
                 <div class="btn-center-wrapper">
-                    <button class="btn-blue-outlined">
+                    <SecondaryButton :outlined="true">
                         Contact
-                    </button>
+                    </SecondaryButton>
 
                     <button class="btn-blue">
                         Explore
@@ -48,12 +48,14 @@
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 import PostList from '@/components/PostList';
+import SecondaryButton from '../components/Buttons/SecondaryButton';
 // import Add from '@/components/Add';
 
 export default {
     name: 'Home',
     components: {
         PostList,
+        SecondaryButton,
         // Add
     },
 
