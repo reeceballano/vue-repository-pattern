@@ -1,5 +1,5 @@
 <template>
-    <button :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg]">
+    <button :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]">
         <slot />
     </button>
 </template>
