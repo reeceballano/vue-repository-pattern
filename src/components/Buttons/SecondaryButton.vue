@@ -1,5 +1,5 @@
 <template>
-    <button :class="[buttonBg]" class="secondary-btn">
+    <button :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg]">
         <slot />
     </button>
 </template>
@@ -52,6 +52,6 @@ export default {
     }
 
     .secondary-btn-outlined {
-        @apply bg-transparent;
+        @apply bg-transparent ring-1 py-4 px-14;
     }
 </style>
