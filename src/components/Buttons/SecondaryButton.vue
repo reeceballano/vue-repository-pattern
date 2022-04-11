@@ -11,6 +11,11 @@ export default {
         outlined: {
             type: Boolean,
             default: false
+        },
+
+        bg: {
+            type: String,
+            default: 'blue'
         }
     }
 }
