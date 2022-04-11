@@ -52,6 +52,6 @@ export default {
     }
 
     .secondary-btn-outlined {
-        @apply bg-transparent ring-1 py-4 px-14;
+        @apply bg-transparent uppercase font-thin ring-1 py-4 px-14;
     }
 </style>
