@@ -1,5 +1,5 @@
 <template>
-    <button :class="`btn-blue${(outlined) ? '-outlined' : ''}`">
+    <button :class="`btn-${bg}${(outlined) ? '-outlined' : ''}`">
         <slot />
     </button>
 </template>
