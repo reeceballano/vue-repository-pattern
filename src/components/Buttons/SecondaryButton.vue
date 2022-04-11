@@ -1,5 +1,5 @@
 <template>
-    <button :class="`btn-${bg}${(outlined) ? '-outlined' : ''}`">
+    <button :class="`btn-blue${(outlined) ? '-outlined' : ''}`">
         <slot />
     </button>
 </template>
@@ -12,11 +12,10 @@ export default {
             type: Boolean,
             default: false
         },
-
-        bg: {
+        cssStyle: {
             type: String,
-            default: 'blue'
-        }
+            default: 'text-gray-700 text-base font-semibold rounded'
+        },
     }
 }
 </script>

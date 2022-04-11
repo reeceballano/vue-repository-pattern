@@ -11,7 +11,7 @@
                         Contact
                     </SecondaryButton>
 
-                    <SecondaryButton>
+                    <SecondaryButton bg="red">
                         Explore
                     </SecondaryButton>
                 </div>
