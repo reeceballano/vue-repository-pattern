@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
     .secondary-btn {
-        @apply ring-1 py-4 px-14 uppercase tracking-widest font-thin;
+        @apply ring-1 py-4 px-14 uppercase tracking-widest font-thin rounded;
     }
 
     .secondary-btn-outlined {
