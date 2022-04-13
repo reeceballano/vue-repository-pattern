@@ -19,6 +19,10 @@ export default {
             type: String,
             default: 'text-gray-700 text-base font-semibold rounded'
         },
+        type: {
+            type: String,
+            default: 'button'
+        }
     },
 
     setup(props) {
