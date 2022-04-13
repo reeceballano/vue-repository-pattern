@@ -27,6 +27,10 @@ export default {
         routeTo: {
             type: String
         },
+        buttonParams: {
+            type: Object,
+            default: () => {}
+        },
         type: {
             type: String,
             default: 'button'
