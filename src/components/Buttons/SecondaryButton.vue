@@ -19,6 +19,9 @@ export default {
             type: String,
             default: 'text-gray-700 text-base font-semibold rounded'
         },
+        routeTo: {
+            type: String
+        },
         type: {
             type: String,
             default: 'button'
