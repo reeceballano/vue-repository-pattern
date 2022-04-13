@@ -1,6 +1,6 @@
 <template>
     <router-link 
-        :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo}"
+        :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams}"
     >
 
     </router-link>
