@@ -11,7 +11,7 @@
                         Contact
                     </SecondaryButton>
 
-                    <SecondaryButton css-style="text-white" bg="red">
+                    <SecondaryButton css-style="text-white">
                         Explore
                     </SecondaryButton>
                 </div>

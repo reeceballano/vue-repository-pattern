@@ -1,12 +1,14 @@
 <template>
-    <router-link 
-        :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams}"
-    >
+    <div>
+        <router-link 
+            :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams}"
+        >
 
-    </router-link>
-    <button :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]">
-        <slot />
-    </button>
+        </router-link>
+        <button :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]">
+            <slot />
+        </button>
+    </div>
 </template>
 
 <script>
