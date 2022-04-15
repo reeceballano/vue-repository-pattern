@@ -1,6 +1,7 @@
 <template>
     <div>
-        <router-link 
+        <router-link
+            @click.prevent="buttonClick"
             :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams}"
         >
 
@@ -39,7 +40,7 @@ export default {
         }
     },
 
-    setup(props) {
+    setup(props, { emit }) {
         const store = useStore();
 
         const buttonSettings = computed(() => {
@@ -57,8 +58,13 @@ export default {
             }
         })
 
+        const buttonClick = () => {
+            emit('buttonClick');
+        }
+
         return {
-            buttonBg
+            buttonBg,
+            buttonClick
         }
     }
 }
