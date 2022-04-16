@@ -1,17 +1,15 @@
 <template>
-    <div>
-        <router-link
-            v-if="type == 'link'"
-            @click.prevent="buttonClick"
-            :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
-            :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams}"
-        >
-            <slot />
-        </router-link>
-        <button v-else :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]">
-            <slot />
-        </button>
-    </div>
+    <router-link
+        v-if="type == 'link'"
+        @click.prevent="buttonClick"
+        :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
+        :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams}"
+    >
+        <slot />
+    </router-link>
+    <button v-else :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]">
+        <slot />
+    </button>
 </template>
 
 <script>
