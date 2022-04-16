@@ -11,7 +11,7 @@
                         Contact
                     </SecondaryButton>
 
-                    <SecondaryButton css-style="text-white">
+                    <SecondaryButton @buttonClick="exploreBtn()" css-style="text-white">
                         Explore
                     </SecondaryButton>
                 </div>
@@ -70,9 +70,14 @@ export default {
             store.dispatch('post/fetchPost', 1);
         }
 
+        const exploreBtn = () => {
+            console.log('exple btn');
+        }
+
         return {
             getPost,
             post,
+            exploreBtn
         }
     }
 }
