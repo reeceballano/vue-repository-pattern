@@ -7,7 +7,11 @@
     >
         <slot />
     </router-link>
-    <button v-else :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]">
+    <button 
+        v-else 
+        @click.prevent="buttonClick"
+        :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
+    >
         <slot />
     </button>
 </template>
