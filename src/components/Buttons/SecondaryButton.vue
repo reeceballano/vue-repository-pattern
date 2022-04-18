@@ -17,6 +17,10 @@
 </template>
 
 <script>
+/**
+ * TODO
+ * - ADD A NATIVE LINK ELEMENTS
+ */
 import { computed } from 'vue';
 import { useStore } from 'vuex';
 
