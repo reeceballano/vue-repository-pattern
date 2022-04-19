@@ -11,7 +11,7 @@
                         Contact
                     </SecondaryButton>
 
-                    <SecondaryButton type="link" @buttonClick="exploreBtn()" css-style="text-white">
+                    <SecondaryButton routeTo="#" type="link" @buttonClick="exploreBtn()" css-style="text-white">
                         Explore
                     </SecondaryButton>
                 </div>
