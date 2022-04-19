@@ -1,7 +1,6 @@
 <template>
     <router-link
         v-if="type == 'link'"
-        @click.prevent="buttonClick"
         :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
         :to="{ name:routeTo, params: buttonParams}"
     >
