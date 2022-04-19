@@ -3,10 +3,11 @@
         v-if="type == 'link'"
         @click.prevent="buttonClick"
         :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
-        :to="(String(routeTo).includes('/') || routeTo == '#') ? routeTo : { name:routeTo, params: buttonParams}"
+        :to="{ name:routeTo, params: buttonParams}"
     >
         <slot />
     </router-link>
+    
     <button 
         v-else 
         @click.prevent="buttonClick"
