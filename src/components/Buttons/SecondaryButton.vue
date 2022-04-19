@@ -1,11 +1,15 @@
 <template>
     <router-link
-        v-if="type == 'link'"
+        v-if="type == 'link' && !String(routeTo).includes('#')"
         :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
         :to="{ name:routeTo, params: buttonParams}"
     >
         <slot />
     </router-link>
+
+    <a v-else-if="type == 'link' && String(routeTo).includes('#')" :href="routeTo">
+        <slot />
+    </a>
     
     <button 
         v-else 
