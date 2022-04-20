@@ -13,7 +13,7 @@
         @click.prevent="buttonClick"
         :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
     >
-            <slot />
+        <slot />
     </a>
     
     <button 
