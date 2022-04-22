@@ -1,6 +1,6 @@
 <template>
     <router-link
-        v-if="type == 'link'" 
+        v-if="type == 'link' && !String(routeTo).includes('#')" 
         @click.prevent="buttonClick"
         :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
         :class="[`${buttonBg} rounded`]"
@@ -10,6 +10,16 @@
         </span>
         <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </router-link>
+    
+    <a 
+        v-else-if="type == 'link' && String(routeTo).includes('#')"  
+        :href="routeTo"
+        @click.prevent="buttonClick"
+        :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
+    >
+        <slot />
+    </a>
+
     <button v-else :class="[`${buttonBg} rounded`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
         <span>
             <slot />
