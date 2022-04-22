@@ -32,7 +32,7 @@
 /**
  * TODO LIST
  * - DONE-remove default classes style when cssStyle is not empty
- * - add native link
+ * - DONE-add native link
 */
 
 import { useStore } from 'vuex';
