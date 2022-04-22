@@ -15,7 +15,8 @@
         v-else-if="type == 'link' && String(routeTo).includes('#')"  
         :href="routeTo"
         @click.prevent="buttonClick"
-        :class="[(outlined) ? 'secondary-btn-outlined' : 'secondary-btn', buttonBg, cssStyle]"
+        :class="[`${buttonBg} rounded`]"
+        class="primary-button"
     >
         <slot />
     </a>
