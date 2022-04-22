@@ -1,7 +1,6 @@
 <template>
     <router-link
         v-if="type == 'link' && !String(routeTo).includes('#')" 
-        @click.prevent="buttonClick"
         :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
         :class="[`${buttonBg} rounded`]"
         class="primary-button">
