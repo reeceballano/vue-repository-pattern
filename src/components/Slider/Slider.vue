@@ -1,12 +1,13 @@
 <template>
     <div class="slider-wrapper">
         <div class="custom-container">
-
+            <SliderItem v-for="(slide, index) in slides" :key="index" />
         </div>
     </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 
 export default {
@@ -16,6 +17,10 @@ export default {
     },
 
     setup() {
+        const slides = ref([
+            { id: 1, image: 'https://images.pexels.com/photos/1757363/pexels-photo-1757363.jpeg' }
+        ])
+
         return {
             
         }
