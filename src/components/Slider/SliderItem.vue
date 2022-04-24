@@ -1,12 +1,20 @@
 <template>
-    <div class="slider-item">
+    <div 
+        class="slider-item"
+    >
 
     </div>
 </template>
 
 <script>
 export default {
-    name: 'SliderItem'
+    name: 'SliderItem',
+    props: {
+        slider: {
+            type: Object,
+            required: true
+        }
+    }
 }
 </script>
 
