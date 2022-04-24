@@ -1,5 +1,9 @@
 <template>
-    <div class="slider-wrapper"></div>
+    <div class="slider-wrapper">
+        <div class="custom-container">
+
+        </div>
+    </div>
 </template>
 
 <script>
