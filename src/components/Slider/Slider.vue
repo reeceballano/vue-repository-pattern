@@ -7,7 +7,14 @@
 </template>
 
 <script>
+import SliderItem from '@/components/Slider/SliderItem';
+
 export default {
+    name: 'Slider',
+    components: {
+        SliderItem
+    },
+
     setup() {
         return {
             
