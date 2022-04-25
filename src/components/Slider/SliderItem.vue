@@ -10,7 +10,7 @@
 export default {
     name: 'SliderItem',
     props: {
-        slider: {
+        slide: {
             type: Object,
             required: true
         }

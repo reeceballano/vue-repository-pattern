@@ -1,7 +1,7 @@
 <template>
     <div class="slider-wrapper">
         <div class="custom-container">
-            <SliderItem v-for="(slide, index) in slides" :key="index" />
+            <SliderItem v-for="(slide, index) in slides" :key="index" :slide="slide"/>
         </div>
     </div>
 </template>
@@ -24,7 +24,7 @@ export default {
         ])
 
         return {
-            
+            slides
         }
     }
 }

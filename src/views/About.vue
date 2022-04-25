@@ -172,6 +172,12 @@
                     </PrimaryButton>
                 </form>
             </div>
+
+            <Divider bg="blue" />
+
+            <h2 class="text-xl mb-10">Slider Component</h2>
+
+            <Slider />
         </div>
         
     </section>
@@ -195,6 +201,7 @@ import AlertBox from '@/components/AlertBox';
 import Accordion from '@/components/Accordion/Accordion';
 import AccordionItem from '@/components/Accordion/AccordionItem';
 import Toggle from '@/components/AccordionToggle/Toggle';
+import Slider from '@/components/Slider/Slider';
 
 export default {
     name: 'About',
@@ -213,7 +220,8 @@ export default {
         AlertBox,
         Accordion,
         AccordionItem,
-        Toggle
+        Toggle,
+        Slider
     },  
     setup() {
         const tabs = ref([
