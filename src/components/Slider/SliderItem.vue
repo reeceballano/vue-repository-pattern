@@ -2,7 +2,7 @@
     <div 
         class="slider-item"
     >
-
+        {{ slide }}
     </div>
 </template>
 
