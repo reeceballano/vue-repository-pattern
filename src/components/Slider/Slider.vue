@@ -1,13 +1,20 @@
 <template>
     <div class="slider-wrapper">
         <div class="custom-container">
-            <SliderItem v-for="(slide, index) in slides" :key="index" :slide="slide"/>
+            <div
+                v-for="(slide, index) in slides" 
+                :key="index" 
+                class="slider-container"
+            >
+                <SliderItem v-show="index == currentSlide" :slide="slide" />
+
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 
 export default {
@@ -23,8 +30,27 @@ export default {
             { id: 3, image: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg' }
         ])
 
+        const currentSlide = ref(1);
+
+        const initSlide = () => {
+            setInterval(() => {
+                const slidesCount = slides.value.length;
+                if(currentSlide.value < slidesCount) {
+                    currentSlide.value++;
+                    console.log(currentSlide.value);
+                } else {
+                    currentSlide.value = 0;
+                }
+            },2000)
+        }
+
+        onMounted(() => {
+            initSlide();
+        })
+
         return {
-            slides
+            slides,
+            currentSlide
         }
     }
 }

@@ -13,7 +13,7 @@ export default {
         slide: {
             type: Object,
             required: true
-        }
+        },
     }
 }
 </script>
