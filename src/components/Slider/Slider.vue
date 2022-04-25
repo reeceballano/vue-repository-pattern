@@ -18,7 +18,9 @@ export default {
 
     setup() {
         const slides = ref([
-            { id: 1, image: 'https://images.pexels.com/photos/1757363/pexels-photo-1757363.jpeg' }
+            { id: 1, image: 'https://images.pexels.com/photos/1757363/pexels-photo-1757363.jpeg' },
+            { id: 2, image: 'https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg' },
+            { id: 3, image: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg' }
         ])
 
         return {
