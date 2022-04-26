@@ -6,7 +6,7 @@
                 :key="index" 
                 class="slider-container"
             >
-                <SliderItem v-show="index == currentSlide" :slide="slide" />
+                <SliderItem v-show="index+1 == currentSlide" :slide="slide" />
 
             </div>
         </div>
@@ -33,13 +33,14 @@ export default {
         const currentSlide = ref(1);
 
         const initSlide = () => {
+            console.log(slides.value.length)
             setInterval(() => {
                 const slidesCount = slides.value.length;
                 if(currentSlide.value < slidesCount) {
                     currentSlide.value++;
                     console.log(currentSlide.value);
                 } else {
-                    currentSlide.value = 0;
+                    currentSlide.value = 1;
                 }
             },2000)
         }
