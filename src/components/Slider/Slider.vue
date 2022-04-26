@@ -1,6 +1,7 @@
 <template>
     <div class="slider-wrapper">
         <div class="custom-container">
+            <button @click.prevent="stopSlide">Stop slide</button>
             <div
                 v-for="(slide, index) in slides" 
                 :key="index" 
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 
 export default {
@@ -32,26 +33,37 @@ export default {
 
         const currentSlide = ref(1);
 
-        const initSlide = () => {
+        const initSlide = setInterval(() => {
             console.log(slides.value.length)
-            setInterval(() => {
-                const slidesCount = slides.value.length;
-                if(currentSlide.value < slidesCount) {
-                    currentSlide.value++;
-                    console.log(currentSlide.value);
-                } else {
-                    currentSlide.value = 1;
-                }
-            },2000)
+            const slidesCount = slides.value.length;
+            if(currentSlide.value < slidesCount) {
+                currentSlide.value++;
+                console.log(currentSlide.value);
+            } else {
+                currentSlide.value = 1;
+            }
+        },2000)
+
+        const stopSlide = () => {
+            console.log('stop slider');
+            clearInterval(initSlide);
         }
 
         onMounted(() => {
-            initSlide();
+            // setInterval(() => {
+            //     initSlide();
+            // }, 2000)
+        })
+
+        onUnmounted(() => {
+            console.log('unmounted')
+            clearInterval(initSlide());
         })
 
         return {
             slides,
-            currentSlide
+            currentSlide,
+            stopSlide
         }
     }
 }
