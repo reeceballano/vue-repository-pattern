@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onUnmounted } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 
 export default {
@@ -48,12 +48,6 @@ export default {
             console.log('stop slider');
             clearInterval(initSlide);
         }
-
-        onMounted(() => {
-            // setInterval(() => {
-            //     initSlide();
-            // }, 2000)
-        })
 
         onUnmounted(() => {
             console.log('unmounted')
