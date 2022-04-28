@@ -36,12 +36,16 @@ export default {
         const initSlide = setInterval(() => {
             console.log(slides.value.length)
             const slidesCount = slides.value.length;
-            if(currentSlide.value < slidesCount) {
-                currentSlide.value++;
-                console.log(currentSlide.value);
-            } else {
-                currentSlide.value = 1;
+            currentSlide.value++;
+            if(currentSlide.value > slidesCount) {
+               currentSlide.value = 1; 
             }
+            // if(currentSlide.value < slidesCount) {
+            //     currentSlide.value++;
+            //     console.log(currentSlide.value);
+            // } else {
+            //     currentSlide.value = 1;
+            // }
         },2000)
 
         const stopSlide = () => {
