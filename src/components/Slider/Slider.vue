@@ -57,6 +57,7 @@ export default {
         return {
             slides,
             currentSlide,
+            initSlide,
             stopSlide
         }
     }
