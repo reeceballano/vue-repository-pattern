@@ -53,6 +53,10 @@ export default {
             clearInterval(initSlide);
         }
 
+        const nextSlide = () => {
+            currentSlide.value++;
+        }
+
         onUnmounted(() => {
             console.log('unmounted')
             clearInterval(initSlide);
@@ -62,7 +66,8 @@ export default {
             slides,
             currentSlide,
             initSlide,
-            stopSlide
+            stopSlide,
+            nextSlide
         }
     }
 }
