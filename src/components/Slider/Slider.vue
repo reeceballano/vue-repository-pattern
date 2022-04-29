@@ -2,6 +2,8 @@
     <div class="slider-wrapper">
         <div class="custom-container">
             <button @click.prevent="stopSlide">Stop slide</button>
+            <button @click.prevent="nextSlide">Next slide</button>
+
             <div
                 v-for="(slide, index) in slides" 
                 :key="index" 
