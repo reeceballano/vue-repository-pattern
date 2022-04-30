@@ -46,12 +46,6 @@ export default {
                 if(currentSlide.value > slidesCount) {
                 currentSlide.value = 1; 
                 }
-                // if(currentSlide.value < slidesCount) {
-                //     currentSlide.value++;
-                //     console.log(currentSlide.value);
-                // } else {
-                //     currentSlide.value = 1;
-                // }
             },2000)
         }
 
