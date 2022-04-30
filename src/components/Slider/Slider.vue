@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { ref, onUnmounted } from 'vue';
+import { ref, onUnmounted, onMounted } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 
 export default {
@@ -35,29 +35,38 @@ export default {
 
         const currentSlide = ref(1);
 
-        const initSlide = setInterval(() => {
-            console.log(slides.value.length)
-            const slidesCount = slides.value.length;
-            currentSlide.value++;
-            if(currentSlide.value > slidesCount) {
-               currentSlide.value = 1; 
-            }
-            // if(currentSlide.value < slidesCount) {
-            //     currentSlide.value++;
-            //     console.log(currentSlide.value);
-            // } else {
-            //     currentSlide.value = 1;
-            // }
-        },2000)
+        let sliderInterval = null;
+
+        const initSlide = () => {
+            stopSlide();
+            sliderInterval = setInterval(() => {
+                console.log(slides.value.length)
+                const slidesCount = slides.value.length;
+                currentSlide.value++;
+                if(currentSlide.value > slidesCount) {
+                currentSlide.value = 1; 
+                }
+                // if(currentSlide.value < slidesCount) {
+                //     currentSlide.value++;
+                //     console.log(currentSlide.value);
+                // } else {
+                //     currentSlide.value = 1;
+                // }
+            },2000)
+        }
 
         const stopSlide = () => {
             console.log('stop slider');
-            clearInterval(initSlide);
+            clearInterval(sliderInterval);
         }
 
         const nextSlide = () => {
             currentSlide.value++;
         }
+
+        onMounted(() => {
+            initSlide();
+        })
 
         onUnmounted(() => {
             console.log('unmounted')
@@ -69,7 +78,8 @@ export default {
             currentSlide,
             initSlide,
             stopSlide,
-            nextSlide
+            nextSlide,
+            sliderInterval
         }
     }
 }
