@@ -58,6 +58,10 @@ export default {
             currentSlide.value++;
         }
 
+        const prevSlide = () => {
+            currentSlide.value--;
+        }
+
         onMounted(() => {
             initSlide();
         })
@@ -73,6 +77,7 @@ export default {
             initSlide,
             stopSlide,
             nextSlide,
+            prevSlide,
             sliderInterval
         }
     }
