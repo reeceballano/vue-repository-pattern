@@ -11,8 +11,10 @@
                 :key="index" 
                 class="slider-container"
             >
-                <SliderItem v-show="index+1 == currentSlide" :slide="slide" />
-
+                <SliderItem 
+                    v-show="index+1 == currentSlide" 
+                    :slide="slide" 
+                />
             </div>
         </div>
     </div>
