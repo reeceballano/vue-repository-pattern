@@ -13,7 +13,8 @@
             >
                 <SliderItem 
                     v-show="index+1 == currentSlide" 
-                    :slide="slide" 
+                    :slide="slide"
+                    @mouseover="stopSlide" 
                 />
             </div>
         </div>
