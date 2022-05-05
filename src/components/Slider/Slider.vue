@@ -27,6 +27,12 @@ import SliderItem from '@/components/Slider/SliderItem';
 
 export default {
     name: 'Slider',
+    props: {
+        slides: {
+            type: Object,
+            default: () => {}
+        }
+    },
     components: {
         SliderItem
     },
