@@ -37,13 +37,7 @@ export default {
         SliderItem
     },
 
-    setup() {
-        const slides = ref([
-            { id: 1, image: 'https://images.pexels.com/photos/1757363/pexels-photo-1757363.jpeg' },
-            { id: 2, image: 'https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg' },
-            { id: 3, image: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg' }
-        ])
-
+    setup(props) {
         const currentSlide = ref(1);
 
         let sliderInterval = null;
@@ -51,8 +45,8 @@ export default {
         const initSlide = () => {
             stopSlide();
             sliderInterval = setInterval(() => {
-                console.log(slides.value.length)
-                const slidesCount = slides.value.length;
+                console.log(props.slides.length)
+                const slidesCount = props.slides.length;
                 currentSlide.value++;
                 if(currentSlide.value > slidesCount) {
                 currentSlide.value = 1; 
@@ -83,7 +77,6 @@ export default {
         })
 
         return {
-            slides,
             currentSlide,
             initSlide,
             stopSlide,

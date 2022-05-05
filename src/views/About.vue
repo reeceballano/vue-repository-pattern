@@ -177,7 +177,7 @@
 
             <h2 class="text-xl mb-10">Slider Component</h2>
 
-            <Slider />
+            <Slider :slides="slides" />
         </div>
         
     </section>
@@ -224,6 +224,12 @@ export default {
         Slider
     },  
     setup() {
+        const slides = ref([
+            { id: 1, image: 'https://images.pexels.com/photos/1757363/pexels-photo-1757363.jpeg' },
+            { id: 2, image: 'https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg' },
+            { id: 3, image: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg' }
+        ])
+
         const tabs = ref([
             { id: 1, title: 'Tab 1', content: 'content for tab 1' },
             { id: 1, title: 'Tab 2', content: 'content for tab 2' },
@@ -282,6 +288,7 @@ export default {
             onClose,
             userInfo,
             fieldType,
+            slides
         }
     },
 }
