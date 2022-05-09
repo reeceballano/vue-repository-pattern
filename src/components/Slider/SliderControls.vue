@@ -8,6 +8,16 @@
 <script>
 export default {
     name: 'SliderControls',
+
+    setup() {
+        const startSlide = () => {
+            emit('startSlide');
+        }
+
+        return {
+            startSlide,
+        }
+    }
 }
 </script>
 
