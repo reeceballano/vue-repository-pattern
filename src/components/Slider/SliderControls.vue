@@ -1,6 +1,6 @@
 <template>
     <div class="slider-control">
-        <button @click.prevent="initSlide">Start slide</button>
+        <button @click.prevent="startSlide">Start slide</button>
         <button @click.prevent="stopSlide">Stop slide</button>
     </div>
 </template>
