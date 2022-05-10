@@ -14,8 +14,13 @@ export default {
             emit('startSlide');
         }
 
+        const stopSlide = () => {
+            emit('stopSlide');
+        }
+
         return {
             startSlide,
+            stopSlide
         }
     }
 }
