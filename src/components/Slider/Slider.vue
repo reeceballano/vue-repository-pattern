@@ -30,6 +30,10 @@ export default {
         slides: {
             type: Object,
             default: () => {}
+        },
+        controls: {
+            type: Boolean,
+            default: true
         }
     },
     components: {

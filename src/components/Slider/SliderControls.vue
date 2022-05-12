@@ -10,12 +10,6 @@ import { boolean } from 'yargs';
 
 export default {
     name: 'SliderControls',
-    props: {
-        controls: {
-            type: boolean,
-            default: true
-        }
-    }, 
 
     setup() {
         const startSlide = () => {
