@@ -1,7 +1,7 @@
 <template>
     <div class="slider-wrapper">
         <div class="custom-container">
-            
+            <SliderControls @startSlide="initSlide" @stopSlide="stopSlide"/>
             <button @click.prevent="prevSlide">Prev slide</button>
             <button @click.prevent="nextSlide">Next slide</button>
 
@@ -23,6 +23,7 @@
 <script>
 import { ref, onUnmounted, onMounted } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
+import SliderControls from '@/components/Slider/SliderControls';
 
 export default {
     name: 'Slider',
@@ -37,7 +38,8 @@ export default {
         }
     },
     components: {
-        SliderItem
+        SliderItem,
+        SliderControls
     },
 
     setup(props) {
