@@ -1,7 +1,13 @@
 <template>
     <div class="slider-wrapper">
         <div class="custom-container">
-            <SliderControls @startSlide="initSlide" @stopSlide="stopSlide"/>
+            
+            <SliderControls 
+                v-if="controls"
+                @startSlide="initSlide" 
+                @stopSlide="stopSlide"
+            />
+
             <button @click.prevent="prevSlide">Prev slide</button>
             <button @click.prevent="nextSlide">Next slide</button>
 
@@ -34,7 +40,7 @@ export default {
         },
         controls: {
             type: Boolean,
-            default: true
+            default: false
         }
     },
     components: {
