@@ -6,12 +6,10 @@
 </template>
 
 <script>
-import { boolean } from 'yargs';
-
 export default {
     name: 'SliderControls',
 
-    setup() {
+    setup(props, {emit}) {
         const startSlide = () => {
             emit('startSlide');
         }
