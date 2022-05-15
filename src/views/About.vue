@@ -177,7 +177,7 @@
 
             <h2 class="text-xl mb-10">Slider Component</h2>
 
-            <Slider :slides="slides" />
+            <Slider :slides="slides" controls />
         </div>
         
     </section>
