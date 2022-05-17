@@ -3,10 +3,13 @@
         class="slider-item"
     >
         {{ slide }}
+        <Image :src="slide.image" />
     </div>
 </template>
 
 <script>
+import Image from '@/components/Image';
+
 export default {
     name: 'SliderItem',
     props: {
@@ -14,6 +17,9 @@ export default {
             type: Object,
             required: true
         },
+    },
+    components: {
+        Image
     }
 }
 </script>
