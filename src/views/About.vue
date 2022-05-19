@@ -225,9 +225,9 @@ export default {
     },  
     setup() {
         const slides = ref([
-            { id: 1, image: 'https://images.pexels.com/photos/1757363/pexels-photo-1757363.jpeg' },
-            { id: 2, image: 'https://images.pexels.com/photos/2559941/pexels-photo-2559941.jpeg' },
-            { id: 3, image: 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg' }
+            { id: 1, image: 'https://i.picsum.photos/id/1023/3955/2094.jpg?hmac=AW_7mARdoPWuI7sr6SG8t-2fScyyewuNscwMWtQRawU' },
+            { id: 2, image: 'https://i.picsum.photos/id/1006/3000/2000.jpg?hmac=x83pQQ7LW1UTo8HxBcIWuRIVeN_uCg0cG6keXvNvM8g' },
+            { id: 3, image: 'https://i.picsum.photos/id/102/4320/3240.jpg?hmac=ico2KysoswVG8E8r550V_afIWN963F6ygTVrqHeHeRc' }
         ])
 
         const tabs = ref([
