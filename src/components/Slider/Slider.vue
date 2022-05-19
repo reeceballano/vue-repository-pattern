@@ -16,11 +16,13 @@
                 :key="index" 
                 class="slider-container"
             >
-                <SliderItem 
-                    v-show="index+1 == currentSlide" 
-                    :slide="slide"
-                    @mouseover="stopSlide" 
-                />
+                <AnimateTransition name="slidedown">
+                    <SliderItem 
+                        v-show="index+1 == currentSlide" 
+                        :slide="slide"
+                        @mouseover="stopSlide" 
+                    />
+                </AnimateTransition>
             </div>
         </div>
     </div>
@@ -30,6 +32,7 @@
 import { ref, onUnmounted, onMounted } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 import SliderControls from '@/components/Slider/SliderControls';
+import AnimateTransition from '@/components/AnimateTransition';
 
 export default {
     name: 'Slider',
@@ -45,7 +48,8 @@ export default {
     },
     components: {
         SliderItem,
-        SliderControls
+        SliderControls,
+        AnimateTransition
     },
 
     setup(props) {
