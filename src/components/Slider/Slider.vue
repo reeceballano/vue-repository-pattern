@@ -21,6 +21,7 @@
                         v-show="index+1 == currentSlide" 
                         :slide="slide"
                         @mouseover="stopSlide" 
+                        @mouseleave="initSlide"
                     />
                 </AnimateTransition>
             </div>
