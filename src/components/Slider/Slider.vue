@@ -44,6 +44,10 @@ export default {
         controls: {
             type: Boolean,
             default: false
+        },
+        interval: {
+            type: Number,
+            default: 3000
         }
     },
     components: {
