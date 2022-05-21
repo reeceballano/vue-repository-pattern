@@ -93,7 +93,7 @@ export default {
 
         onUnmounted(() => {
             console.log('unmounted')
-            clearInterval(initSlide);
+            stopSlide();
         })
 
         return {
