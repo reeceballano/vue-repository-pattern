@@ -70,7 +70,7 @@ export default {
                 if(currentSlide.value > slidesCount) {
                 currentSlide.value = 1; 
                 }
-            },2000)
+            },props.interval)
         }
 
         const stopSlide = () => {
