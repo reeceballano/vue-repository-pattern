@@ -16,7 +16,7 @@
                 :key="index" 
                 class="slider-container"
             >
-                <AnimateTransition name="slidedown">
+                <AnimateTransition name="slide-in">
                     <SliderItem 
                         v-show="index+1 == currentSlide" 
                         :slide="slide"
@@ -107,3 +107,17 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .slider-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .slider-wrapper .custom-container {
+        position: relative;
+        width: 900px;
+        height: 400px;
+        overflow: hidden;
+    }
+</style>
