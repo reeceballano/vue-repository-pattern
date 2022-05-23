@@ -1,15 +1,15 @@
 <template>
     <div class="slider-wrapper">
+        <SliderControls 
+            v-if="controls"
+            @startSlide="initSlide" 
+            @stopSlide="stopSlide"
+        />
+
+        <button @click.prevent="prevSlide">Prev slide</button>
+        <button @click.prevent="nextSlide">Next slide</button>
         <div class="custom-container">
             
-            <SliderControls 
-                v-if="controls"
-                @startSlide="initSlide" 
-                @stopSlide="stopSlide"
-            />
-
-            <button @click.prevent="prevSlide">Prev slide</button>
-            <button @click.prevent="nextSlide">Next slide</button>
 
             <div
                 v-for="(slide, index) in slides" 
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { ref, onUnmounted, onMounted } from 'vue';
+import { ref, onUnmounted, onMounted, toRefs } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 import SliderControls from '@/components/Slider/SliderControls';
 import AnimateTransition from '@/components/AnimateTransition';
@@ -62,14 +62,15 @@ export default {
 
         let sliderInterval = null;
 
+        const { slides } = toRefs(props);
+        
         const initSlide = () => {
             stopSlide();
             sliderInterval = setInterval(() => {
-                console.log(props.slides.length)
-                const slidesCount = props.slides.length;
+                console.log(slides.value.length)
                 currentSlide.value++;
-                if(currentSlide.value > slidesCount) {
-                currentSlide.value = 1; 
+                if(currentSlide.value > slides.value.length) {
+                    currentSlide.value = 1; 
                 }
             },props.interval)
         }
@@ -81,6 +82,11 @@ export default {
 
         const nextSlide = () => {
             currentSlide.value++;
+            if(currentSlide.value > slides.value.length) {
+                currentSlide.value = 1; 
+            }
+            stopSlide();
+            initSlide();
         }
 
         const prevSlide = () => {
