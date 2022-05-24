@@ -85,7 +85,6 @@ export default {
             if(currentSlide.value > slides.value.length) {
                 currentSlide.value = 1; 
             }
-            stopSlide();
             initSlide();
         }
 
