@@ -89,7 +89,12 @@ export default {
         }
 
         const prevSlide = () => {
+            if(currentSlide.value == 1) {
+                currentSlide.value = slides.value.length + 1;
+            }
             currentSlide.value--;
+            initSlide();
+            console.log(currentSlide.value)
         }
 
         onMounted(() => {
