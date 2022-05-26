@@ -130,9 +130,8 @@ export default {
     }
 
     .slider-wrapper .custom-container {
-        position: relative;
         width: 900px;
         height: 400px;
-        overflow: hidden;
+        @apply flex justify-center items-center relative overflow-hidden;
     }
 </style>
