@@ -6,9 +6,12 @@
             @stopSlide="stopSlide"
         />
 
-        <PrimaryButton type="link" routeTo="#" @click.prevent="prevSlide">Prev slide</PrimaryButton>
-        <PrimaryButton type="link" routeTo="#" @click.prevent="nextSlide">Next slide</PrimaryButton>
         <div class="custom-container">
+            
+            <div class="slider-buttons">
+                <PrimaryButton type="link" routeTo="#" @click.prevent="prevSlide">Prev slide</PrimaryButton>
+                <PrimaryButton type="link" routeTo="#" @click.prevent="nextSlide">Next slide</PrimaryButton>
+            </div>
             
 
             <div
