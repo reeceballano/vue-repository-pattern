@@ -134,4 +134,8 @@ export default {
         height: 400px;
         @apply flex justify-center items-center relative overflow-hidden;
     }
+
+    .slider-buttons {
+        @apply z-10;
+    }
 </style>
