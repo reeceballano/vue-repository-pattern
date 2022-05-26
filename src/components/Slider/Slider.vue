@@ -6,8 +6,8 @@
             @stopSlide="stopSlide"
         />
 
-        <button @click.prevent="prevSlide">Prev slide</button>
-        <button @click.prevent="nextSlide">Next slide</button>
+        <PrimaryButton type="link" routeTo="#" @click.prevent="prevSlide">Prev slide</PrimaryButton>
+        <PrimaryButton type="link" routeTo="#" @click.prevent="nextSlide">Next slide</PrimaryButton>
         <div class="custom-container">
             
 
@@ -34,6 +34,7 @@ import { ref, onUnmounted, onMounted, toRefs } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 import SliderControls from '@/components/Slider/SliderControls';
 import AnimateTransition from '@/components/AnimateTransition';
+import PrimaryButton from '@/components/Buttons/PrimaryButton';
 
 export default {
     name: 'Slider',
@@ -54,7 +55,8 @@ export default {
     components: {
         SliderItem,
         SliderControls,
-        AnimateTransition
+        AnimateTransition,
+        PrimaryButton
     },
 
     setup(props) {
