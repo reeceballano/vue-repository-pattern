@@ -136,6 +136,6 @@ export default {
     }
 
     .slider-buttons {
-        @apply z-10;
+        @apply z-10 w-full justify-between flex;
     }
 </style>
