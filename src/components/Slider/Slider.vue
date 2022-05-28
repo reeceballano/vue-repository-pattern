@@ -65,6 +65,8 @@ export default {
     setup(props) {
         const currentSlide = ref(1);
 
+        const direction = ref('right');
+
         let sliderInterval = null;
 
         const { slides } = toRefs(props);
@@ -72,6 +74,7 @@ export default {
         const initSlide = () => {
             stopSlide();
             sliderInterval = setInterval(() => {
+                direction.value = 'right';
                 console.log(slides.value.length)
                 currentSlide.value++;
                 if(currentSlide.value > slides.value.length) {
