@@ -101,6 +101,7 @@ export default {
             if(currentSlide.value == 1) {
                 currentSlide.value = slides.value.length + 1;
             }
+            direction.value = 'left';
             currentSlide.value--;
             initSlide();
             console.log(currentSlide.value)
