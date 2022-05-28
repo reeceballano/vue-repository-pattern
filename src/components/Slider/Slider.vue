@@ -90,6 +90,7 @@ export default {
 
         const nextSlide = () => {
             currentSlide.value++;
+            direction.value = 'right';
             if(currentSlide.value > slides.value.length) {
                 currentSlide.value = 1; 
             }
