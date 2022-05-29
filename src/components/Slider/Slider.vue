@@ -19,7 +19,7 @@
                 :key="index" 
                 class="slider-container"
             >
-                <AnimateTransition name="slide-in">
+                <AnimateTransition :name="currentDirection">
                     <SliderItem 
                         v-show="index+1 == currentSlide" 
                         :slide="slide"
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { ref, onUnmounted, onMounted, toRefs } from 'vue';
+import { ref, onUnmounted, onMounted, toRefs, computed } from 'vue';
 import SliderItem from '@/components/Slider/SliderItem';
 import SliderControls from '@/components/Slider/SliderControls';
 import AnimateTransition from '@/components/AnimateTransition';
@@ -66,6 +66,10 @@ export default {
         const currentSlide = ref(1);
 
         const direction = ref('right');
+
+        const currentDirection = computed(() => {
+            return (direction.value == 'right') ? 'slide-in' : 'slide-out';
+        })
 
         let sliderInterval = null;
 
@@ -122,7 +126,8 @@ export default {
             stopSlide,
             nextSlide,
             prevSlide,
-            sliderInterval
+            sliderInterval,
+            currentDirection
         }
     }
 }
