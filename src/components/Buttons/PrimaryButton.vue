@@ -24,7 +24,7 @@
         <span>
             <slot />
         </span>
-        <Icon v-show="showIcon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
+        <Icon v-show="icon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
     </button>
 </template>
 
@@ -60,12 +60,7 @@ export default {
             type: String,
             default: ''
         },
-
-        showIcon: {
-            type: Boolean,
-            default: false
-        },
-
+        
         cssStyle: {
             type: String,
             default: 'text-gray-700 text-base font-semibold rounded'
