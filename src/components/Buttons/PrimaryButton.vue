@@ -7,7 +7,7 @@
         <span>
             <slot />
         </span>
-        <Icon v-show="icon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
+        <Icon v-show="icon" :icon="icon" class="h-5 w-5"/>
     </router-link>
     
     <a 
@@ -24,7 +24,7 @@
         <span>
             <slot />
         </span>
-        <Icon v-show="icon" icon="MenuAlt2Icon" class="h-3 w-3 ml-2"/>
+        <Icon v-show="icon" :icon="icon" class="h-5 w-5"/>
     </button>
 </template>
 
