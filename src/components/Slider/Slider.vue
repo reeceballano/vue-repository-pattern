@@ -9,10 +9,9 @@
         <div class="custom-container">
             
             <div class="slider-buttons">
-                <PrimaryButton type="link" routeTo="#" @click.prevent="prevSlide">Prev</PrimaryButton>
-                <PrimaryButton type="link" routeTo="#" @click.prevent="nextSlide">Next</PrimaryButton>
+                <PrimaryButton :showIcon="true" type="button" routeTo="#" @click.prevent="prevSlide">Prev</PrimaryButton>
+                <PrimaryButton :showIcon="true" type="button" routeTo="#" @click.prevent="nextSlide">Next</PrimaryButton>
             </div>
-            
 
             <div
                 v-for="(slide, index) in slides" 
