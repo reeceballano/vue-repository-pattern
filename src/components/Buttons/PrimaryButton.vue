@@ -56,6 +56,11 @@ export default {
             default: () => {}
         },
 
+        icon: {
+            type: String,
+            default: ''
+        },
+
         showIcon: {
             type: Boolean,
             default: false
