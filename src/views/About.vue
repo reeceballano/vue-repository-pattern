@@ -50,19 +50,19 @@
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton route-to="/users" bg="blue" :show-icon="true" css-style="bg-red-400 hover:bg-red-200">
+                <PrimaryButton route-to="/users" bg="blue" css-style="bg-red-400 hover:bg-red-200">
                     Users Page
                 </PrimaryButton>
 
-                <PrimaryButton route-to="User" :button-params="{uid:1}" :show-icon="true" css-style="bg-yellow-400 hover:bg-yellow-200">
+                <PrimaryButton route-to="User" :button-params="{uid:1}" css-style="bg-yellow-400 hover:bg-yellow-200">
                     User Page
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" :show-icon="true" css-style="bg-green-400 hover:bg-green-200 text-white">
+                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" css-style="bg-green-400 hover:bg-green-200 text-white">
                     I'm a Button
                 </PrimaryButton>
 
-                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button" :show-icon="true">
+                <PrimaryButton @button-click="buttonClick('Im a <button>')" type="button">
                     I'm a Button
                 </PrimaryButton>
             </div>
