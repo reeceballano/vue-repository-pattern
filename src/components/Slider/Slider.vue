@@ -9,8 +9,8 @@
         <div class="custom-container">
             
             <div class="slider-buttons">
-                <PrimaryButton :showIcon="true" type="button" @click.prevent="prevSlide">Prev</PrimaryButton>
-                <PrimaryButton :showIcon="true" type="button" @click.prevent="nextSlide">Next</PrimaryButton>
+                <PrimaryButton icon="ArrowCircleLeftIcon" type="button" @click.prevent="prevSlide"></PrimaryButton>
+                <PrimaryButton icon="ArrowCircleRightIcon" type="button" @click.prevent="nextSlide"></PrimaryButton>
             </div>
 
             <div
