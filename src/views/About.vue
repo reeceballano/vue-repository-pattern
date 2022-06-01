@@ -106,7 +106,6 @@
                         <PrimaryButton type="button" @button-click="isVisibleModalTwo = !isVisibleModalTwo" css-style="bg-red-400 hover:bg-red-200">
                             Modal no overlay
                         </PrimaryButton>
-
                     </template>
                 </Modal>
             </div>
