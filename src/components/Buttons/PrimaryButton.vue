@@ -61,6 +61,11 @@ export default {
             default: ''
         },
 
+        iconPosition: {
+            type: String,
+            default: 'right'
+        },
+
         cssStyle: {
             type: String,
             default: 'text-gray-700 text-base font-semibold rounded'
