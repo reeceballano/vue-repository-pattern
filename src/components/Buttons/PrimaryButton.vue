@@ -21,10 +21,11 @@
     </a>
 
     <button v-else :class="[`${buttonBg} rounded`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
+        <Icon v-show="icon && iconPosition == 'Left'" :icon="icon" class="h-5 w-5"/>
         <span>
             <slot />
         </span>
-        <Icon v-show="icon" :icon="icon" class="h-5 w-5"/>
+        <Icon v-show="icon && iconPosition == 'Right'" :icon="icon" class="h-5 w-5"/>
     </button>
 </template>
 
