@@ -25,7 +25,7 @@
         <span>
             <slot />
         </span>
-        <Icon v-show="icon && iconPosition == 'Right'" :icon="icon" class="h-5 w-5"/>
+        <Icon v-show="icon && iconPosition == 'Right'" :icon="icon" class="h-5 w-5 ml-2"/>
     </button>
 </template>
 
