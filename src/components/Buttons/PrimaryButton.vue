@@ -4,10 +4,11 @@
         :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
         :class="[`${buttonBg} rounded`]"
         class="primary-button">
-        <span>
-            <slot />
-        </span>
-        <Icon v-show="icon" :icon="icon" class="h-5 w-5"/>
+            <Icon v-show="icon && iconPosition == 'Left'" :icon="icon" class="h-5 w-5 mr-2"/>
+            <span>
+                <slot />
+            </span>
+            <Icon v-show="icon && iconPosition == 'Right'" :icon="icon" class="h-5 w-5 ml-2"/>  
     </router-link>
     
     <a 
