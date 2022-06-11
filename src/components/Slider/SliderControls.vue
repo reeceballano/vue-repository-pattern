@@ -1,13 +1,19 @@
 <template>
     <div class="slider-control">
-        <button @click.prevent="startSlide">Start slide</button>
+        <PrimaryButton icon="PlayIcon" iconPosition="Right">Play</PrimaryButton>
         <button @click.prevent="stopSlide">Stop slide</button>
     </div>
 </template>
 
 <script>
+import PrimaryButton from '@/components/Buttons/PrimaryButton';
+
 export default {
     name: 'SliderControls',
+    
+    components: {
+        PrimaryButton
+    },
 
     setup(props, {emit}) {
         const startSlide = () => {

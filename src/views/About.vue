@@ -50,7 +50,7 @@
                     Primary Button
                 </PrimaryButton>
 
-                <PrimaryButton icon="UsersIcon" route-to="/users" bg="blue" css-style="bg-red-400 hover:bg-red-200">
+                <PrimaryButton icon="UsersIcon" iconPosition="Left" route-to="/users" bg="blue" css-style="bg-red-400 hover:bg-red-200">
                     Users Page
                 </PrimaryButton>
 
