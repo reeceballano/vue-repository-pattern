@@ -2,7 +2,7 @@
     <router-link
         v-if="type == 'link' && !String(routeTo).includes('#')" 
         :to="(String(routeTo).includes('/')) ? routeTo : { name:routeTo, params: buttonParams }"
-        :class="[`${buttonBg} rounded`]"
+        :class="[`${buttonBg} rounded ${cssStyle}`]"
         class="primary-button">
             <Icon v-show="icon && iconPosition == 'Left'" :icon="icon" class="h-5 w-5 mr-2"/>
             <span>
@@ -15,7 +15,7 @@
         v-else-if="type == 'link' && String(routeTo).includes('#')"  
         :href="routeTo"
         @click.prevent="buttonClick"
-        :class="[`${buttonBg} rounded`]"
+        :class="[`${buttonBg} rounded ${cssStyle}`]"
         class="primary-button"
     >
         <Icon v-show="icon && iconPosition == 'Left'" :icon="icon" class="h-5 w-5 mr-2"/>
@@ -25,7 +25,7 @@
         <Icon v-show="icon && iconPosition == 'Right'" :icon="icon" class="h-5 w-5 ml-2"/>
     </a>
 
-    <button v-else :class="[`${buttonBg} rounded`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
+    <button v-else :class="[`${buttonBg} rounded ${cssStyle}`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
         <Icon v-show="icon && iconPosition == 'Left'" :icon="icon" class="h-5 w-5 mr-2"/>
         <span>
             <slot />
@@ -74,7 +74,7 @@ export default {
 
         cssStyle: {
             type: String,
-            default: 'text-gray-700 text-base font-semibold rounded'
+            default: 'text-base rounded'
         },
 
     },
