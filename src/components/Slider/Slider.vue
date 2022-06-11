@@ -1,11 +1,6 @@
 <template>
     <div class="slider-wrapper">
-        <SliderControls 
-            v-if="controls"
-            @startSlide="initSlide" 
-            @stopSlide="stopSlide"
-        />
-
+        
         <div class="custom-container">
             
             <div class="slider-buttons">
@@ -27,6 +22,11 @@
                     />
                 </AnimateTransition>
             </div>
+            <SliderControls 
+                v-if="controls"
+                @startSlide="initSlide" 
+                @stopSlide="stopSlide"
+            />
         </div>
     </div>
 </template>
