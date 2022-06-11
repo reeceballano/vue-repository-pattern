@@ -32,6 +32,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .slider-control {
+        @apply z-10;
+    }
 </style>
