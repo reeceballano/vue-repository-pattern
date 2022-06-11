@@ -1,7 +1,7 @@
 <template>
     <div class="slider-control">
-        <PrimaryButton icon="PlayIcon" iconPosition="Right">Play</PrimaryButton>
-        <button @click.prevent="stopSlide">Stop slide</button>
+        <PrimaryButton @buttonClick="startSlide" icon="PlayIcon" iconPosition="Right"></PrimaryButton>
+        <PrimaryButton @buttonClick="stopSlide" icon="StopIcon" iconPosition="Right"></PrimaryButton>
     </div>
 </template>
 
