@@ -34,6 +34,6 @@ export default {
 
 <style scoped>
     .slider-control {
-        @apply z-10;
+        @apply z-10 absolute bottom-10;
     }
 </style>
