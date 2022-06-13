@@ -26,11 +26,11 @@
     </a>
 
     <button v-else :class="[`${buttonBg} rounded ${cssStyle}`]" :type="(type == 'button') ? 'button' : 'submit'" class="primary-button" @click.prevent="buttonClick">
-        <Icon v-show="icon && iconPosition == 'Left'" :icon="icon" class="h-5 w-5 mr-2"/>
+        <Icon v-show="icon && iconPosition == 'Left'" :icon="icon" :class="(hasSlot) ? 'mr-2' : ''" class="h-5 w-5"/>
         <span>
             <slot />
         </span>
-        <Icon v-show="icon && iconPosition == 'Right'" :icon="icon" class="h-5 w-5 ml-2"/>
+        <Icon v-show="icon && iconPosition == 'Right'" :icon="icon" :class="(hasSlot) ? 'ml-2' : ''" class="h-5 w-5"/>
     </button>
 </template>
 
@@ -82,8 +82,11 @@ export default {
         Icon,
     },
 
-    setup(props, { emit }) {
+    setup(props, { emit, slots }) {
+
         const store = useStore();
+
+        const hasSlot = name => !!slots[name];
 
         const buttonSettings = computed(() => {
             return store.getters['siteSetting/getButtonSetting'];
@@ -108,6 +111,7 @@ export default {
             buttonSettings,
             buttonBg,
             buttonClick,
+            hasSlot,
         }
     }
 }
