@@ -1,12 +1,13 @@
 <template>
     <div class="slider-wrapper">
-        
+       
         <div class="custom-container">
             
             <div class="slider-buttons">
                 <PrimaryButton iconPosition="Left" icon="ArrowCircleLeftIcon" type="button" @click.prevent="prevSlide"></PrimaryButton>
                 <PrimaryButton iconPosition="Right" icon="ArrowCircleRightIcon" type="button" @click.prevent="nextSlide"></PrimaryButton>
             </div>
+
 
             <div
                 v-for="(slide, index) in slides" 
@@ -17,8 +18,8 @@
                     <SliderItem 
                         v-show="index+1 == currentSlide" 
                         :slide="slide"
-                        @mouseover="stopSlide" 
-                        @mouseleave="initSlide"
+                        @mouseover="stopSlide; isHovered = true;" 
+                        @mouseleave="initSlide; isHovered = false"
                     />
                 </AnimateTransition>
             </div>
@@ -63,6 +64,8 @@ export default {
 
     setup(props) {
         const currentSlide = ref(1);
+
+        const isHovered = ref(false);
 
         const direction = ref('right');
 
@@ -126,7 +129,8 @@ export default {
             nextSlide,
             prevSlide,
             sliderInterval,
-            currentDirection
+            currentDirection,
+            isHovered
         }
     }
 }
