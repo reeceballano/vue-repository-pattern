@@ -3,7 +3,7 @@
        
         <div class="custom-container">
             
-            <div class="slider-buttons">
+            <div :class="(isHovered) ? 'opacity-90' : 'opacity-0'" class="slider-buttons">
                 <PrimaryButton iconPosition="Left" icon="ArrowCircleLeftIcon" type="button" @click.prevent="prevSlide"></PrimaryButton>
                 <PrimaryButton iconPosition="Right" icon="ArrowCircleRightIcon" type="button" @click.prevent="nextSlide"></PrimaryButton>
             </div>
