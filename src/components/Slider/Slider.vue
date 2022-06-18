@@ -3,9 +3,9 @@
        
         <div class="custom-container">
             
-            <div :class="(isHovered) ? 'opacity-90' : 'opacity-0'" class="slider-buttons">
-                <PrimaryButton iconPosition="Left" icon="ArrowCircleLeftIcon" type="button" @click.prevent="prevSlide"></PrimaryButton>
-                <PrimaryButton iconPosition="Right" icon="ArrowCircleRightIcon" type="button" @click.prevent="nextSlide"></PrimaryButton>
+            <div @mouseover="isHovered = true;" :class="(isHovered) ? 'opacity-90' : 'opacity-0'" class="slider-buttons">
+                <PrimaryButton @mouseover="isHovered = true;"  :cssStyle="(isHovered) ? 'opacity-90' : 'opacity-0'" iconPosition="Left" icon="ArrowCircleLeftIcon" type="button" @click.prevent="prevSlide"></PrimaryButton>
+                <PrimaryButton @mouseover="isHovered = true;" :cssStyle="(isHovered) ? 'opacity-90' : 'opacity-0'" iconPosition="Right" icon="ArrowCircleRightIcon" type="button" @click.prevent="nextSlide"></PrimaryButton>
             </div>
 
 
