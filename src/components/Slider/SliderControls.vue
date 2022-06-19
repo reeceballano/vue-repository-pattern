@@ -36,4 +36,8 @@ export default {
     .slider-control {
         @apply z-10 absolute bottom-10;
     }
+
+    .slider-control button {
+        padding: 3px;
+    }
 </style>
