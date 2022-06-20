@@ -1,13 +1,13 @@
 <template>
     <div class="slider-wrapper">
-       
+                   PAUSE: {{pauseHover}}
+
         <div class="custom-container">
             
             <div @mouseover="isHovered = true;" :class="(isHovered) ? 'opacity-90' : 'opacity-0'" class="slider-buttons">
                 <PrimaryButton @mouseover="isHovered = true;"  :cssStyle="(isHovered) ? 'opacity-90' : 'opacity-0'" iconPosition="Left" icon="ArrowCircleLeftIcon" type="button" @click.prevent="prevSlide"></PrimaryButton>
                 <PrimaryButton @mouseover="isHovered = true;" :cssStyle="(isHovered) ? 'opacity-90' : 'opacity-0'" iconPosition="Right" icon="ArrowCircleRightIcon" type="button" @click.prevent="nextSlide"></PrimaryButton>
             </div>
-
 
             <div
                 v-for="(slide, index) in slides" 
@@ -18,8 +18,8 @@
                     <SliderItem 
                         v-show="index+1 == currentSlide" 
                         :slide="slide"
-                        @mouseover="stopSlide; isHovered = true;" 
-                        @mouseleave="initSlide; isHovered = false"
+                        @mouseover="(pauseHover) ? stopSlide() : initSlide(); isHovered = true;" 
+                        @mouseleave="initSlide(); isHovered = false"
                     />
                 </AnimateTransition>
             </div>
@@ -53,6 +53,10 @@ export default {
         interval: {
             type: Number,
             default: 3000
+        },
+        pauseHover: {
+            type: Boolean,
+            default: true
         }
     },
     components: {
