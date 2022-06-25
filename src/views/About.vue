@@ -181,9 +181,10 @@
             <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Switch Toggle Component</h2>
-            
-            <SwitchToggle />
-            <SwitchToggle />
+            <div class="flex items-center w-full">
+                <SwitchToggle />
+                <SwitchToggle />
+            </div>
         </div>
         
     </section>
