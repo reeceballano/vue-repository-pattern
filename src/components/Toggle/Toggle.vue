@@ -1,5 +1,5 @@
 <template>
-    <div class="toggle flex items-center justify-center w-full mb-12">
+    <div class="toggle mb-12">
         <label class="flex items-center cursor-pointer">
             <div class="relative">
                 <input type="checkbox" class="sr-only" />
