@@ -177,6 +177,11 @@
             <h2 class="text-xl mb-10">Slider Component</h2>
 
             <Slider :slides="slides" controls :interval="4000" />
+
+            <Divider bg="blue" />
+
+            <h2 class="text-xl mb-10">Switch Toggle Component</h2>
+            <SwitchToggle />
         </div>
         
     </section>
@@ -201,6 +206,7 @@ import Accordion from '@/components/Accordion/Accordion';
 import AccordionItem from '@/components/Accordion/AccordionItem';
 import Toggle from '@/components/AccordionToggle/Toggle';
 import Slider from '@/components/Slider/Slider';
+import SwitchToggle from '@/components/Toggle/Toggle';
 
 export default {
     name: 'About',
@@ -220,7 +226,8 @@ export default {
         Accordion,
         AccordionItem,
         Toggle,
-        Slider
+        Slider,
+        SwitchToggle
     },  
     setup() {
         const slides = ref([
