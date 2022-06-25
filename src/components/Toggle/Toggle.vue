@@ -2,7 +2,7 @@
     <div class="toggle flex items-center justify-center w-full mb-12">
         <label class="flex items-center cursor-pointer">
             <div class="relative">
-                <input type="checkbox" />
+                <input type="checkbox" class="sr-only" />
                 <!-- line -->
                 <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
                 <!-- dot -->
@@ -21,5 +21,8 @@
 </script>
 
 <style scoped>
-
+    input:checked ~ .dot {
+        transform: translateX(100%);
+        background-color: #48bb78;
+    }
 </style>
