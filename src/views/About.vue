@@ -181,9 +181,14 @@
             <Divider bg="blue" />
 
             <h2 class="text-xl mb-10">Switch Toggle Component</h2>
-            <div class="flex items-center w-full">
-                <SwitchToggle />
-                <SwitchToggle />
+            {{ switches[0] }}
+            <div class="w-full mt-10">
+                <SwitchToggle 
+                    :inputData="switches[0]"
+                    :modelValue="switches[0].value" 
+                    @update:modelValue="switches[0].value = $event" 
+                    :options="switches[0].option"
+                />
             </div>
         </div>
         
@@ -256,6 +261,10 @@ export default {
             console.log('on close callback');
         }
 
+        const switches = ref([
+            { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:[], option:['Developer', 'Designer', 'DevOp'] },
+        ])
+
         const userInfo = ref([
             { id: 'field-name', type: 'text', label: 'Name', value:'' },
             { id: 'field-email', type: 'email', label: 'Email', value: '' },
@@ -297,7 +306,8 @@ export default {
             onClose,
             userInfo,
             fieldType,
-            slides
+            slides,
+            switches
         }
     },
 }
