@@ -214,7 +214,7 @@ import Accordion from '@/components/Accordion/Accordion';
 import AccordionItem from '@/components/Accordion/AccordionItem';
 import Toggle from '@/components/AccordionToggle/Toggle';
 import Slider from '@/components/Slider/Slider';
-import SwitchToggle from '@/components/Toggle/Toggle';
+import SwitchToggle from '@/components/SwitchToggle/SwitchToggle';
 
 export default {
     name: 'About',
