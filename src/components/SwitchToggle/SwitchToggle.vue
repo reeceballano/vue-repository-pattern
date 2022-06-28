@@ -30,7 +30,7 @@
     import { ref } from 'vue';
 
     export default {
-        name: 'Switch',
+        name: 'SwitchToggle',
 
         props: {
             inputData: {
