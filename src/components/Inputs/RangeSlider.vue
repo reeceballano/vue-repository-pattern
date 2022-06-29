@@ -1,6 +1,9 @@
 <template>
     <div class="range-slider">
-        <label v-show="showLabel" class="block mb-2">*ON DEVELOPMENT* {{inputData.label}}: <span>{{modelValue}}</span></label>
+        <label v-show="showLabel" class="block mb-2">*ON DEVELOPMENT* {{inputData.label}}: 
+            <span v-if="modelValue.length">{{modelValue}}</span>
+            <span v-else>{{options}}</span>
+        </label>
         
         <!-- TODO
             - add dual handles - DONE!
@@ -45,7 +48,7 @@ export default {
         },
         
         modelValue: {
-            type: [Number, Array]
+            type: [Number, Array],
         },
 
         showLabel: {
@@ -69,7 +72,7 @@ export default {
         return {
             updateValue,
             sliderValue,
-            sliderValueTwo
+            sliderValueTwo,
         }
     }
 }
