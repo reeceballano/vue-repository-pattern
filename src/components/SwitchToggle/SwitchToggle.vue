@@ -65,6 +65,6 @@
 <style scoped>
     input:checked ~ .dot {
         transform: translateX(100%);
-        background-color: #48bb78;
+        background-color: #12c0f0;
     }
 </style>
