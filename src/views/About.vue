@@ -262,7 +262,7 @@ export default {
         }
 
         const switches = ref([
-            { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:[], option:['Developer', 'Designer', 'DevOp'] },
+            { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:['Developer'], option:['Developer', 'Designer', 'DevOp'] },
         ])
 
         const userInfo = ref([
