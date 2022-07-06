@@ -1,5 +1,6 @@
 <template>
     <label class="block mb-2">{{inputData.label}}</label>
+    {{inputData.value}}
     <div class="toggle mb-12 mr-8 flex justify-around py-1.5 h-px[2500]">
         <div v-for="(option,i) in options" :key="i" >
             <label class="flex items-center cursor-pointer">
@@ -19,7 +20,7 @@
                 </div>
                 <!-- label -->
                 <div class="ml-3 text-gray-700 font-medium">
-                    {{ option }}
+                    {{ option }} {{checkValue(option)}}
                 </div>
             </label>
         </div>    
@@ -50,6 +51,16 @@
         },
         
         setup(props, { emit }) {
+            // CHECK IF CHECKBOX HAS VALUE
+            console.log(props.inputData.value);
+            const checkValue = (val) => {
+                if(props.inputData.value.find((str) => str === val)) {
+                    return true;
+                }
+
+                return false;
+            }
+
             // ASSIGN A MODEL FOR THE REFERENCE
             const collectedValues = ref([]);
 
@@ -60,7 +71,8 @@
 
             return {
                 updateValue,
-                collectedValues
+                collectedValues,
+                checkValue
             }
         }
     }
