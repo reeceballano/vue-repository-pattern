@@ -17,6 +17,11 @@
 </template>
 
 <script>
+    /**
+    * TODO
+    * - check if checkbox has value on initial page load
+    * 
+    */
 import { ref } from 'vue';
 
 export default {
