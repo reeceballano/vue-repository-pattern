@@ -31,7 +31,7 @@
     /**
      * TODO
      * - DONE check if checkbox has value on initial page load
-     * - fixed the value of collectedValues, check if there is a value in inputData.value 
+     * - DONE fixed the value of collectedValues, check if there is a value in inputData.value 
      */
     import { ref } from 'vue';
 
