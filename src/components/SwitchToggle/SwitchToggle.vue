@@ -63,7 +63,7 @@
             }
 
             // ASSIGN A MODEL FOR THE REFERENCE
-            const collectedValues = ref([]);
+            const collectedValues = ref(props.inputData.value);
 
             const updateValue = () => {
                 // WE NEED TO MAP THE VALUES IN THE collectedValues ref
