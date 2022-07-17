@@ -34,6 +34,7 @@
      * - DONE fixed the value of collectedValues, check if there is a value in inputData.value 
      */
     import { ref } from 'vue';
+    import { checkValue as checkVal } from '@/common/checkValue';
 
     export default {
         name: 'SwitchToggle',
@@ -55,11 +56,7 @@
             // CHECK IF CHECKBOX HAS VALUE
             console.log(props.inputData.value);
             const checkValue = (val) => {
-                if(props.inputData.value.find((str) => str === val)) {
-                    return true;
-                }
-
-                return false;
+                checkVal(props.inputData.value, val);
             }
 
             // ASSIGN A MODEL FOR THE REFERENCE
