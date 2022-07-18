@@ -23,7 +23,7 @@
     * - fix the value of collectedValues, check if there is a value in inputData.value 
     */
 import { ref } from 'vue';
-
+import { checkValue as checkVal } from '@/common/checkValue';
 export default {
     name: 'Checkbox',
     props: {
@@ -55,9 +55,15 @@ export default {
             emit('update:modelValue', collectedValues.value);
         }
 
+        // CHECK IF CHECKBOX HAS VALUE
+        const checkValue = (val) => {
+            checkVal(props.inputData.value, val);
+        }
+
         return {
             updateValue,
-            collectedValues
+            collectedValues,
+            checkValue
         }
     }
 }
