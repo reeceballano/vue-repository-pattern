@@ -10,6 +10,7 @@
                 @change="updateValue($event.target.value)" 
                 class="mr-1.5" 
                 :placeholder="(showLabel) ? '' : inputData.label" 
+                :checked="(checkValue(option))"
             />
             <label v-show="showLabel" :for="inputData.name" class="block">{{option}}</label>
         </div>
