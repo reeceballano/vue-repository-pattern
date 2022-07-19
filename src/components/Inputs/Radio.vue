@@ -49,7 +49,7 @@ export default {
             emit('update:modelValue', value);
         }
 
-        const picked = ref(null);
+        const picked = ref(props.inputData.value);
         
         return {
             updateValue,
