@@ -272,7 +272,7 @@ export default {
             { id: 'field-message', type: 'textarea', label: 'Message', value:'' },
             { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:['Developer', 'DevOp'], option:['Developer', 'Designer', 'DevOp'] },
             { id: 'field-select', type: 'select', label: 'Salary Expectation', value:'', option:['50000-70000', '70000-90000', '90000-120000'] },
-            { id: 'field-radio', type: 'radio', label: 'Experience', value:'', option:['Junior', 'Mid', 'Senior'] },
+            { id: 'field-radio', type: 'radio', label: 'Experience', value:'Mid', option:['Junior', 'Mid', 'Senior'] },
             { id: 'field-range-slider', type: 'range', label:'Annual Income', value: [], option:[1000,5000] }
         ])
 
