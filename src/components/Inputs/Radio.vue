@@ -16,6 +16,10 @@
 </template>
 
 <script>
+/***
+* TODO  
+* - fix the value of picked, get the value of inputData.value and place it on the picked ref
+*/
 import { ref } from 'vue';
 
 export default {
