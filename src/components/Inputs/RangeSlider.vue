@@ -4,7 +4,6 @@
             <span v-if="modelValue.length">{{modelValue}}</span>
             <span v-else>{{options}}</span>
         </label>
-        
         <!-- TODO
             - add dual handles - DONE!
             - modelValue should be in array[min,max] - DONE!
@@ -12,6 +11,7 @@
             - add value on handles
             - avoid range to overlap
         -->
+        {{initialValue}}
 
         <div class="range-wrapper relative h-16">
             <input 
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 export default {
     name: 'RangeSlider',
@@ -62,6 +62,13 @@ export default {
     },
 
     setup(props, { emit }) {
+        const initialValue = computed(() => {
+            const minVal = props.inputData.value[0];
+            const maxVal = props.inputData.value[1];
+            const max = maxVal / 100;
+            return minVal / max;
+        })
+
         const updateValue = () => {
             emit('update:modelValue', [Number(sliderValue.value), Number(sliderValueTwo.value)]);
         }
@@ -73,6 +80,7 @@ export default {
             updateValue,
             sliderValue,
             sliderValueTwo,
+            initialValue
         }
     }
 }
