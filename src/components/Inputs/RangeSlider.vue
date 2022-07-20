@@ -66,7 +66,7 @@ export default {
             emit('update:modelValue', [Number(sliderValue.value), Number(sliderValueTwo.value)]);
         }
 
-        const sliderValue = ref(0);
+        const sliderValue = ref(props.options[0]);
         const sliderValueTwo = ref(props.options[1]);
 
         return {
