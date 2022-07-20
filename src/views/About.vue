@@ -273,7 +273,7 @@ export default {
             { id: 'field-checkbox', type: 'checkbox', label: 'Position', value:['Developer', 'DevOp'], option:['Developer', 'Designer', 'DevOp'] },
             { id: 'field-select', type: 'select', label: 'Salary Expectation', value:'', option:['50000-70000', '70000-90000', '90000-120000'] },
             { id: 'field-radio', type: 'radio', label: 'Experience', value:'Mid', option:['Junior', 'Mid', 'Senior'] },
-            { id: 'field-range-slider', type: 'range', label:'Annual Income', value: [], option:[1000,5000] }
+            { id: 'field-range-slider', type: 'range', label:'Annual Income', value: [2500, 5000], option:[1000,5000] }
         ])
 
         const fetchCountries = async () => {
