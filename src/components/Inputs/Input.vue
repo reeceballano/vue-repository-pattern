@@ -5,7 +5,7 @@
         :type="inputData.type" 
         :value="modelValue" 
         @input="updateValue($event.target.value)" 
-        class="primary-input" 
+        class="primary-input mb-0" 
         :placeholder="(showLabel) ? '' : inputData.label" 
     />
 </template>
