@@ -40,6 +40,14 @@
                 <h2>
                     Stay in the loop!
                 </h2> 
+                <div class="flex justify-center items-center my-10">
+                    <div class="flex justify-center w-2/4">
+                        <Input :inputData="{ id: 'field-name', type: 'text', label: 'Name', value:'' }"/>
+                        <SecondaryButton routeTo="#" type="link" @buttonClick="exploreBtn()" css-style="text-white">
+                            Explore
+                        </SecondaryButton>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -50,6 +58,7 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 import PostList from '@/components/PostList';
 import SecondaryButton from '../components/Buttons/SecondaryButton';
+import Input from '@/components/Inputs/Input';
 // import Add from '@/components/Add';
 
 export default {
@@ -57,6 +66,7 @@ export default {
     components: {
         PostList,
         SecondaryButton,
+        Input,
         // Add
     },
 
