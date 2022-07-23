@@ -34,22 +34,6 @@
                 <PostList  />
             </div>
         </section>
-
-        <section class="cta-section bg-purple-800">
-            <div class="custom-container">
-                <h2>
-                    Stay in the loop!
-                </h2> 
-                <div class="flex justify-center items-center my-10 overflow-auto">
-                    <div class="flex justify-center w-2/4">
-                        <Input :inputData="{ id: 'field-email', type: 'email', label: 'Your email', value:'' }"/>
-                        <SecondaryButton routeTo="#" type="link" @buttonClick="exploreBtn()" css-style="text-white">
-                            Explore
-                        </SecondaryButton>
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 </template>
 
@@ -58,7 +42,6 @@ import { computed } from 'vue';
 import { useStore } from 'vuex';
 import PostList from '@/components/PostList';
 import SecondaryButton from '../components/Buttons/SecondaryButton';
-import Input from '@/components/Inputs/Input';
 // import Add from '@/components/Add';
 
 export default {
@@ -66,7 +49,6 @@ export default {
     components: {
         PostList,
         SecondaryButton,
-        Input,
         // Add
     },
 
