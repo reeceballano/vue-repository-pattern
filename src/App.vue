@@ -29,6 +29,8 @@
         <component :is="layout">
             <router-view/>
         </component>
+
+        <Cta />
     </div>
 </template>
 
@@ -43,6 +45,7 @@ import Hero from '@/components/Header/Hero';
 import Search from '@/components/Search';
 import AnimateTransition from '@/components/AnimateTransition';
 import Icon from '@/components/Icon';
+import Cta from '@/components/Cta';
 
 export default {
     components: {
@@ -52,7 +55,8 @@ export default {
         Hero,
         Search,
         AnimateTransition,
-        Icon
+        Icon,
+        Cta
     },
 
     setup() {
