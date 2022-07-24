@@ -77,7 +77,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .cta-section {
+
+    .intro-text {
         h2 {
             @apply text-center text-center md:text-4xl text-2xl leading-10;
         }
