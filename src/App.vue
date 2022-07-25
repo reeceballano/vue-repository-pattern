@@ -30,7 +30,9 @@
             <router-view/>
         </component>
 
-        <Cta />
+        <Cta v-if="!hideSection" />
+
+        <Footer v-if="!hideSection" />
     </div>
 </template>
 
@@ -46,6 +48,7 @@ import Search from '@/components/Search';
 import AnimateTransition from '@/components/AnimateTransition';
 import Icon from '@/components/Icon';
 import Cta from '@/components/Cta';
+import Footer from '@/components/Footer';
 
 export default {
     components: {
@@ -56,7 +59,8 @@ export default {
         Search,
         AnimateTransition,
         Icon,
-        Cta
+        Cta,
+        Footer
     },
 
     setup() {
@@ -70,6 +74,18 @@ export default {
         
         const headerLayout = computed(() => {
             return (route.meta.header || 'half');
+        })
+
+        const hideSection = computed(() => {
+            if(route.name == 'Login') {
+                return true;
+            }
+
+            if(route.name == 'Register') {
+                return true;
+            }
+
+            return false;
         })
 
         const navLinks = [
@@ -112,6 +128,8 @@ export default {
             headerLayout,
             isFixed,
             closeSearch,
+            route,
+            hideSection
         }
     },
 }
