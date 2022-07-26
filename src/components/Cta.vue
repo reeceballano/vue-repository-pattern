@@ -2,7 +2,7 @@
     <section class="cta-section bg-purple-800">
         <div class="custom-container">
             <h2 class="text-white">
-                Stay in the loop!
+                {{title}}
             </h2> 
             <div class="flex justify-center items-center my-10 overflow-auto">
                 <div class="flex justify-center w-2/4">
