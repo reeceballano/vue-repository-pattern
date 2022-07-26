@@ -30,7 +30,11 @@
             <router-view/>
         </component>
 
-        <Cta v-if="!hideSection" title="Stay in the loop!" />
+        <Cta 
+            v-if="!hideSection" 
+            title="Stay in the loop!" 
+            @ctaSubmit="ctaSubmit"
+        />
 
         <Footer v-if="!hideSection" />
     </div>
@@ -113,6 +117,10 @@ export default {
             isSearch.value = false;
         }
 
+        const ctaSubmit = () => {
+            console.log('cta submit');
+        }
+
         onMounted(() => {
             store.dispatch('post/fetchPosts');
             store.dispatch('post/fetchPaginatedPosts');
@@ -129,7 +137,8 @@ export default {
             isFixed,
             closeSearch,
             route,
-            hideSection
+            hideSection,
+            ctaSubmit
         }
     },
 }
