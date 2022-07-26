@@ -25,6 +25,12 @@ export default {
     components: {
         SecondaryButton,
         Input,
+    },
+    props: {
+        title: {
+            type: String,
+            required: true
+        }
     }
 }
 </script>
