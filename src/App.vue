@@ -30,7 +30,7 @@
             <router-view/>
         </component>
 
-        <Cta v-if="!hideSection" />
+        <Cta v-if="!hideSection" title="Stay in the loop!" />
 
         <Footer v-if="!hideSection" />
     </div>
