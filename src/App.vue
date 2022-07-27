@@ -29,12 +29,15 @@
         <component :is="layout">
             <router-view/>
         </component>
-
         <Cta 
             v-if="!hideSection" 
             title="Stay in the loop!" 
+            :inputData="ctaDetails"
+            @update="ctaDetails.value = $event"
             @ctaSubmit="ctaSubmit"
-        />
+        >
+            {{ctaDetails}}
+        </Cta>
 
         <Footer v-if="!hideSection" />
     </div>
@@ -117,8 +120,10 @@ export default {
             isSearch.value = false;
         }
 
+        const ctaDetails = ref({ id: 'field-email', type: 'email', label: 'Your email', value:'' });
+
         const ctaSubmit = () => {
-            console.log('cta submit');
+            console.log('cta submit', ctaDetails.value);
         }
 
         onMounted(() => {
@@ -138,7 +143,8 @@ export default {
             closeSearch,
             route,
             hideSection,
-            ctaSubmit
+            ctaSubmit,
+            ctaDetails
         }
     },
 }

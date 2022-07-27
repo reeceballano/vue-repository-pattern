@@ -3,10 +3,18 @@
         <div class="custom-container">
             <h2 class="text-white">
                 {{title}}
-            </h2> 
+            </h2>
+            <p class="text-center text-white mt-5">
+                <slot />
+            </p> 
             <div class="flex justify-center items-center my-10 overflow-auto">
                 <div class="flex justify-center w-2/4">
-                    <Input :inputData="{ id: 'field-email', type: 'email', label: 'Your email', value:'' }"/>
+                    <input 
+                        type="email"
+                        @input="ctaInput($event.target.value)" 
+                        class="primary-input mb-0" 
+                        placeholder="Enter your email" 
+                    />
                     <SecondaryButton routeTo="#" type="link" @buttonClick="ctaSubmit()" css-style="text-white">
                         Subscribe
                     </SecondaryButton>
@@ -18,28 +26,36 @@
 
 <script>
 import SecondaryButton from '../components/Buttons/SecondaryButton';
-import Input from '@/components/Inputs/Input';
 
 export default {
     name: 'Cta',
     components: {
         SecondaryButton,
-        Input,
     },
     props: {
+        inputData: {
+            type: Object
+        },
+
         title: {
             type: String,
             required: true
-        }
+        },
+
     },
 
     setup(props, { emit }) {
+        const ctaInput= (value) => {
+            emit('update', value);
+        }
+
         const ctaSubmit = () => {
             emit('ctaSubmit');
         }
 
         return {
-            ctaSubmit,
+            ctaInput,
+            ctaSubmit
         }
     }
 }
@@ -51,4 +67,5 @@ export default {
             @apply text-center text-center md:text-4xl text-2xl leading-10;
         }
     }
+
 </style>
