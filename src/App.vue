@@ -38,8 +38,11 @@
         >
             {{ctaDetails}}
         </Cta>
+        
+        <SubFooter />
 
         <Footer v-if="!hideSection" />
+
     </div>
 </template>
 
@@ -56,6 +59,7 @@ import AnimateTransition from '@/components/AnimateTransition';
 import Icon from '@/components/Icon';
 import Cta from '@/components/Cta';
 import Footer from '@/components/Footer';
+import SubFooter from '@/components/SubFooter';
 
 export default {
     components: {
@@ -67,7 +71,8 @@ export default {
         AnimateTransition,
         Icon,
         Cta,
-        Footer
+        Footer,
+        SubFooter
     },
 
     setup() {
