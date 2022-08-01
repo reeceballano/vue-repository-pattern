@@ -1,7 +1,7 @@
 <template>
     <div class="subfooter-item">
         <h2>{{item.title}}</h2>
-        <slot v-bind:item="item.content"></slot>
+        <div v-html="item.content"></div>
     </div>
 </template>
 

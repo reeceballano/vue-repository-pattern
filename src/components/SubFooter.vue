@@ -10,7 +10,6 @@
                         :item="item"
                         v-slot="{ item }"
                     >
-                        <div><strong>Content:</strong> {{ item }}</div>
                     </SubFooterItem>
                 </div>
             </div>
