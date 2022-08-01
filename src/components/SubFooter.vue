@@ -42,7 +42,5 @@ export default {
 </script>
 
 <style scoped>
-    h2 {
-        @apply text-xl font-medium;
-    }
+
 </style>

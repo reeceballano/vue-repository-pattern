@@ -17,6 +17,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    h2 {
+        @apply text-xl font-medium mb-7 pb-3 border-b;
+    }
 </style>
