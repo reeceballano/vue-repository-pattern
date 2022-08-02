@@ -1,7 +1,7 @@
 <template>
     <section class="sub-footer">
         <div class="custom-container">
-            <div class="grid md:grid-cols-4 grid-cols-2 gap-4">
+            <div class="grid md:grid-cols-4 grid-cols-2 md:gap-10 gap-4">
                 <div
                     v-for="item in items"
                     :key="item.id"
