@@ -68,4 +68,8 @@ export default {
         }
     }
 
+    .primary-input {
+        margin-bottom: 0 !important;
+    }
+
 </style>
