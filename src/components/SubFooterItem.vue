@@ -13,7 +13,12 @@ export default {
             type: Object,
             required: true
         },
-    }
+        yCenter: {
+            type: Boolean,
+            default: false
+        }
+    },
+
 }
 </script>
 
