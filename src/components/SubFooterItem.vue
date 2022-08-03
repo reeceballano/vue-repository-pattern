@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed } from 'vue';
 export default {
     name: 'SubFooterItem',
     props: {
@@ -20,7 +20,10 @@ export default {
         }
     },
     setup(props) {
-        const setYCenter = ref(props.yCenter);
+        const setYCenter = computed(() => {
+            if(!props.yCenter) { return }
+            return 'flex items-center flex-col';
+        });
 
         return {
             setYCenter
