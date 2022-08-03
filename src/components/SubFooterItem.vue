@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
     name: 'SubFooterItem',
     props: {
@@ -18,7 +19,13 @@ export default {
             default: false
         }
     },
+    setup(props) {
+        const setYCenter = ref(props.yCenter);
 
+        return {
+            setYCenter
+        }
+    }
 }
 </script>
 
