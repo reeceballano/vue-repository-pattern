@@ -1,5 +1,5 @@
 <template>
-    <div class="subfooter-item">
+    <div :class="setYCenter" class="subfooter-item">
         <h2 v-if="item.title">{{item.title}}</h2>
         <div v-html="item.content"></div>
     </div>
