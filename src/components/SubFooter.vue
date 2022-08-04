@@ -28,7 +28,7 @@ export default {
     },
     setup() {
         const items = ref([
-            { id: 1, title: '', content: 'Item 1 content' },
+            { id: 1, title: '', content: '<img class="h-20" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" />' },
             { id: 2, title: 'Item 2', content: 'Item 2 content' },
             { id: 3, title: 'Item 3', content: '<p>Item 3 <strong>content</strong></p>' },
             { id: 4, title: 'Item 4', content: '<p>Item 4' },
