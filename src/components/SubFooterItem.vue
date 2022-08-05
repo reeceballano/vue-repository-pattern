@@ -1,5 +1,5 @@
 <template>
-    <div :class="setYCenter" class="subfooter-item">
+    <div :class="setVerticalCenter" class="subfooter-item">
         <h2 v-if="item.title">{{item.title}}</h2>
         <div v-html="item.content"></div>
     </div>
@@ -13,20 +13,17 @@ export default {
         item: {
             type: Object,
             required: true
-        },
-        yCenter: {
-            type: Boolean,
-            default: false
         }
+
     },
     setup(props) {
-        const setYCenter = computed(() => {
-            if(!props.yCenter) { return }
+        const setVerticalCenter = computed(() => {
+            if(!props.verticalCenter) { return }
             return 'flex items-center flex-col';
         });
 
         return {
-            setYCenter
+            setVerticalCenter
         }
     }
 }
