@@ -18,7 +18,7 @@ export default {
     },
     setup(props) {
         const setVerticalCenter = computed(() => {
-            if(!props.verticalCenter) { return }
+            if(!props.item.verticalAlign) { return }
             return 'flex items-center flex-col';
         });
 
