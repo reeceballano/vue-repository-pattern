@@ -99,7 +99,7 @@ export default {
     }
 
     .full {
-        @apply h-screen;
+        @apply md:h-screen;
     }
 
     .half {
