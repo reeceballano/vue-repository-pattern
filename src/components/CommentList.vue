@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { ref, onMounted } from 'vue';
 import Comment from '@/components/Comment';
 
 
@@ -16,10 +16,6 @@ export default {
     },
 
     props: {
-        postId: {
-            type: Number
-        },
-
         commentData: {
             type: Object,
             default: () => {}
@@ -27,7 +23,8 @@ export default {
     },
 
     async setup(props) {
-        const postId = ref(props.postId);
+        console.log(props.commentData)
+        const comments = ref(null);
 
         let fetchComments = new Promise((resolve) => {
                 // const data = [
@@ -36,15 +33,18 @@ export default {
                 // ]
         
                 setTimeout(() => {
-                    return resolve(props.commentData)
-                }, 3000);
+                    comments.value = props.commentData;
+                    resolve();
+                }, 3500);
         })
-
-        watch(postId, (newQuery, oldQuery) => {
-            console.log('post id', newQuery, oldQuery);
+        
+        onMounted(() => {
+            console.log('mounted')
         })
+        
+        await fetchComments;
 
-        const comments = ref(await fetchComments);
+        //const comments = ref(await fetchComments);
 
         return {
             comments,

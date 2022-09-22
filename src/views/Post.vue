@@ -16,7 +16,7 @@
                     *ON DEVELOPMENT
                     <Suspense>
                         <template #default>
-                            <CommentList :key="post.id" :postId="post.id" :commentData="filteredComments(comments.data)" />
+                            <CommentList :key="post.id" :commentData="filteredComments(comments.data)" />
                         </template>
 
                         <template #fallback>
