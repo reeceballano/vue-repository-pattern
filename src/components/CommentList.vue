@@ -1,11 +1,12 @@
 <template>
     <div class="comment-list">
+        {{randomNum}}
         <Comment v-for="comment in comments" :key="comment.id" :comment="comment" />
     </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import Comment from '@/components/Comment';
 
 
@@ -16,6 +17,10 @@ export default {
     },
 
     props: {
+        postId: {
+            type: Number
+        },
+
         commentData: {
             type: Object,
             default: () => {}
@@ -23,6 +28,10 @@ export default {
     },
 
     async setup(props) {
+        const postId = ref(props.postId);
+
+        const randomNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+
         let fetchComments = new Promise((resolve) => {
                 // const data = [
                 //     { id: 1, postId: 1, name: 'user 1', body: 'comment 1 '},
@@ -34,10 +43,15 @@ export default {
                 }, 3000);
         })
 
+        watch(postId, (newQuery, oldQuery) => {
+            console.log('post id', newQuery, oldQuery);
+        })
+
         const comments = ref(await fetchComments);
 
         return {
             comments,
+            randomNum
         }
     }
 }

@@ -16,7 +16,7 @@
                     *ON DEVELOPMENT
                     <Suspense>
                         <template #default>
-                            <CommentList :commentData="filteredComments(comments.data)" />
+                            <CommentList :key="post.id" :postId="post.id" :commentData="filteredComments(comments.data)" />
                         </template>
 
                         <template #fallback>
@@ -24,7 +24,10 @@
                         </template>
                     </Suspense>
                 </div>
-                <!-- <div class="comment-list">
+
+                <!-- <hr />
+
+                <div class="comment-list">
                     <div v-for="comment in filteredComments(comments.data)" :key="comment.id" class="comment-item m-5 border-b pb-5">
                         {{ comment.body }}
 
