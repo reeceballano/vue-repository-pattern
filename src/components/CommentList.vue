@@ -1,6 +1,5 @@
 <template>
     <div class="comment-list">
-        {{randomNum}}
         <Comment v-for="comment in comments" :key="comment.id" :comment="comment" />
     </div>
 </template>
@@ -30,8 +29,6 @@ export default {
     async setup(props) {
         const postId = ref(props.postId);
 
-        const randomNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-
         let fetchComments = new Promise((resolve) => {
                 // const data = [
                 //     { id: 1, postId: 1, name: 'user 1', body: 'comment 1 '},
@@ -51,7 +48,6 @@ export default {
 
         return {
             comments,
-            randomNum
         }
     }
 }
